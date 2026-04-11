@@ -1,0 +1,69 @@
+site_name: AI辅助科研工具使用说明
+site_description: 面向课题组研究生的AI辅助环境配置与工具使用指南
+site_author: 课题组
+
+# 主题配置
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant  # 即时加载
+    - navigation.tabs     # 顶部标签导航
+    - navigation.sections # 章节导航
+    - navigation.top      # 返回顶部按钮
+    - search.suggest      # 搜索建议
+    - search.highlight    # 搜索高亮
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切换深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切换浅色模式
+
+# 导航结构（路径相对于 docs/ 目录）
+nav:
+  - 前言: 00-introduction.md
+  - AI工具总览: 01-ai-tools-guide.md
+  - 工具指南:
+    - Origin: 02-origin.md
+    - MATLAB: 03-matlab.md
+    - Excel: 04-excel.md
+    - COMSOL: 05-comsol.md
+    - FDTD: 06-fdtd.md
+    - SolidWorks: 07-solidworks.md
+    - C4D: 08-c4d.md
+    - LabVIEW: 09-labview.md
+  - 提示词模板: 10-prompt-templates.md
+
+# Markdown 扩展
+markdown_extensions:
+  - admonition        # 提示块
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - footnotes         # 脚注
+  - meta              # 元数据
+  - toc:              # 目录
+      permalink: true
+  - tables            # 表格
+  - pymdownx.arithmatex:  # 数学公式
+      generic: true
+  - pymdownx.betterem     # 改进的强调语法
+  - pymdownx.superfences  # 嵌套代码块
+
+# 搜索配置
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+
+# 使用方法：
+# 1. pip install -r requirements.txt
+# 2. 本地预览: mkdocs serve
+# 3. 构建站点: mkdocs build
+# 4. 部署到 GitHub Pages: mkdocs gh-deploy

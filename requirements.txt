@@ -1,0 +1,2 @@
+# 本地预览与构建 MkDocs 站点（Material 主题）
+mkdocs-material>=9.5,<10
