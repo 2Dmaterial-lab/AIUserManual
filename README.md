@@ -2,6 +2,10 @@
 
 > 面向课题组研究生的 AI 辅助环境配置与工具使用指南
 
+**在线阅读（正式版）**：<https://2dmaterial-lab.github.io/AIUserManual/>
+
+若仅在 GitHub 上浏览本仓库中的 Markdown，目录与渲染可能与站点不一致，**请以部署后的网页为准**。主要修订见 [docs/changelog.md](docs/changelog.md)。
+
 ## 项目简介
 
 本手册旨在帮助课题组成员快速上手科研常用软件，并学会利用 AI 工具（Claude、ChatGPT、DeepSeek、Copilot、Cursor 等）显著提升工作效率。
@@ -69,7 +73,7 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 ## 贡献
 
-本手册欢迎课题组成员共同完善：
+详见 [CONTRIBUTING.md](CONTRIBUTING.md)。摘要如下：
 
 1. 发现错误或过时信息，请提出修改
 2. 有好的 AI 使用技巧或提示词，欢迎补充

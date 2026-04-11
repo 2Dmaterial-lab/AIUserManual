@@ -1,5 +1,7 @@
 # LabVIEW -- AI辅助仪器控制与数据采集指南
 
+> **本章导读**：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。
+
 ## 1. 简介与适用场景
 
 LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是 NI（National Instruments）开发的图形化编程环境，在物理与光学实验室中，它是仪器控制和数据采集领域最主流的工具之一。与文本编程语言不同，LabVIEW 通过拖拽连线的方式构建程序（称为 VI，即虚拟仪器），程序逻辑体现在"数据流"的传递路径上。

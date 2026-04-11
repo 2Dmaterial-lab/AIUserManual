@@ -1,14 +1,11 @@
-name: Deploy MkDocs Site
+name: MkDocs CI
 
 on:
-  push:
+  pull_request:
     branches: [main]
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,4 +14,3 @@ jobs:
           python-version: '3.12'
       - run: pip install -r requirements.txt
       - run: mkdocs build --strict
-      - run: mkdocs gh-deploy --force

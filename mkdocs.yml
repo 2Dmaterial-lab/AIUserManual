@@ -32,6 +32,7 @@ nav:
   - 基础篇:
     - 前言: 00-introduction.md
     - AI工具总览: 01-ai-tools-guide.md
+    - 课题组信息与本地约定: 11-lab-info.md
   - 工具指南:
     - Origin: 02-origin.md
     - MATLAB: 03-matlab.md
@@ -42,9 +43,11 @@ nav:
     - C4D: 08-c4d.md
     - LabVIEW: 09-labview.md
   - 提示词模板: 10-prompt-templates.md
+  - 更新日志: changelog.md
 
 # Markdown 扩展
 markdown_extensions:
+  - attr_list
   - admonition
   - pymdownx.highlight:
       anchor_linenums: true
