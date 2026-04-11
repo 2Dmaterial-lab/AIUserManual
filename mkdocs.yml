@@ -1,18 +1,19 @@
 site_name: AI辅助科研工具使用说明
 site_description: 面向课题组研究生的AI辅助环境配置与工具使用指南
-site_author: 课题组
+site_author: 2Dmaterial-lab
 
 # 主题配置
 theme:
   name: material
   language: zh
   features:
-    - navigation.instant  # 即时加载
-    - navigation.tabs     # 顶部标签导航
-    - navigation.sections # 章节导航
-    - navigation.top      # 返回顶部按钮
-    - search.suggest      # 搜索建议
-    - search.highlight    # 搜索高亮
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -25,10 +26,12 @@ theme:
         icon: material/brightness-4
         name: 切换浅色模式
 
-# 导航结构（路径相对于 docs/ 目录）
+# 导航结构
 nav:
-  - 前言: 00-introduction.md
-  - AI工具总览: 01-ai-tools-guide.md
+  - 首页: index.md
+  - 基础篇:
+    - 前言: 00-introduction.md
+    - AI工具总览: 01-ai-tools-guide.md
   - 工具指南:
     - Origin: 02-origin.md
     - MATLAB: 03-matlab.md
@@ -42,18 +45,18 @@ nav:
 
 # Markdown 扩展
 markdown_extensions:
-  - admonition        # 提示块
+  - admonition
   - pymdownx.highlight:
       anchor_linenums: true
-  - footnotes         # 脚注
-  - meta              # 元数据
-  - toc:              # 目录
+  - pymdownx.superfences
+  - footnotes
+  - meta
+  - toc:
       permalink: true
-  - tables            # 表格
-  - pymdownx.arithmatex:  # 数学公式
+  - tables
+  - pymdownx.arithmatex:
       generic: true
-  - pymdownx.betterem     # 改进的强调语法
-  - pymdownx.superfences  # 嵌套代码块
+  - pymdownx.betterem
 
 # 搜索配置
 plugins:
