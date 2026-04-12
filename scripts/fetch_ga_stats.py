@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-在部署前从 GA4 Data API 拉取全站累计 screenPageViews，写入 docs/assets/analytics-stats.json。
+在部署前从 GA4 Data API 拉取全站累计「网页浏览」约数，写入 docs/assets/analytics-stats.json。
+
+优先使用事件 **page_view** 的 eventCount 汇总（与 GA4 网页数据流一致）。
+仅当该汇总为 0 时再尝试无维度的 screenPageViews（部分报表口径兼容）。
 需要环境变量：
   GA_SERVICE_ACCOUNT_JSON  服务账号 JSON 全文（与 GitHub Secret 一致）
   GA4_PROPERTY_ID          纯数字，如 123456789（GA「管理 → 媒体资源设置」中的媒体资源 ID）
@@ -54,19 +57,51 @@ def main() -> int:
         cred_path = tmp.name
 
         from google.analytics.data_v1beta import BetaAnalyticsDataClient
-        from google.analytics.data_v1beta.types import DateRange, Metric, RunReportRequest
+        from google.analytics.data_v1beta.types import (
+            DateRange,
+            Filter,
+            FilterExpression,
+            Metric,
+            RunReportRequest,
+        )
 
         client = BetaAnalyticsDataClient.from_service_account_json(cred_path)
-        request = RunReportRequest(
-            property=f"properties/{prop}",
-            date_ranges=[DateRange(start_date="2020-01-01", end_date="today")],
-            metrics=[Metric(name="screenPageViews")],
+        property_path = f"properties/{prop}"
+        date_range = [DateRange(start_date="2020-01-01", end_date="today")]
+
+        # 1) 网页浏览：eventName=page_view 的 eventCount（网站数据流主口径；避免仅用 screenPageViews 在网页属性上常为 0）
+        page_view_filter = FilterExpression(
+            filter=Filter(
+                field_name="eventName",
+                string_filter=Filter.StringFilter(
+                    match_type=Filter.StringFilter.MatchType.EXACT,
+                    value="page_view",
+                ),
+            )
         )
-        response = client.run_report(request)
-        if not response.rows:
-            total = 0
-        else:
-            total = int(response.rows[0].metric_values[0].value)
+        req_pv = RunReportRequest(
+            property=property_path,
+            date_ranges=date_range,
+            metrics=[Metric(name="eventCount")],
+            dimension_filter=page_view_filter,
+            limit=10,
+        )
+        resp_pv = client.run_report(req_pv)
+        total = 0
+        if resp_pv.rows:
+            total = int(resp_pv.rows[0].metric_values[0].value)
+
+        # 2) 兜底：仍用无维度 screenPageViews（与部分报表「浏览」接近）
+        if total == 0:
+            req_sc = RunReportRequest(
+                property=property_path,
+                date_ranges=date_range,
+                metrics=[Metric(name="screenPageViews")],
+                limit=10,
+            )
+            resp_sc = client.run_report(req_sc)
+            if resp_sc.rows:
+                total = int(resp_sc.rows[0].metric_values[0].value)
 
         now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
         write_file(
@@ -74,7 +109,7 @@ def main() -> int:
                 "totalPageViews": total,
                 "updatedAt": now,
                 "source": "ga4",
-                "note": "自 2020-01-01 起至「今天」的 screenPageViews 合计；由部署任务拉取。",
+                "note": "自 2020-01-01 起至「今天」：主指标为 page_view 的 eventCount；若为 0 再尝试 screenPageViews；由部署任务拉取。",
             }
         )
         return 0
