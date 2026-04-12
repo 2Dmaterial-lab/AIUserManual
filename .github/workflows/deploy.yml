@@ -11,6 +11,11 @@ on:
       - 'requirements.txt'
       - 'README.md'
       - '.github/workflows/deploy.yml'
+  # 手动在 Actions 里点「Run workflow」也会跑一遍，用于只刷新页脚累计数而不改文档
+  workflow_dispatch:
+  # 页脚 JSON 只在「部署构建」时从 GA 拉取；访问网站不会更新文件。每天自动部署一次以同步累计浏览量。
+  schedule:
+    - cron: '40 2 * * *'
 
 permissions:
   contents: write

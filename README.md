@@ -78,7 +78,7 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 ### 页脚「全站累计约 ×× 次页面浏览」（可选）
 
-在页脚展示**约计总浏览量**（数据来自 GA4 的 `screenPageViews` 汇总，非实时秒级）。需要在 **Google Cloud** 侧启用 **Google Analytics Data API**，并为本仓库配置两个 **Actions Secret**（与上方的 `GOOGLE_ANALYTICS_ID` 是不同用途，需同时配置才会在页脚看到数字）：
+在页脚展示**约计总浏览量**（数据来自 GA4 的 **`page_view` 事件**累计，非实时秒级）。需要在 **Google Cloud** 侧启用 **Google Analytics Data API**，并为本仓库配置两个 **Actions Secret**（与上方的 `GOOGLE_ANALYTICS_ID` 是不同用途，需同时配置才会在页脚看到数字）：
 
 | Secret 名称 | 内容 |
 |-------------|------|
@@ -94,6 +94,8 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 5. 仍在「管理」→ **媒体资源设置** 中复制 **媒体资源 ID**（数字），写入 Secret `GA4_PROPERTY_ID`。
 
 配置完成后，推送 `main` 触发部署：构建前会运行 `scripts/fetch_ga_stats.py` 拉取累计值并写入 `docs/assets/analytics-stats.json`，页脚脚本会读取并显示。**请勿**将服务账号 JSON 提交到 Git，仅放在 GitHub Secrets。
+
+**为什么多访问了几次网站，页脚数字不变？** 静态站上的 JSON **只在「部署」时**从 GA 拉取一次；访客访问**不会**改写服务器上的文件（GitHub Pages 无动态后端）。`updatedAt` 表示**上次成功部署**的时间。若要立刻刷新：打开 **Actions → Deploy MkDocs Site → Run workflow** 手动运行；仓库默认 **每天 UTC 02:40** 也会自动跑一次部署以同步累计（可在 `.github/workflows/deploy.yml` 里改 `cron`）。
 
 本地可安装 `pip install -r scripts/requirements-analytics.txt` 后导出上述两个环境变量，运行 `python scripts/fetch_ga_stats.py` 再 `mkdocs serve` 预览页脚效果。
 
