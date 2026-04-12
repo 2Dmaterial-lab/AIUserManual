@@ -13,9 +13,10 @@ on:
       - '.github/workflows/deploy.yml'
   # 手动在 Actions 里点「Run workflow」也会跑一遍，用于只刷新页脚累计数而不改文档
   workflow_dispatch:
-  # 页脚 JSON 只在「部署构建」时从 GA 拉取；访问网站不会更新文件。每天自动部署一次以同步累计浏览量。
+  # 页脚数字只在「部署」时写入；定时全量部署以从 GA 拉最新累计（默认每小时；非秒级实时）。
+  # 需要更频繁可把下面改成 */15 * * * *（约 15 分钟），但 gh-pages 提交会变很密。
   schedule:
-    - cron: '40 2 * * *'
+    - cron: '0 * * * *'
 
 permissions:
   contents: write

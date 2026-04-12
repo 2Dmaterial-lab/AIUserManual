@@ -95,7 +95,12 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 配置完成后，推送 `main` 触发部署：构建前会运行 `scripts/fetch_ga_stats.py` 拉取累计值并写入 `docs/assets/analytics-stats.json`，页脚脚本会读取并显示。**请勿**将服务账号 JSON 提交到 Git，仅放在 GitHub Secrets。
 
-**为什么多访问了几次网站，页脚数字不变？** 静态站上的 JSON **只在「部署」时**从 GA 拉取一次；访客访问**不会**改写服务器上的文件（GitHub Pages 无动态后端）。`updatedAt` 表示**上次成功部署**的时间。若要立刻刷新：打开 **Actions → Deploy MkDocs Site → Run workflow** 手动运行；仓库默认 **每天 UTC 02:40** 也会自动跑一次部署以同步累计（可在 `.github/workflows/deploy.yml` 里改 `cron`）。
+**为什么多访问了几次网站，页脚数字不变？** 静态站上的 JSON **只在「部署」时**从 GA 拉取一次；访客访问**不会**改写服务器上的文件（GitHub Pages 无动态后端）。`updatedAt` 表示**上次成功部署**的时间。若要立刻刷新：打开 **Actions → Deploy MkDocs Site → Run workflow** 手动运行。
+
+**能「实时」更新吗？**
+
+- **严格意义的实时**（每打开页面都从 Google 拉最新数）：需要**自建一个小接口**（如 Cloudflare Workers、Cloud Functions）在服务端保存服务账号并返回数字，页脚用 `fetch` 调该接口；纯静态仓库**无法实现**，也不能把密钥写进前端。  
+- **当前做法（折中）**：定时 **每小时**（UTC 整点）自动跑一遍部署，从 GA 拉数并更新站点上的 JSON，延迟一般在 **约 1 小时 + GA 处理延迟**；仍非秒级实时。需要更快可把 `deploy.yml` 里 `cron` 改成 `*/15 * * * *`（约 15 分钟一次，但 `gh-pages` 提交会很密）。想省 Actions 可改成每天一次 `0 2 * * *`。
 
 本地可安装 `pip install -r scripts/requirements-analytics.txt` 后导出上述两个环境变量，运行 `python scripts/fetch_ga_stats.py` 再 `mkdocs serve` 预览页脚效果。
 

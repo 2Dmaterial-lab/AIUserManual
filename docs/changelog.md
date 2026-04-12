@@ -4,6 +4,7 @@
 
 | 日期 | 摘要 |
 |------|------|
+| 2026-04-12 | 部署定时任务改为每小时（UTC 整点）同步页脚累计；README 说明真·实时需自建 API、可自调 cron。 |
 | 2026-04-12 | 部署工作流增加 `workflow_dispatch` 与每日 `cron`（UTC 02:40），便于刷新页脚累计；README 说明 JSON 仅在部署时更新。 |
 | 2026-04-12 | `fetch_ga_stats`：累计浏览改用语义为 `page_view` 的 `eventCount`（`dimension_filter`），避免仅 `screenPageViews` 在网页属性上长期为 0；仍为 0 时再试 `screenPageViews`。 |
 | 2026-04-12 | 页脚浏览量：改为 `site_url` 绝对路径拉取 JSON（避免 instant 导航下相对路径失败）；加载中/失败/未配置时有提示；累计为 0 时附加说明（新站或 GA 延迟）。 |
