@@ -7,29 +7,40 @@
       {{ config.copyright }}
     </div>
   {% endif %}
+  {# 使用 site_url 拼绝对地址，避免 navigation.instant 下相对路径 fetch 失败 #}
   <div
     class="md-copyright__highlight"
     id="site-ga-popularity"
-    data-stats="{{ 'assets/analytics-stats.json' | url }}"
-    hidden
-  ></div>
+    data-stats="{{ config.site_url }}assets/analytics-stats.json"
+  >浏览量统计加载中…</div>
   <script>
     (function () {
       var el = document.getElementById("site-ga-popularity");
       if (!el) return;
       var url = el.getAttribute("data-stats");
-      if (!url) return;
-      fetch(url, { credentials: "same-origin" })
+      if (!url) {
+        el.textContent = "浏览量统计未配置（缺少 site_url）";
+        return;
+      }
+      fetch(url, { credentials: "same-origin", cache: "no-store" })
         .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
           return r.json();
         })
         .then(function (d) {
-          if (d.totalPageViews == null || d.totalPageViews === "") return;
+          if (d.totalPageViews == null || d.totalPageViews === "") {
+            el.textContent =
+              "全站浏览量：暂未写入（请确认部署时已配置 GA_SERVICE_ACCOUNT_JSON 与 GA4_PROPERTY_ID）";
+            return;
+          }
           var n =
             typeof d.totalPageViews === "number"
               ? d.totalPageViews
               : parseInt(d.totalPageViews, 10);
-          if (isNaN(n)) return;
+          if (isNaN(n)) {
+            el.textContent = "浏览量数据格式异常";
+            return;
+          }
           var when = "";
           if (d.updatedAt) {
             try {
@@ -38,10 +49,21 @@
             } catch (e) {}
           }
           el.textContent =
-            "全站累计约 " + n.toLocaleString("zh-CN") + " 次页面浏览" + when;
-          el.hidden = false;
+            "全站累计约 " +
+            n.toLocaleString("zh-CN") +
+            " 次页面浏览" +
+            when +
+            (n === 0
+              ? "（新站或 GA 处理延迟时可能短期为 0，可与 GA 后台对照）"
+              : "");
         })
-        .catch(function () {});
+        .catch(function (err) {
+          el.textContent =
+            "浏览量统计加载失败（请强制刷新或关闭广告拦截后重试）";
+          if (typeof console !== "undefined" && console.warn) {
+            console.warn("analytics-stats:", err);
+          }
+        });
     })();
   </script>
   {% if not config.extra.generator == false %}
