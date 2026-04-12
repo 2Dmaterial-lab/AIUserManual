@@ -16,7 +16,8 @@
 
 ## 主题与全站行为
 
-- **Material 覆盖**：仓库根目录 `overrides/main.html` 继承主题的 `base.html`，用于在 `<head>` 中注入全站元数据（例如 `noindex`）。修改后务必本地执行 `mkdocs build --strict`，并在变更可见时记入 `docs/changelog.md`。
+- **Material 覆盖**：目录 `overrides/` 中的模板会覆盖主题默认实现（例如 `partials/integrations/analytics/google.html`：仅当配置了 `GOOGLE_ANALYTICS_ID` 时才注入 GA4 脚本）。修改后务必本地执行 `mkdocs build --strict`，并在变更可见时记入 `docs/changelog.md`。
+- **访问统计**：若需统计线上访问量，在仓库 **Settings → Secrets and variables → Actions** 中配置密钥 `GOOGLE_ANALYTICS_ID`（GA4 衡量 ID）。未配置时构建产物不含统计脚本。
 - **依赖版本**：`requirements.txt` 中已固定 `mkdocs` / `mkdocs-material` 主版本，便于 CI 与本地一致。升级主题或 MkDocs 时请在说明中写清，并全站预览后再合并。
 
 ## 本地检查

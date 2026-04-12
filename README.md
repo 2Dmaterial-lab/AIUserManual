@@ -66,6 +66,16 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 说明与依赖版本见项目根目录 `requirements.txt`。
 
+## 访问统计（可选）
+
+在线站点可接入 **Google Analytics 4（GA4）**，在 [Google 分析](https://analytics.google.com/) 后台查看访问量、页面浏览与流量来源等（静态站本身不保存访问日志）。
+
+1. 在 GA4 中为该网站创建**数据流**，复制**衡量 ID**（格式 `G-xxxxxxxxxx`）。
+2. 打开本仓库 **Settings → Secrets and variables → Actions**，新建仓库密钥 **`GOOGLE_ANALYTICS_ID`**，值为上述衡量 ID。推送 `main` 后的部署构建会自动注入该变量。
+3. 本地验证：可先执行 `export GOOGLE_ANALYTICS_ID=G-你的ID`，再 `mkdocs serve` 或 `mkdocs build`，在生成的页面中应能看到对 `googletagmanager.com` 的请求（浏览器开发者工具 → 网络）。
+
+未配置该密钥时，站点**不会**加载任何统计脚本。若部分访问者网络无法连接 Google 服务，统计可能不完整，属正常现象。
+
 ## 示例脚本
 
 各章「进阶资源」中已挂链；文件统一放在 `docs/assets/examples/`，与 MkDocs 构建产物一并发布。

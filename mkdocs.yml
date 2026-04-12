@@ -81,6 +81,11 @@ plugins:
 extra:
   generator: false
   copyright: Copyright &copy; 2025–2026 2Dmaterial-lab
+  # 浏览量：在 Google Analytics 4 创建数据流，取得 G- 开头的衡量 ID；
+  # 本地可 export GOOGLE_ANALYTICS_ID=G-xxxx；GitHub Actions 见仓库 Settings → Secrets → GOOGLE_ANALYTICS_ID
+  analytics:
+    provider: google
+    property: !ENV [GOOGLE_ANALYTICS_ID, ""]
 
 # 使用方法：
 # 1. pip install -r requirements.txt

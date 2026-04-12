@@ -17,6 +17,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      # 在仓库 Settings → Secrets and variables → Actions 中新建 GOOGLE_ANALYTICS_ID（GA4 衡量 ID，形如 G-xxxxxxxxxx）
+      GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
