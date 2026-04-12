@@ -1,19 +1,27 @@
 site_name: AI辅助科研工具使用说明
 site_description: 面向课题组研究生的AI辅助环境配置与工具使用指南
 site_author: 2Dmaterial-lab
+site_url: https://2dmaterial-lab.github.io/AIUserManual/
+
+repo_url: https://github.com/2Dmaterial-lab/AIUserManual
+edit_uri: edit/main/docs/
 
 # 主题配置
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   features:
     - navigation.instant
     - navigation.tabs
     - navigation.sections
     - navigation.top
+    - navigation.tracking
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.action.edit
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -57,8 +65,6 @@ markdown_extensions:
   - toc:
       permalink: true
   - tables
-  - pymdownx.arithmatex:
-      generic: true
   - pymdownx.betterem
 
 # 搜索配置
@@ -67,6 +73,10 @@ plugins:
       lang:
         - zh
         - en
+
+extra:
+  generator: false
+  copyright: Copyright &copy; 2026 2Dmaterial-lab
 
 # 使用方法：
 # 1. pip install -r requirements.txt

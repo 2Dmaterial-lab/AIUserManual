@@ -1,2 +1,4 @@
 # 本地预览与构建 MkDocs 站点（Material 主题）
-mkdocs-material>=9.5,<10
+# 版本固定便于 CI 与本地一致；升级时请同步运行 mkdocs build --strict 后再提交。
+mkdocs==1.6.1
+mkdocs-material==9.7.6

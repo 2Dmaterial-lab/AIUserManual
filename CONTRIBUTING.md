@@ -12,7 +12,12 @@
 1. **小改动**：修正笔误、更新链接，可直接提交到 `main`（或通过 Pull Request）。
 2. **新增章节或大块内容**：尽量保持与现有章节一致的结构（参见各工具章开头的「本章导读」与仓库 `README.md` 中的说明）。
 3. **可下载脚本**：放入 `docs/assets/examples/`，文件名使用小写字母与下划线，并在对应章节的「进阶资源」中说明用途。
-4. **涉及价格、产品名、政策**：在文内注明「请以官网为准」，并视情况更新 `docs/changelog.md` 与 `docs/01-ai-tools-guide.md` 中的核对日期说明。
+4. **涉及价格、产品名、政策**：在文内注明「请以官网为准」。凡更新《AI工具选择与使用指南》中的产品表、费用或注册步骤，请**同步**：（1）调整 `docs/01-ai-tools-guide.md` 顶部「价格与产品信息时效」中的核对说明或日期；（2）在 `docs/changelog.md` 增加一条摘要，便于读者判断内容新鲜度。
+
+## 主题与全站行为
+
+- **Material 覆盖**：仓库根目录 `overrides/main.html` 继承主题的 `base.html`，用于在 `<head>` 中注入全站元数据（例如 `noindex`）。修改后务必本地执行 `mkdocs build --strict`，并在变更可见时记入 `docs/changelog.md`。
+- **依赖版本**：`requirements.txt` 中已固定 `mkdocs` / `mkdocs-material` 主版本，便于 CI 与本地一致。升级主题或 MkDocs 时请在说明中写清，并全站预览后再合并。
 
 ## 本地检查
 
