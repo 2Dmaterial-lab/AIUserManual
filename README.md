@@ -76,6 +76,27 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 未配置该密钥时，站点**不会**加载任何统计脚本。若部分访问者网络无法连接 Google 服务，统计可能不完整，属正常现象。
 
+### 页脚「全站累计约 ×× 次页面浏览」（可选）
+
+在页脚展示**约计总浏览量**（数据来自 GA4 的 `screenPageViews` 汇总，非实时秒级）。需要在 **Google Cloud** 侧启用 **Google Analytics Data API**，并为本仓库配置两个 **Actions Secret**（与上方的 `GOOGLE_ANALYTICS_ID` 是不同用途，需同时配置才会在页脚看到数字）：
+
+| Secret 名称 | 内容 |
+|-------------|------|
+| `GA_SERVICE_ACCOUNT_JSON` | Google Cloud **服务账号** 的 JSON 密钥全文（多行粘贴到 Secret 中）。 |
+| `GA4_PROPERTY_ID` | GA4 **媒体资源 ID**（纯数字，如 `123456789`；在 GA「管理 → 媒体资源设置」中查看，**不是** `G-` 开头的衡量 ID）。 |
+
+**Google Cloud 简要步骤**（需有权限操作 GCP 与 GA4 媒体资源）：
+
+1. 打开 [Google Cloud Console](https://console.cloud.google.com/)，选择或新建项目。  
+2. 「API 和服务 → 已启用的 API」→ 启用 **Google Analytics Data API**。  
+3. 「IAM 和管理 → 服务账号」→ 创建服务账号 →「密钥」→ 添加 **JSON** 密钥并下载；将 JSON **整份**粘贴到仓库 Secret `GA_SERVICE_ACCOUNT_JSON`。  
+4. 打开 [Google Analytics](https://analytics.google.com/) → **管理**（齿轮）→ 选中你的 **媒体资源** → **媒体资源访问管理** → **新增使用者**，填入服务账号邮箱（形如 `xxx@项目id.iam.gserviceaccount.com`），角色选 **查看者**。  
+5. 仍在「管理」→ **媒体资源设置** 中复制 **媒体资源 ID**（数字），写入 Secret `GA4_PROPERTY_ID`。
+
+配置完成后，推送 `main` 触发部署：构建前会运行 `scripts/fetch_ga_stats.py` 拉取累计值并写入 `docs/assets/analytics-stats.json`，页脚脚本会读取并显示。**请勿**将服务账号 JSON 提交到 Git，仅放在 GitHub Secrets。
+
+本地可安装 `pip install -r scripts/requirements-analytics.txt` 后导出上述两个环境变量，运行 `python scripts/fetch_ga_stats.py` 再 `mkdocs serve` 预览页脚效果。
+
 ## 示例脚本
 
 各章「进阶资源」中已挂链；文件统一放在 `docs/assets/examples/`，与 MkDocs 构建产物一并发布。

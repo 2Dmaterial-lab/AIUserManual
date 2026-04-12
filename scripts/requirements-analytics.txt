@@ -1,0 +1,2 @@
+# 仅用于 scripts/fetch_ga_stats.py（部署与可选本地拉取）；不必装也可本地 mkdocs serve
+google-analytics-data>=0.18.12,<1

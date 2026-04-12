@@ -1,0 +1,6 @@
+{
+  "totalPageViews": null,
+  "updatedAt": null,
+  "source": "ga4",
+  "note": "未配置 GA_SERVICE_ACCOUNT_JSON 或 GA4_PROPERTY_ID；部署时在 Actions 中设置 Secret 后即可显示约计浏览量。"
+}

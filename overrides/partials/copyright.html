@@ -1,0 +1,53 @@
+{#-
+  在默认版权信息下增加「全站约计浏览量」（数据来自 docs/assets/analytics-stats.json）。
+-#}
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  <div
+    class="md-copyright__highlight"
+    id="site-ga-popularity"
+    data-stats="{{ 'assets/analytics-stats.json' | url }}"
+    hidden
+  ></div>
+  <script>
+    (function () {
+      var el = document.getElementById("site-ga-popularity");
+      if (!el) return;
+      var url = el.getAttribute("data-stats");
+      if (!url) return;
+      fetch(url, { credentials: "same-origin" })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.totalPageViews == null || d.totalPageViews === "") return;
+          var n =
+            typeof d.totalPageViews === "number"
+              ? d.totalPageViews
+              : parseInt(d.totalPageViews, 10);
+          if (isNaN(n)) return;
+          var when = "";
+          if (d.updatedAt) {
+            try {
+              var dt = d.updatedAt.slice(0, 10);
+              when = " · 数据更新 " + dt;
+            } catch (e) {}
+          }
+          el.textContent =
+            "全站累计约 " + n.toLocaleString("zh-CN") + " 次页面浏览" + when;
+          el.hidden = false;
+        })
+        .catch(function () {});
+    })();
+  </script>
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  {% endif %}
+</div>

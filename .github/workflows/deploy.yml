@@ -6,6 +6,7 @@ on:
     paths:
       - 'docs/**'
       - 'overrides/**'
+      - 'scripts/**'
       - 'mkdocs.yml'
       - 'requirements.txt'
       - 'README.md'
@@ -18,7 +19,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      # 在仓库 Settings → Secrets and variables → Actions 中新建 GOOGLE_ANALYTICS_ID（GA4 衡量 ID，形如 G-xxxxxxxxxx）
+      # GA4 网页统计（gtag）
       GOOGLE_ANALYTICS_ID: ${{ secrets.GOOGLE_ANALYTICS_ID }}
     steps:
       - uses: actions/checkout@v4
@@ -28,5 +29,11 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt
+      - run: pip install -r scripts/requirements-analytics.txt
+      - name: Pull GA4 total page views for footer
+        env:
+          GA_SERVICE_ACCOUNT_JSON: ${{ secrets.GA_SERVICE_ACCOUNT_JSON }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: python scripts/fetch_ga_stats.py
       - run: mkdocs build --strict
       - run: mkdocs gh-deploy --force

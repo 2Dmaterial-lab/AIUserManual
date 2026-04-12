@@ -15,6 +15,12 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt
+      - run: pip install -r scripts/requirements-analytics.txt
+      - name: GA4 stats JSON (no secrets on fork PRs → placeholder)
+        env:
+          GA_SERVICE_ACCOUNT_JSON: ${{ secrets.GA_SERVICE_ACCOUNT_JSON }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+        run: python scripts/fetch_ga_stats.py
       - run: mkdocs build --strict
 
   link_check:
