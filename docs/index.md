@@ -6,7 +6,7 @@
 
     **正式版以课题组网站为准**（排版、搜索、目录与站内链接在构建后的站点中完整可用）。若仅在 GitHub 仓库里浏览原始 Markdown，请以部署后的网页为准。
 
-    本站 HTML 已设置不向搜索引擎收录（`noindex`），以降低公开检索中的曝光；**不能替代**真正的访问控制。对外传播、保密要求与可选技术方案见仓库根目录 [README](https://github.com/2Dmaterial-lab/AIUserManual/blob/main/README.md#许可与可见性) 中的「许可与可见性」。
+    仓库与站点为公开访问，如需保密请参考仓库根目录 [README](https://github.com/2dmaterial-lab/AIUserManual/blob/main/README.md#许可与可见性) 中的「许可与可见性」。
 
 ## 快速开始
 
@@ -16,8 +16,8 @@
 
 1. [前言：AI辅助科研的理念](00-introduction.md) — 了解正确心态和使用边界
 2. [AI工具选择与使用指南](01-ai-tools-guide.md) — 选对工具，事半功倍
-3. [课题组信息与本地约定](11-lab-info.md) — 账号、数据与协作方式（请维护者按需填写）
-4. 按需阅读你使用的工具章节
+3. 按需阅读你使用的工具章节
+4. [课题组信息与本地约定](11-lab-info.md) — 账号、数据与协作方式（请维护者按需填写）
 
 ## 按角色快速入口
 

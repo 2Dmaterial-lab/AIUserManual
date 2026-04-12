@@ -14,7 +14,7 @@ axis_width = 1.2;
 output_format = '-depsc';  % -depsc(EPS) / -dpng(PNG) / -dpdf(PDF)
 output_name = 'publication_figure';
 
-%% 读取数据（替换为你的数据文件）
+%% 读取数据（替换为你的数据文件，示例数据见 test_data/ 目录）
 d1 = readmatrix('data1.csv');
 d2 = readmatrix('data2.csv');
 d3 = readmatrix('data3.csv');

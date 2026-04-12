@@ -5,7 +5,7 @@
 clear; clc; close all;
 
 %% 参数设置
-filename = 'signal_data.csv';  % CSV文件路径
+filename = 'signal_data.csv';  % CSV文件路径（示例数据见 test_data/ 目录）
 fs = 10000;                     % 采样率 (Hz)
 freq_range = [0, 2000];         % 显示频率范围 (Hz)
 

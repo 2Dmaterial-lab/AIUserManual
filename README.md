@@ -20,7 +20,6 @@
 |------|------|------|
 | 00 | 前言：AI辅助科研的理念与心态 | [introduction.md](docs/00-introduction.md) |
 | 01 | AI工具选择与使用指南 | [ai-tools-guide.md](docs/01-ai-tools-guide.md) |
-| 11 | 课题组信息与本地约定 | [11-lab-info.md](docs/11-lab-info.md) |
 
 ### 工具篇
 
@@ -41,10 +40,11 @@
 |------|------|------|
 | 10 | 通用提示词模板集合 | [prompt-templates.md](docs/10-prompt-templates.md) |
 
-### 维护
+### 附录
 
 | 章节 | 内容 | 链接 |
 |------|------|------|
+| 11 | 课题组信息与本地约定 | [11-lab-info.md](docs/11-lab-info.md) |
 | — | 更新日志（主要修订） | [changelog.md](docs/changelog.md) |
 
 ## 使用建议
@@ -78,6 +78,17 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 | [fdtd_waveguide.lsf](docs/assets/examples/fdtd_waveguide.lsf) | Lumerical FDTD 脚本示例 |
 | [c4d_batch_render.py](docs/assets/examples/c4d_batch_render.py) | C4D Python 批量渲染示例 |
 
+### 测试数据
+
+示例脚本引用的数据文件放在 `docs/assets/test_data/`，可直接用于验证脚本运行效果。
+
+| 文件 | 说明 |
+|------|------|
+| [data1.csv](docs/assets/test_data/data1.csv) | MATLAB 绘图示例 — Sample A 透射率数据 |
+| [data2.csv](docs/assets/test_data/data2.csv) | MATLAB 绘图示例 — Sample B 透射率数据 |
+| [data3.csv](docs/assets/test_data/data3.csv) | MATLAB 绘图示例 — Sample C 透射率数据 |
+| [signal_data.csv](docs/assets/test_data/signal_data.csv) | MATLAB FFT 示例 — 采样信号数据 |
+
 ## 贡献
 
 详见 [CONTRIBUTING.md](CONTRIBUTING.md)。摘要如下：
@@ -89,6 +100,6 @@ mkdocs serve    # 浏览器访问提示的本地地址预览
 
 ## 许可与可见性
 
-本手册仅供课题组内部学习与交流使用，请勿擅自对外传播。仓库与 GitHub Pages 站点在默认设置下可被公开访问；**本站 HTML 已设置 `noindex` 以降低被搜索引擎收录的概率**，但这不能替代访问控制。若课题或学校对数据与资料有更高保密要求，请结合私有仓库、权限管理或校内部署等方式另行约定。
+本手册仅供课题组内部学习与交流使用，请勿擅自对外传播。仓库与 GitHub Pages 站点为公开访问，搜索引擎可收录。若课题或学校对数据与资料有更高保密要求，请将仓库设为 private 或结合校内部署等方式另行约定。
 
 若需将手册完全限制在校内或组内网络，请与导师或信息化部门确认可行方案。
