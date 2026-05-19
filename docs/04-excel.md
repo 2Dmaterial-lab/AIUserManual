@@ -2,6 +2,10 @@
 
 > **本章导读**：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。
 
+!!! info "版本与功能时效"
+
+    本章按 Microsoft 365/Excel 2026 年前后的公开功能和常见科研数据处理需求整理。Copilot、Power Query、动态数组函数和网页版能力会随许可证变化；请以学校账号实际可用功能为准。
+
 ## 1. 简介与适用场景
 
 Excel 是科研中最常用的数据处理与可视化工具之一。无论你是整理实验数据、生成统计报表，还是制作可视化图表，Excel 都能胜任。但说实话，很多同学对 Excel 的掌握停留在"手动输入公式 + 拖拽填充"的阶段，遇到复杂需求就束手无策。
@@ -28,7 +32,7 @@ AI 辅助可以帮你跨越这个门槛：
 
 ### 2.1 获取 Excel
 
-**推荐方案：Office 365 学生版**
+**可选方案：Microsoft 365 学生/校园授权**
 
 1. 访问 [Microsoft 教育版页面](https://www.microsoft.com/zh-cn/education/products/office)，输入学校邮箱（.edu.cn 后缀），验证学生身份后可免费使用网页版 Office，或以优惠价格订阅桌面版
 2. 如果学校已购买校园授权，直接用学校账号登录 [office.com](https://www.office.com) 即可下载安装
@@ -37,7 +41,7 @@ AI 辅助可以帮你跨越这个门槛：
 - WPS Office：免费，界面与 Excel 兼容，但部分高级功能（Power Query、部分 VBA）支持有限
 - LibreOffice Calc：完全免费开源，VBA 兼容性较差，不推荐用于复杂自动化任务
 
-> 提示：科研场景下强烈建议使用 Microsoft Excel 桌面版，Power Query 和 VBA 功能在网页版中不可用或受限。
+> 提示：如果需要 Power Query、VBA、批量导入导出或插件，桌面版 Excel 通常比网页版更完整；只做简单查看和协作时网页版也够用。
 
 ### 2.2 关键配置
 
@@ -59,9 +63,13 @@ AI 辅助可以帮你跨越这个门槛：
 
 ### 2.3 Copilot for Excel（如可用）
 
-如果你的 Office 365 许可证包含 Copilot，你会在 Excel 功能区首页看到 Copilot 按钮。Copilot 可以直接在 Excel 中用自然语言执行操作，比如"高亮大于平均值的数据"、"添加一列计算同比增长率"等。
+如果你的 Microsoft 365 许可证包含 Copilot，你会在 Excel 功能区看到 Copilot 入口。Copilot 可以直接在 Excel 中用自然语言辅助操作，比如"高亮大于平均值的数据"、"添加一列计算同比增长率"等。
 
-目前 Copilot for Excel 的能力还在持续更新中，对于复杂的 VBA 宏生成和多步骤 Power Query 操作，建议仍然配合对话式 AI（如 Claude、ChatGPT）使用，效果更可控。
+Copilot for Excel 的能力和入口在 2026 年仍在调整，部分 App Skills 和 Office 内嵌入口会随许可证变化。对于复杂 VBA、Power Query M 代码和可复现数据处理，仍建议让对话式 AI 生成可审查的公式/脚本，再由你手动验证。
+
+!!! warning "数据安全"
+
+    不要把未发表实验数据、专利相关信息或包含个人信息的工作簿上传到云端 AI。需要借助 AI 调试公式时，优先使用脱敏后的列名和少量模拟数据。
 
 ---
 
@@ -113,7 +121,15 @@ VBA 是 Excel 自动化的核心能力，但学习曲线陡峭。AI 可以帮你
 - **数据透视表**：向 AI 描述你的分析维度和指标，它会告诉你行字段、列字段、值字段分别放什么，以及用什么汇总方式
 - **Power Query**：向 AI 描述数据清洗需求，它帮你生成 M 语言代码，你可以直接粘贴到 Power Query 的高级编辑器中
 
-### 3.4 提问公式
+### 3.4 AI 生成公式/宏的验收清单
+
+1. **先复制工作簿**：VBA 宏执行后通常无法撤销，先另存为测试副本。
+2. **检查函数兼容性**：确认是否使用 `XLOOKUP`、`FILTER`、`UNIQUE`、`LET`、`LAMBDA` 等新版函数。
+3. **用手算样例验证**：挑 3–5 行数据手算，核对公式结果。
+4. **保留清洗步骤**：Power Query 的 M 代码比手工操作更可复现，建议保存在工作簿或单独 `.pq` 文本中。
+5. **避免覆盖原始数据**：宏输出到新工作表或新文件，原始数据只读。
+
+### 3.5 提问公式
 
 无论什么场景，一个高效的提问通常包含以下要素：
 
@@ -465,7 +481,8 @@ ThisWorkbook.SaveCopyAs ThisWorkbook.Path & "\backup_" & Format(Now, "yyyymmdd_h
 ### 学习资源
 
 - **Excel 函数速查**：微软官方文档 [support.microsoft.com](https://support.microsoft.com/zh-cn/excel) 提供所有函数的详细说明和示例
-- **VBA 入门教程**：推荐先让 AI 帮你生成几段 VBA 代码并逐行解释，从实践中学习比看书更高效
+- **VBA 入门教程**：可以先让 AI 帮你生成几段 VBA 代码并逐行解释，从实践中学习比单纯看语法更高效
+- **Copilot in Excel**：[support.microsoft.com/copilot-excel](https://support.microsoft.com/en-us/copilot-excel)
 - **Power Query 指南**：微软 Learn 平台有系统的 Power Query 学习路径，搜索 "Power Query 学习路径" 即可找到
 
 ### 进阶技巧

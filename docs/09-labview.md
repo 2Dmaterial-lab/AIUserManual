@@ -2,6 +2,9 @@
 
 > **本章导读**：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。
 
+!!! info "版本与功能时效"
+    本章按 LabVIEW 2026 Q1 前后的公开资料和实验室仪器控制场景整理。NI-VISA、NI-DAQmx、仪器驱动、Python Node 支持版本和硬件固件会影响实际可用功能，部署前请按实验室机器逐项核对。
+
 ## 1. 简介与适用场景
 
 LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是 NI（National Instruments）开发的图形化编程环境，在物理与光学实验室中，它是仪器控制和数据采集领域最主流的工具之一。与文本编程语言不同，LabVIEW 通过拖拽连线的方式构建程序（称为 VI，即虚拟仪器），程序逻辑体现在"数据流"的传递路径上。
@@ -16,7 +19,7 @@ LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是 NI（Nationa
 
 ### AI辅助的特殊定位
 
-LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI 文件。但 AI 仍然可以在以下方面提供强有力的辅助：
+LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI 文件。但 AI 仍然可以在以下方面提供辅助：
 
 - **框图设计策略**：描述你的测量需求，AI 帮你规划程序架构（状态机、生产者/消费者、主从等），确定数据流向和模块划分
 - **文本化脚本**：LabVIEW 支持通过 VI Scripting 自动生成代码，AI 可以帮你编写脚本
@@ -34,20 +37,27 @@ LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI
 | 与 Python 联合使用 | 搜索调用方法，配置繁琐 | AI 提供具体的 Python Node 或管道通信方案 |
 | 程序报错排查 | 逐个排查错误代码含义 | 把错误代码贴给 AI，快速获得解释和修复建议 |
 
+### 2026 年可关注的变化
+
+- **LabVIEW 2026 Q1**：NI 持续更新 LabVIEW 版本和功能变更说明，升级前要确认项目、工具包和驱动兼容性。
+- **NI Nigel AI**：NI 正在把 AI 辅助能力引入开发流程，可用于查文档、解释错误和生成思路；关键 VI 仍需人工搭建和测试。
+- **驱动版本联动**：DAQmx、VISA、Serial、仪器厂商驱动与 LabVIEW 版本强相关，换电脑或升级系统时要一并记录。
+- **Python Node 兼容性**：Python 版本、位数、包环境和 LabVIEW 支持矩阵要匹配；生产环境可保留文件中转方案作为兜底。
+
 ---
 
 ## 2. 安装与配置
 
 ### 2.1 获取 LabVIEW
 
-**推荐方案：LabVIEW 学生版**
+**可选方案：LabVIEW 学生版或校园授权**
 
 1. 访问 [ni.com/zh-cn/shop/labview](https://www.ni.com/zh-cn/shop/labview.html)，下载 LabVIEW 学生版安装包
 2. 学生版可免费使用于教学和学习目的，功能与专业版基本一致
 3. 如果学校已购买 NI 校园授权，请联系实验室老师获取安装包和序列号
 4. 安装时选择 64 位版本（LabVIEW 2020 及以后版本全面支持 64 位）
 
-> 提示：LabVIEW 学生版在非商业用途下功能完整，完全可以满足实验室的仪器控制和数据采集需求。
+> 提示：LabVIEW 学生版适合教学和非商业科研训练；涉及课题组长期设备控制、共享电脑或商业合作时，应按学校和 NI 授权规则确认许可证。
 
 ### 2.2 安装要点
 
@@ -95,6 +105,14 @@ LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI
    - "环境"类别：设置"自动保存间隔"为 5 分钟
 2. 在框图上右键 -> "VI 属性" -> "执行"类别，将优先级设为"正常优先级"（避免占用过多 CPU）
 
+### 2.4 版本兼容检查
+
+1. 记录 LabVIEW 主版本、位数、补丁版本和许可证类型。
+2. 记录 NI-VISA、NI-DAQmx、NI-Serial、仪器厂商驱动和固件版本。
+3. 使用 NI MAX 对每台仪器执行 `*IDN?` 或厂商提供的通信测试。
+4. 如果调用 Python，记录 Python 版本、位数、虚拟环境路径和关键包版本。
+5. 升级前备份项目，并用一个最小 VI 验证采集、保存、关闭资源三个关键流程。
+
 ---
 
 ## 3. AI辅助使用核心技巧
@@ -119,7 +137,15 @@ LabVIEW 程序的质量很大程度上取决于架构设计。很多初学者习
 3. **说明数据流向**：数据从哪里来、经过什么处理、最终到哪里去
 4. **说明异常处理**：通信断开、超时、数据异常时程序应如何反应
 
-### 3.2 让 AI 生成文本化的仪器命令
+### 3.2 AI 生成架构/命令的验收清单
+
+1. **命令先查手册**：AI 给出的 SCPI、串口命令和返回格式要对照厂商 programming manual。
+2. **先在 NI MAX 测试**：每条关键命令先在交互式通信界面验证，再放入 VI。
+3. **错误线必须贯通**：VISA 打开、写入、读取、关闭和文件操作都应连接错误线。
+4. **资源关闭要兜底**：即使测量中断，也要关闭 VISA、文件句柄、DAQ Task 和 Python session。
+5. **数据记录可复现**：保存仪器型号、连接方式、采样率、单位、时间戳、软件版本和脚本版本。
+
+### 3.3 让 AI 生成文本化的仪器命令
 
 这是 AI 辅助 LabVIEW 开发中效率最高的用法。仪器的 SCPI（Standard Commands for Programmable Instruments）命令是纯文本，AI 可以直接给出完整的命令序列。你只需要在 LabVIEW 中使用 VISA 写入节点发送这些命令即可。
 
@@ -146,7 +172,7 @@ GPIB 通信配置示例：
   VISA 资源名：TCPIP0::192.168.1.100::5025::SOCKET
 ```
 
-### 3.3 让 AI 生成伪代码再映射为框图
+### 3.4 让 AI 生成伪代码再映射为框图
 
 对于复杂的逻辑（如状态机、条件判断），可以让 AI 先生成伪代码，你再将伪代码逐步映射为 LabVIEW 的框图节点：
 
@@ -156,7 +182,7 @@ GPIB 通信配置示例：
 4. 伪代码中的 `switch/case` 映射为"条件结构"的多个分支
 5. 伪代码中的函数调用映射为"子 VI"
 
-### 3.4 提问公式
+### 3.5 提问公式
 
 一个高效的提问通常包含以下要素：
 
@@ -898,6 +924,8 @@ if __name__ == '__main__':
 ### 官方文档与教程
 
 - **LabVIEW 官方文档**：[ni.com/zh-cn/shop/labview.html](https://www.ni.com/zh-cn/shop/labview.html)
+- **LabVIEW Release Notes**：[ni.com LabVIEW release notes](https://www.ni.com/en/support/documentation/release-notes/product.labview.html)
+- **LabVIEW New Features and Changes**：[ni.com LabVIEW changes](https://www.ni.com/docs/en-IO/bundle/labview/page/labview-changes.html)
 - **NI VISA 帮助**：安装 NI-VISA 后，在开始菜单中找到 "NI-VISA Documentation"
 - **SCPI 命令参考**：[scpi-99.org](http://www.ivifoundation.org/docs/scpi-99.pdf)（通用 SCPI 标准，具体仪器命令以厂商手册为准）
 - **NI 开发者社区**：[forums.ni.com](https://forums.ni.com/) 有大量 LabVIEW 编程问题的讨论和解决方案
