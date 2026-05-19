@@ -50,6 +50,10 @@ nav:
     - SolidWorks: 07-solidworks.md
     - C4D: 08-c4d.md
     - LabVIEW: 09-labview.md
+  - 科研工作流:
+    - 科研任务工作流: 12-research-workflows.md
+    - 数据管理与可复现科研: 13-data-reproducibility.md
+    - 入组第一周训练: 14-new-student-bootcamp.md
   - 提示词模板: 10-prompt-templates.md
   - 附录:
     - 课题组信息与本地约定: 11-lab-info.md

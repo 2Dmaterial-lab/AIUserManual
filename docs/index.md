@@ -12,25 +12,35 @@
 
 本手册帮助课题组成员快速上手科研常用软件，并学会利用 AI 工具显著提升工作效率。
 
-**2026 年 5 月 19 日更新**：按当前公开信息刷新 AI 工具部分，覆盖 GPT-5.5、Claude Opus 4.7、Gemini 3.1 Pro、DeepSeek V4、GLM-5.1 等主流模型线；新增「MCP 协议与 AI 智能体」专章；补充推理模型、Agent、终端 AI 编程工具（Claude Code / Codex CLI）、科研工作流、文献核查、可复现数据分析和科研数据安全建议。
+**2026 年 5 月 19 日更新**：按当前公开信息刷新 AI 工具部分，覆盖 GPT-5.5、Claude Opus 4.7、Gemini 3.1 Pro、DeepSeek V4、GLM-5.1 等主流模型线；新增「MCP 协议与 AI 智能体」小节；补充工具选择速查、推荐工作流、Agent、终端 AI 编程工具（Claude Code / Codex CLI）、科研工作流、文献核查、可复现数据分析和科研数据安全建议；新增科研任务工作流、数据管理与可复现科研、入组第一周训练。
 
 **建议阅读顺序**：
 
 1. [前言：AI辅助科研的理念](00-introduction.md) — 了解正确心态和使用边界
 2. [AI工具选择与使用指南](01-ai-tools-guide.md) — 选对工具，事半功倍
-3. 按需阅读你使用的工具章节
-4. [课题组信息与本地约定](11-lab-info.md) — 账号、数据与协作方式（请维护者按需填写）
+3. [科研任务工作流](12-research-workflows.md) — 从任务出发组织文献、数据、仿真和投稿
+4. 按需阅读你使用的工具章节
+5. [课题组信息与本地约定](11-lab-info.md) — 账号、数据与协作方式（请维护者按需填写）
 
 ## 按角色快速入口
 
 | 你主要做… | 建议先读 | 常用工具章 |
 |-----------|----------|------------|
-| **实验与数据处理** | [前言](00-introduction.md) → [提示词模板](10-prompt-templates.md)（数据分析 / 实验记录） | [Origin](02-origin.md)、[Excel](04-excel.md) |
+| **实验与数据处理** | [AI工具指南](01-ai-tools-guide.md#tool-choice) → [提示词模板](10-prompt-templates.md)（数据分析 / 实验记录） | [Origin](02-origin.md)、[Excel](04-excel.md) |
 | **编程、脚本、批量任务** | [前言](00-introduction.md) → [AI工具指南](01-ai-tools-guide.md) → [提示词模板](10-prompt-templates.md) | [MATLAB](03-matlab.md)、[Excel](04-excel.md) |
 | **仿真与三维设计/渲染** | [前言](00-introduction.md) → 对应仿真或建模章 | [COMSOL](05-comsol.md)、[FDTD](06-fdtd.md)、[SolidWorks](07-solidworks.md)、[C4D](08-c4d.md) |
 | **仪器、测控、自动化** | [LabVIEW 章](09-labview.md) → [提示词模板](10-prompt-templates.md)（代码与调试类） | [LabVIEW](09-labview.md) |
+| **新入组同学** | [入组第一周训练](14-new-student-bootcamp.md) → [数据管理与可复现科研](13-data-reproducibility.md) | 按任务选择 |
 
 更细的说明见 [课题组信息与本地约定](11-lab-info.md) 中的「推荐阅读方式」表格。
+
+## 科研工作流
+
+| 任务 | 章节 |
+|------|------|
+| 文献调研、数据作图、仿真扫描、仪器采集、投稿前检查 | [科研任务工作流](12-research-workflows.md) |
+| 原始数据保护、目录结构、README、图表追溯、AI 使用记录 | [数据管理与可复现科研](13-data-reproducibility.md) |
+| 新生 5 天训练任务：工具边界、文献表、复现图、报错调试、小闭环 | [入组第一周训练](14-new-student-bootcamp.md) |
 
 ## 工具指南
 
