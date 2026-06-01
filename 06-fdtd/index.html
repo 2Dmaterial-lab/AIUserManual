@@ -1,0 +1,2552 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="面向课题组研究生的AI辅助环境配置与工具使用指南">
+      
+      
+        <meta name="author" content="2Dmaterial-lab">
+      
+      
+        <link rel="canonical" href="https://2dmaterial-lab.github.io/AIUserManual/06-fdtd/">
+      
+      
+        <link rel="prev" href="../05-comsol/">
+      
+      
+        <link rel="next" href="../07-solidworks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>FDTD - AI辅助科研工具使用说明</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-CL41PLMZE3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-CL41PLMZE3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-CL41PLMZE3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fdtd-ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-header__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI辅助科研工具使用说明
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FDTD
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00-introduction/" class="md-tabs__link">
+          
+  
+  
+  基础篇
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../02-origin/" class="md-tabs__link">
+          
+  
+  
+  工具指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-research-workflows/" class="md-tabs__link">
+          
+  
+  
+  科研工作流
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../10-prompt-templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  提示词模板
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../11-lab-info/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-nav__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI辅助科研工具使用说明
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-tools-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI工具总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具指南
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-origin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMSOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDTD
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDTD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 FDTD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 年可关注的变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        获取方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aiclaudechatgptdeepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对话式AI（Claude/ChatGPT/DeepSeek）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对话式AI（Claude/ChatGPT/DeepSeek）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        脚本生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建模策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调试报错
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-fdtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 辅助 FDTD 的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景1：波导耦合器仿真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景2：参数扫描
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景3：S参数提取
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景4：与MATLAB联合优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI能帮你快速解决的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        需要注意的事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐学习路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开源替代
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-solidworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SolidWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-c4d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-labview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研工作流
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    科研工作流
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-research-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研任务工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-data-reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据管理与可复现科研
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-new-student-bootcamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入组第一周训练
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-prompt-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提示词模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-lab-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课题组信息与本地约定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fdtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 FDTD
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 年可关注的变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        获取方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aiclaudechatgptdeepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        对话式AI（Claude/ChatGPT/DeepSeek）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="对话式AI（Claude/ChatGPT/DeepSeek）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        脚本生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建模策略
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        调试报错
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-fdtd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 辅助 FDTD 的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景1：波导耦合器仿真
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景2：参数扫描
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景3：S参数提取
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景4：与MATLAB联合优化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI能帮你快速解决的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        需要注意的事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        官方资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐学习路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        开源替代
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/2dmaterial-lab/AIUserManual/edit/main/docs/06-fdtd.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="fdtd-ai">FDTD — AI辅助使用指南<a class="headerlink" href="#fdtd-ai" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>本章导读</strong>：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">版本与功能时效</p>
+<p>本章按 Ansys Lumerical / Ansys 2026 R1 附近的公开资料和常见光子器件仿真流程整理。Lumerical 产品名、许可证、GPU/HPC 支持和脚本 API 会随 Ansys 版本更新；请以本机 Help 与学校授权为准。</p>
+</div>
+<h2 id="1">1. 简介与适用场景<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>FDTD（时域有限差分法）是求解麦克斯韦方程组的数值方法，在光学仿真中广泛应用。本指南以 Ansys Lumerical FDTD Solutions 为主，它是课题组最常用的 FDTD 商业软件。</p>
+<p>主要应用场景：</p>
+<ul>
+<li><strong>光子器件仿真</strong>：波导、光栅、耦合器、谐振腔</li>
+<li><strong>超表面/超材料</strong>：单元结构设计和相位响应</li>
+<li><strong>散射问题</strong>：纳米粒子散射、Mie 散射</li>
+<li><strong>近场光学</strong>：等离激元、近场增强</li>
+<li><strong>与MATLAB联合</strong>：FDTD 仿真 + MATLAB 优化</li>
+</ul>
+<h3 id="fdtd">什么时候优先用 FDTD<a class="headerlink" href="#fdtd" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>波导、光栅、耦合器、谐振腔等光子器件</td>
+<td>推荐</td>
+<td>适合全波电磁传播问题</td>
+</tr>
+<tr>
+<td>需要近场、远场、S 参数或透射谱</td>
+<td>推荐</td>
+<td>监视器和脚本体系成熟</td>
+</tr>
+<tr>
+<td>大量结构参数扫描</td>
+<td>推荐脚本化使用</td>
+<td>Lumerical Script / Python API 可复现</td>
+</tr>
+<tr>
+<td>只需要简化模式求解</td>
+<td>谨慎</td>
+<td>MODE 或解析模型可能更快</td>
+</tr>
+<tr>
+<td>不清楚边界和网格就直接扫参数</td>
+<td>不推荐</td>
+<td>容易得到看似平滑但错误的结果</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai">AI 能做 / 不能做<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>AI 适合做</th>
+<th>必须人工确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成 Lumerical Script / Python API 框架</td>
+<td>材料库名称、色散模型和损耗</td>
+</tr>
+<tr>
+<td>建议光源、监视器和扫描参数</td>
+<td>PML、对称性、源偏振和监视器位置</td>
+</tr>
+<tr>
+<td>排查脚本报错和导出数据格式</td>
+<td>网格收敛、仿真时间和能量守恒</td>
+</tr>
+<tr>
+<td>把结果导出到 MATLAB/Python 后处理</td>
+<td>物理解释和论文结论</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">最小闭环案例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>运行 <code>docs/assets/examples/fdtd_waveguide.lsf</code> 的简化波导模板。</li>
+<li>修改一个参数，如波导宽度，做 2-3 个测试点。</li>
+<li>导出传输谱为 CSV/MAT。</li>
+<li>检查材料、边界、mesh override、monitor 位置和 auto shutoff。</li>
+</ol>
+<h3 id="2026">2026 年可关注的变化<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ansys 2026 R1</strong>：Ansys 2026 R1 强调多产品工程工作流和 AI-powered 产品更新，光子设计中更常见 FDTD、MODE、INTERCONNECT 与版图/电路工具联动。</li>
+<li><strong>Lumerical 与系统级光子设计</strong>：如果课题涉及光子集成电路，不要只停留在单个 FDTD 仿真；可把器件级 S 参数导出到 INTERCONNECT 或其他系统级工具。</li>
+<li><strong>材料库与色散模型</strong>：新版材料库和旧脚本可能存在名称差异，AI 生成脚本后要核对材料名、拟合波段和损耗模型。</li>
+<li><strong>HPC/GPU 设置</strong>：是否启用 GPU 或并行计算取决于许可证和硬件，性能提升不能假定，需用小模型实测。</li>
+</ul>
+<h2 id="2">2. 安装与配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">获取方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ansys 学术授权</strong>：学校通过 Ansys 学术计划获取，联系学校 IT 部门</li>
+<li><strong>Lumerical 试用版</strong>：30天全功能试用</li>
+<li><strong>下载地址</strong>：<a href="https://www.ansys.com/products/photonics">ansys.com/products/photonics</a></li>
+</ul>
+<h3 id="_3">安装要点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lumerical 现在是 Ansys 产品线的一部分，安装时选择 Ansys Photonics</li>
+<li>需要安装 Ansys License Manager</li>
+<li>推荐安装的配套工具：</li>
+<li>MODE Solutions：波导模式求解器</li>
+<li>INTERCONNECT：光子集成电路仿真</li>
+<li>Lumerical Script：内置脚本环境</li>
+</ul>
+<h3 id="_4">推荐配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>硬件要求</strong>：FDTD 计算量大，建议 32GB+ RAM、多核 CPU</li>
+<li><strong>GPU 加速</strong>：Lumerical 支持 GPU 加速，如果有 NVIDIA GPU 建议启用</li>
+<li><strong>临时文件目录</strong>：设置到大容量磁盘，FDTD 仿真会产生大量临时文件</li>
+</ol>
+<h2 id="3-ai">3. AI辅助使用核心技巧<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h2>
+<h3 id="aiclaudechatgptdeepseek">对话式AI（Claude/ChatGPT/DeepSeek）<a class="headerlink" href="#aiclaudechatgptdeepseek" title="Permanent link">&para;</a></h3>
+<p>Lumerical 有自己的脚本语言（类似 MATLAB 语法），AI 对其支持还不错：</p>
+<h4 id="_5">脚本生成<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>描述你的器件结构和仿真需求，AI 生成 Lumerical 脚本</li>
+<li>AI 可以生成参数扫描、优化循环的脚本</li>
+<li>适合批量创建几何结构、设置仿真参数</li>
+</ul>
+<h4 id="_6">建模策略<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>AI 可以建议仿真区域大小、PML 设置、网格精度</li>
+<li>帮助选择合适的监视器类型（频域/时域/功率）</li>
+<li>指导如何正确提取 S 参数</li>
+</ul>
+<h4 id="_7">调试报错<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Lumerical 脚本报错信息相对清晰，AI 通常能直接修复</li>
+<li>仿真发散问题，AI 可以提供排查思路</li>
+</ul>
+<h3 id="ai-fdtd">AI 辅助 FDTD 的验收清单<a class="headerlink" href="#ai-fdtd" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>材料不要只用常数折射率</strong>：论文级结果应使用材料库或自定义色散数据，并说明来源。</li>
+<li><strong>网格与时间收敛</strong>：检查 mesh accuracy、局部 mesh override、auto shutoff min 和仿真时间。</li>
+<li><strong>边界条件核对</strong>：PML 厚度、对称/反对称边界方向和源偏振必须人工检查。</li>
+<li><strong>监视器位置</strong>：功率监视器和模式展开监视器要避开近场扰动区。</li>
+<li><strong>脚本可复现</strong>：保存 <code>.lsf</code>、材料文件、参数表和导出数据，不只保存 <code>.fsp</code>。</li>
+</ol>
+<h2 id="4">4. 常见任务与提示词示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">场景1：波导耦合器仿真<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我需要在 Lumerical FDTD 中仿真一个硅基条形波导，结构参数：
+- 波导宽度：500nm
+- 波导高度：220nm
+- 包层：SiO2（n=1.44），厚度 2um
+- 上包层：空气
+- 工作波长：1550nm
+- 波导长度：10um</p>
+<p>请帮我写一个 Lumerical 脚本，完成：
+1. 创建几何结构
+2. 设置仿真区域和边界条件
+3. 添加光源和监视器
+4. 运行仿真并提取传输谱</p>
+</blockquote>
+<p><strong>预期输出</strong>：Lumerical 脚本</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a># 硅基波导 FDTD 仿真脚本
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a># 删除所有已有对象
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>deleteall;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a># ===== 材料定义 =====
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a># Si 折射率（简化，实际应用中建议用材料库中的色散模型）
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>addrect;
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>set(&quot;name&quot;, &quot;Si_core&quot;);
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>set(&quot;x&quot;, 0);
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>set(&quot;x span&quot;, 10e-6);
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>set(&quot;y&quot;, 0);
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>set(&quot;y span&quot;, 500e-9);    # 宽度 500nm
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>set(&quot;z&quot;, 110e-9);
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>set(&quot;z span&quot;, 220e-9);    # 高度 220nm
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>set(&quot;material&quot;, &quot;Si (Silicon) - Palik&quot;);
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a># SiO2 下包层
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>addrect;
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>set(&quot;name&quot;, &quot;SiO2_clad&quot;);
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>set(&quot;x&quot;, 0);
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>set(&quot;x span&quot;, 14e-6);
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>set(&quot;y&quot;, 0);
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>set(&quot;y span&quot;, 4e-6);
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>set(&quot;z&quot;, -890e-9);       # 底面在 -1um
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>set(&quot;z span&quot;, 2e-6);     # 厚度 2um
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>set(&quot;material&quot;, &quot;SiO2 (Glass) - Palik&quot;);
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>set(&quot;alpha&quot;, 0.3);       # 半透明显示
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a># ===== 仿真区域 =====
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>addfdtd;
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>set(&quot;x&quot;, 0);
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>set(&quot;x span&quot;, 12e-6);
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>set(&quot;y&quot;, 0);
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>set(&quot;y span&quot;, 4e-6);
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>set(&quot;z&quot;, 0);
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>set(&quot;z span&quot;, 4e-6);
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>set(&quot;mesh accuracy&quot;, 3);    # 网格精度
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>set(&quot;pml type&quot;, &quot;standard&quot;);
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a># ===== 光源 =====
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>addmode;
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>set(&quot;name&quot;, &quot;source&quot;);
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>set(&quot;x&quot;, -4e-6);           # 光源位置
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>set(&quot;y&quot;, 0);
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>set(&quot;z&quot;, 0);
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>set(&quot;wavelength start&quot;, 1.5e-6);
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>set(&quot;wavelength stop&quot;, 1.6e-6);
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>set(&quot;direction&quot;, &quot;Forward&quot;);
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a># ===== 监视器 =====
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a># 频域功率监视器 - 输出端
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>addpower;
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>set(&quot;name&quot;, &quot;transmission&quot;);
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>set(&quot;monitor type&quot;, &quot;2D X-normal&quot;);
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>set(&quot;x&quot;, 4e-6);
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>set(&quot;y&quot;, 0);
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>set(&quot;y span&quot;, 4e-6);
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>set(&quot;z&quot;, 0);
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>set(&quot;z span&quot;, 4e-6);
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a># 运行仿真
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>run;
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a># 提取传输谱
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>T = getresult(&quot;transmission&quot;, &quot;T&quot;);
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>plot(T.lambda*1e6, T.T, &quot;Wavelength (um)&quot;, &quot;Transmission&quot;);
+</code></pre></div>
+<h3 id="2_1">场景2：参数扫描<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我已经建好了一个光栅耦合器的 FDTD 模型，想用脚本做参数扫描。需要扫描：
+- 光栅周期 period：600nm 到 700nm，步长 5nm
+- 刻蚀深度 etch_depth：80nm 到 160nm，步长 10nm</p>
+<p>每次仿真记录 1550nm 处的耦合效率。请写一个 Lumerical 参数扫描脚本。</p>
+</blockquote>
+<p><strong>预期输出</strong>：参数扫描脚本</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># 光栅耦合器参数扫描脚本
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a># 定义参数范围
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>period_min = 600e-9;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>period_max = 700e-9;
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>period_step = 5e-9;
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>n_period = (period_max - period_min) / period_step + 1;
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>etch_min = 80e-9;
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>etch_max = 160e-9;
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>etch_step = 10e-9;
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>n_etch = (etch_max - etch_min) / etch_step + 1;
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a># 结果存储
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>efficiency = matrix(n_period, n_etch);
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>periods = linspace(period_min, period_max, n_period);
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>etch_depths = linspace(etch_min, etch_max, n_etch);
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a># 扫描循环
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>for (i = 1:n_period) {
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    for (j = 1:n_etch) {
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        # 设置参数
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        switchtolayout;
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        setnamed(&quot;grating_period&quot;, &quot;period&quot;, periods(i));
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        setnamed(&quot;etch_region&quot;, &quot;z span&quot;, etch_depths(j));
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>        # 运行仿真
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        run;
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        # 提取 1550nm 处传输效率
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>        T = getresult(&quot;transmission_monitor&quot;, &quot;T&quot;);
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>        lambda = T.lambda;
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>        T_val = T.T;
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        idx = find(lambda, 1550e-9);  # 找到1550nm
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>        efficiency(i, j) = T_val(idx);
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>        ?sprintf(&quot;Period=%.0fnm, Etch=%.0fnm, Eff=%.4f&quot;,
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>            periods(i)*1e9, etch_depths(j)*1e9, efficiency(i,j));
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>    }
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>}
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a># 绘制二维效率图
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>image(periods*1e9, etch_depths*1e9, efficiency,
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>    &quot;Period (nm)&quot;, &quot;Etch depth (nm)&quot;, &quot;Coupling efficiency&quot;);
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a># 找到最优参数
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>max_eff = max(efficiency);
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>[i_max, j_max] = find(efficiency, max_eff);
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>?sprintf(&quot;最优: Period=%.0fnm, Etch=%.0fnm, Eff=%.4f&quot;,
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>    periods(i_max)*1e9, etch_depths(j_max)*1e9, max_eff);
+</code></pre></div>
+<h3 id="3s">场景3：S参数提取<a class="headerlink" href="#3s" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我在 Lumerical FDTD 中仿真了一个对称的 2x2 定向耦合器，需要提取完整的 S 参数矩阵（S11, S21, S31, S41）。</p>
+<p>请告诉我：
+1. 如何正确放置监视器
+2. 如何用脚本提取 S 参数
+3. 如何归一化 S 参数
+4. 如何将结果导出给 MATLAB</p>
+</blockquote>
+<p><strong>预期输出</strong>：S 参数提取脚本</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a># S 参数提取脚本（2x2 定向耦合器）
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># 确保有4个功率监视器（每个端口一个）
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a># Port1: input, Port2: through, Port3: cross1, Port4: cross2
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a># 提取各端口传输
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>T1 = getresult(&quot;port1_monitor&quot;, &quot;T&quot;);  # 反射
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>T2 = getresult(&quot;port2_monitor&quot;, &quot;T&quot;);  # 直通
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>T3 = getresult(&quot;port3_monitor&quot;, &quot;T&quot;);  # 交叉
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>T4 = getresult(&quot;port4_monitor&quot;, &quot;T&quot;);  # 交叉
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>lambda = T1.lambda;
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>S11 = sqrt(abs(T1.T));   # 反射系数
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>S21 = sqrt(abs(T2.T));   # 直通系数
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>S31 = sqrt(abs(T3.T));   # 交叉系数
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>S41 = sqrt(abs(T4.T));   # 交叉系数
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a># 绘制 S 参数
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>plot(lambda*1e6, abs(S21)^2, abs(S31)^2, abs(S11)^2,
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>    &quot;Wavelength (um)&quot;, &quot;Power&quot;,
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    &quot;S parameters&quot;);
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>legend(&quot;Through (S21)&quot;, &quot;Cross (S31)&quot;, &quot;Reflection (S11)&quot;);
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a># 导出到 MATLAB 格式
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>matlabsave(&quot;coupler_S_params.mat&quot;, lambda, S11, S21, S31, S41);
+</code></pre></div>
+<h3 id="4matlab">场景4：与MATLAB联合优化<a class="headerlink" href="#4matlab" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我想用 MATLAB 驱动 Lumerical FDTD 进行器件优化。具体流程：
+1. MATLAB 定义优化算法（比如粒子群优化）
+2. 每次迭代生成新的参数
+3. 调用 Lumerical 运行仿真
+4. 从结果文件中读取性能指标
+5. 更新优化参数</p>
+<p>请给出 MATLAB 端的代码框架。</p>
+</blockquote>
+<p><strong>预期输出</strong>：MATLAB + Lumerical 联合优化框架</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">% MATLAB 驱动 Lumerical FDTD 优化</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c">% 前提：Lumerical 已安装，且 MATLAB 可以调用 Lumerical API</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c">% 初始化 Lumerical</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">hLum</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">lumopen</span><span class="p">();</span><span class="w">  </span><span class="c">% 打开 Lumerical</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c">% 加载基础模型</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;load(&#39;&#39;grating_coupler.fsp&#39;&#39;);&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c">% 优化参数定义</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c">% x = [period, etch_depth, duty_cycle]</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">lb</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">600</span><span class="p">,</span><span class="w"> </span><span class="mi">80</span><span class="p">,</span><span class="w"> </span><span class="mf">0.3</span><span class="p">];</span><span class="w">    </span><span class="c">% 下界 (nm)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">ub</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">700</span><span class="p">,</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span><span class="w"> </span><span class="mf">0.7</span><span class="p">];</span><span class="w">   </span><span class="c">% 上界 (nm)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c">% 目标函数</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">objFun</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">@(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">runFDTD</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c">% 粒子群优化</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="n">options</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">optimoptions</span><span class="p">(</span><span class="s">&#39;particleswarm&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">    </span><span class="s">&#39;SwarmSize&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="s">&#39;MaxIterations&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">);</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="p">[</span><span class="n">x_opt</span><span class="p">,</span><span class="w"> </span><span class="n">fval</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">particleswarm</span><span class="p">(</span><span class="n">objFun</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">lb</span><span class="p">,</span><span class="w"> </span><span class="n">ub</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;最优参数: Period=%.1fnm, Etch=%.1fnm, Duty=%.2f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">    </span><span class="n">x_opt</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="w"> </span><span class="n">x_opt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="w"> </span><span class="n">x_opt</span><span class="p">(</span><span class="mi">3</span><span class="p">));</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="nb">fprintf</span><span class="p">(</span><span class="s">&#39;最优耦合效率: %.4f\n&#39;</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">fval</span><span class="p">);</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="n">lumclose</span><span class="p">(</span><span class="n">hLum</span><span class="p">);</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="c">%% 子函数：运行 FDTD 仿真</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="k">function</span><span class="w"> </span>eff<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">runFDTD</span><span class="p">(</span>hLum, params<span class="p">)</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="w">    </span><span class="n">period</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">params</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="n">etch_depth</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">params</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="n">duty_cycle</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">params</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="w">    </span><span class="c">% 设置参数</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="w">    </span><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;setnamed(&quot;grating&quot;,&quot;period&quot;,%e);&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">period</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">));</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="w">    </span><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;setnamed(&quot;etch&quot;,&quot;z span&quot;,%e);&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">etch_depth</span><span class="o">*</span><span class="mf">1e-9</span><span class="p">));</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="w">    </span><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="nb">sprintf</span><span class="p">(</span><span class="s">&#39;setnamed(&quot;grating&quot;,&quot;duty_cycle&quot;,%e);&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">duty_cycle</span><span class="p">));</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="w">    </span><span class="c">% 运行仿真</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a><span class="w">    </span><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;run;&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="w">    </span><span class="c">% 提取结果</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">    </span><span class="n">T</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">lumeval</span><span class="p">(</span><span class="n">hLum</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;getresult(&quot;monitor&quot;,&quot;T&quot;);&#39;</span><span class="p">);</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">    </span><span class="n">lambda</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">lambda</span><span class="p">;</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a><span class="w">    </span><span class="n">T_val</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">T</span><span class="p">.</span><span class="n">T</span><span class="p">;</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a><span class="w">    </span><span class="c">% 找 1550nm 处的耦合效率（取负值因为要最小化）</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">idx</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1550e-9</span><span class="p">));</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">    </span><span class="n">eff</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="n">T_val</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span><span class="w">  </span><span class="c">% 取负值用于最小化</span>
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a><span class="k">end</span>
+</code></pre></div>
+<h2 id="5">5. 常见问题与排错<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="ai_1">AI能帮你快速解决的问题<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>AI协助方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lumerical 脚本语法</td>
+<td>描述功能需求，AI 生成脚本</td>
+</tr>
+<tr>
+<td>仿真发散</td>
+<td>描述设置和现象，AI 排查原因</td>
+</tr>
+<tr>
+<td>S参数提取</td>
+<td>描述器件类型，AI 给出监视器方案</td>
+</tr>
+<tr>
+<td>网格设置</td>
+<td>描述结构和波长，AI 建议网格参数</td>
+</tr>
+<tr>
+<td>材料设置</td>
+<td>描述材料，AI 推荐材料库选项</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">需要注意的事项<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>仿真时间</strong>：FDTD 仿真可能很耗时，先用粗网格验证，再细网格精算</li>
+<li><strong>网格收敛性</strong>：改变 mesh accuracy 检查结果是否收敛</li>
+<li><strong>PML 反射</strong>：PML 距离结构至少半波长，注意 PML 类型选择</li>
+<li><strong>色散材料</strong>：Lumerical 材料库中的色散模型需要确认适用波长范围</li>
+<li><strong>脚本兼容性</strong>：不同版本 Lumerical 的脚本 API 可能有差异</li>
+</ul>
+<h3 id="_9">常见问题速查<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>仿真发散</td>
+<td>PML问题/光源设置/材料拟合</td>
+<td>检查PML、降低网格精度排查、检查材料</td>
+</tr>
+<tr>
+<td>结果不对称</td>
+<td>网格偏移/结构不对称</td>
+<td>检查网格对齐、确认结构对称性</td>
+</tr>
+<tr>
+<td>传输率&gt;1</td>
+<td>归一化问题/监视器位置</td>
+<td>检查光源归一化、监视器不要在PML内</td>
+</tr>
+<tr>
+<td>运行极慢</td>
+<td>网格过密/仿真域过大</td>
+<td>先粗网格验证、缩小仿真域</td>
+</tr>
+<tr>
+<td>与文献差异大</td>
+<td>材料参数不同/网格不够</td>
+<td>核对材料、做网格收敛测试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 进阶资源<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="_10">本仓库示例脚本<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>以下文件位于 <code>docs/assets/examples/</code>，为 Lumerical 脚本示例，导入软件后请根据网格与材料自行核对。</p>
+<ul>
+<li><a href="../assets/examples/fdtd_waveguide.lsf">fdtd_waveguide.lsf</a> — 波导类结构脚本示例</li>
+</ul>
+<h3 id="_11">官方资源<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Lumerical 官方文档：<a href="https://www.ansys.com/products/photonics">ansys.com/products/photonics</a></li>
+<li>Lumerical KB（知识库）：<a href="https://support.lumerical.com">support.lumerical.com</a></li>
+<li>Lumerical 脚本参考：安装目录下 <code>scripting/</code></li>
+<li>Ansys Learning Forum：<a href="https://forum.ansys.com">forum.ansys.com</a></li>
+<li>Ansys 2026 R1 Release Highlights：<a href="https://www.ansys.com/products/release-highlights">ansys.com/products/release-highlights</a></li>
+</ul>
+<h3 id="_12">推荐学习路径<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>入门</strong>：完成 Lumerical 官方入门教程，熟悉 GUI 操作</li>
+<li><strong>进阶</strong>：掌握脚本编写、参数扫描、S参数提取</li>
+<li><strong>高级</strong>：MATLAB LiveLink 联合优化、自定义材料、高级后处理</li>
+</ol>
+<h3 id="_13">开源替代<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>如果暂时无法获取 Lumerical 授权，可考虑开源 FDTD 工具：</p>
+<ul>
+<li><strong>MEEP</strong>（MIT 开源 FDTD）：<a href="https://meep.readthedocs.io">meep.readthedocs.io</a>，Python 接口，AI 对其支持很好</li>
+<li><strong>openFDTD</strong>：较简单的开源实现</li>
+</ul>
+<p>AI 可以帮你将 Lumerical 脚本转换为 MEEP Python 脚本，实现低成本替代。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <div
+    class="md-copyright__highlight"
+    id="site-ga-popularity"
+    data-stats="https://2dmaterial-lab.github.io/AIUserManual/assets/analytics-stats.json"
+  >浏览量统计加载中…</div>
+  <script>
+    (function () {
+      var el = document.getElementById("site-ga-popularity");
+      if (!el) return;
+      var url = el.getAttribute("data-stats");
+      if (!url) {
+        el.textContent = "浏览量统计未配置（缺少 site_url）";
+        return;
+      }
+      fetch(url, { credentials: "same-origin", cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.totalPageViews == null || d.totalPageViews === "") {
+            el.textContent =
+              "全站浏览量：暂未写入（请确认部署时已配置 GA_SERVICE_ACCOUNT_JSON 与 GA4_PROPERTY_ID）";
+            return;
+          }
+          var n =
+            typeof d.totalPageViews === "number"
+              ? d.totalPageViews
+              : parseInt(d.totalPageViews, 10);
+          if (isNaN(n)) {
+            el.textContent = "浏览量数据格式异常";
+            return;
+          }
+          var when = "";
+          if (d.updatedAt) {
+            try {
+              var dt = d.updatedAt.slice(0, 10);
+              when = " · 数据更新 " + dt;
+            } catch (e) {}
+          }
+          el.textContent =
+            "全站累计约 " +
+            n.toLocaleString("zh-CN") +
+            " 次页面浏览" +
+            when +
+            (n === 0
+              ? "（新站或 GA 处理延迟时可能短期为 0，可与 GA 后台对照）"
+              : "");
+        })
+        .catch(function (err) {
+          el.textContent =
+            "浏览量统计加载失败（请强制刷新或关闭广告拦截后重试）";
+          if (typeof console !== "undefined" && console.warn) {
+            console.warn("analytics-stats:", err);
+          }
+        });
+    })();
+  </script>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

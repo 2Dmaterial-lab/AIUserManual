@@ -1,0 +1,2634 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="面向课题组研究生的AI辅助环境配置与工具使用指南">
+      
+      
+        <meta name="author" content="2Dmaterial-lab">
+      
+      
+        <link rel="canonical" href="https://2dmaterial-lab.github.io/AIUserManual/04-excel/">
+      
+      
+        <link rel="prev" href="../03-matlab/">
+      
+      
+        <link rel="next" href="../05-comsol/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Excel - AI辅助科研工具使用说明</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-CL41PLMZE3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-CL41PLMZE3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-CL41PLMZE3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#excelai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-header__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI辅助科研工具使用说明
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Excel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00-introduction/" class="md-tabs__link">
+          
+  
+  
+  基础篇
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../02-origin/" class="md-tabs__link">
+          
+  
+  
+  工具指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-research-workflows/" class="md-tabs__link">
+          
+  
+  
+  科研工作流
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../10-prompt-templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  提示词模板
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../11-lab-info/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-nav__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI辅助科研工具使用说明
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-tools-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI工具总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具指南
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-origin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型使用场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 获取 Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 关键配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-copilot-for-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Copilot for Excel（如可用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 用对话式AI生成公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aivba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 用对话式AI编写VBA宏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-aipower-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 AI辅助数据透视表与Power Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 AI 生成公式/宏的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 提问公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务1：复杂公式生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务2：VBA宏批量处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务3：数据透视表设置指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务4：Power Query 数据清洗
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务5：条件格式与数据可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1ai-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q1：AI 生成的公式报 #NAME? 错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q2：VBA 宏运行时报"子过程未定义"错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q3：VBA 宏运行后数据被覆盖，无法撤销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q4：Power Query 刷新后数据丢失或格式变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q5：AI 生成的公式太长，难以理解和维护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6copilot-for-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q6：Copilot for Excel 不可用或功能有限
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进阶技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与 AI 协作的最佳实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMSOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fdtd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDTD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-solidworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SolidWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-c4d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-labview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研工作流
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    科研工作流
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-research-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研任务工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-data-reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据管理与可复现科研
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-new-student-bootcamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入组第一周训练
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-prompt-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提示词模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-lab-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课题组信息与本地约定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        典型使用场景
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 获取 Excel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 关键配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-copilot-for-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Copilot for Excel（如可用）
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 用对话式AI生成公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-aivba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 用对话式AI编写VBA宏
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-aipower-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 AI辅助数据透视表与Power Query
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 AI 生成公式/宏的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 提问公式
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务1：复杂公式生成
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务2：VBA宏批量处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务3：数据透视表设置指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务4：Power Query 数据清洗
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务5：条件格式与数据可视化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#q1ai-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q1：AI 生成的公式报 #NAME? 错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q2vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q2：VBA 宏运行时报"子过程未定义"错误
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q3vba" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q3：VBA 宏运行后数据被覆盖，无法撤销
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q4power-query" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q4：Power Query 刷新后数据丢失或格式变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q5ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q5：AI 生成的公式太长，难以理解和维护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#q6copilot-for-excel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q6：Copilot for Excel 不可用或功能有限
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        进阶技巧
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        与 AI 协作的最佳实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/2dmaterial-lab/AIUserManual/edit/main/docs/04-excel.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="excelai">Excel：AI辅助数据处理与可视化<a class="headerlink" href="#excelai" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>本章导读</strong>：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">版本与功能时效</p>
+<p>本章按 Microsoft 365/Excel 2026 年前后的公开功能和常见科研数据处理需求整理。Copilot、Power Query、动态数组函数和网页版能力会随许可证变化；请以学校账号实际可用功能为准。</p>
+</div>
+<h2 id="1">1. 简介与适用场景<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Excel 是科研中最常用的数据处理与可视化工具之一。无论你是整理实验数据、生成统计报表，还是制作可视化图表，Excel 都能胜任。但说实话，很多同学对 Excel 的掌握停留在"手动输入公式 + 拖拽填充"的阶段，遇到复杂需求就束手无策。</p>
+<p>AI 辅助可以帮你跨越这个门槛：</p>
+<ul>
+<li><strong>公式生成</strong>：描述你想要的结果，AI 帮你写出复杂嵌套公式，不用再一个个函数去查</li>
+<li><strong>VBA 宏编写</strong>：不会 VBA 也能批量处理数据，AI 帮你生成完整的宏代码</li>
+<li><strong>数据透视表</strong>：告诉 AI 你的分析目标，它帮你规划字段布局和计算方式</li>
+<li><strong>Power Query 数据清洗</strong>：面对杂乱的原始数据，AI 帮你设计清洗流程</li>
+</ul>
+<h3 id="_1">典型使用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>传统做法</th>
+<th>AI 辅助做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验数据整理</td>
+<td>手动复制粘贴、逐个设公式</td>
+<td>描述需求，AI 生成公式或 VBA 宏一键处理</td>
+</tr>
+<tr>
+<td>自动生成报告</td>
+<td>每次手动更新数据和图表</td>
+<td>AI 帮写 VBA 宏自动刷新报表</td>
+</tr>
+<tr>
+<td>条件格式标记</td>
+<td>在菜单里翻找设置项</td>
+<td>描述规则，AI 给出完整设置步骤和公式</td>
+</tr>
+<tr>
+<td>数据清洗</td>
+<td>逐列检查、手动删除异常值</td>
+<td>AI 帮你设计 Power Query 清洗流程</td>
+</tr>
+</tbody>
+</table>
+<h3 id="excel">什么时候优先用 Excel<a class="headerlink" href="#excel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小规模数据查看、筛选、人工标注</td>
+<td>推荐</td>
+<td>上手快，适合临时整理</td>
+</tr>
+<tr>
+<td>组内共享表格、报销、样品台账</td>
+<td>推荐</td>
+<td>协作和表格格式友好</td>
+</tr>
+<tr>
+<td>重复清洗同格式文件</td>
+<td>推荐 Power Query / VBA</td>
+<td>可把操作步骤保存下来</td>
+</tr>
+<tr>
+<td>论文最终数据分析链</td>
+<td>谨慎</td>
+<td>必须保留公式、Power Query 和校验记录</td>
+</tr>
+<tr>
+<td>大规模数值计算和复杂统计</td>
+<td>不优先</td>
+<td>MATLAB/Python 更可复现、更容易测试</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai">AI 能做 / 不能做<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>AI 适合做</th>
+<th>必须人工确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生成公式、VBA、Power Query M 代码</td>
+<td>公式引用区域是否正确</td>
+</tr>
+<tr>
+<td>解释函数、数据透视表和条件格式</td>
+<td>文本数字、日期格式和空值处理</td>
+</tr>
+<tr>
+<td>用 Copilot 做表内辅助分析</td>
+<td>结果是否可复现、是否适合科研结论</td>
+</tr>
+<tr>
+<td>设计报表字段和清洗流程</td>
+<td>宏是否覆盖原始数据</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">最小闭环案例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>复制一份小型 CSV 到测试工作簿。</li>
+<li>让 AI 生成公式或 Power Query 步骤，完成筛选、单位换算和汇总。</li>
+<li>用 3 行数据手算校验结果。</li>
+<li>保存测试副本、公式说明和导出的处理后表格。</li>
+</ol>
+<hr />
+<h2 id="2">2. 安装与配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="21-excel">2.1 获取 Excel<a class="headerlink" href="#21-excel" title="Permanent link">&para;</a></h3>
+<p><strong>可选方案：Microsoft 365 学生/校园授权</strong></p>
+<ol>
+<li>访问 <a href="https://www.microsoft.com/zh-cn/education/products/office">Microsoft 教育版页面</a>，输入学校邮箱（.edu.cn 后缀），验证学生身份后可免费使用网页版 Office，或以优惠价格订阅桌面版</li>
+<li>如果学校已购买校园授权，直接用学校账号登录 <a href="https://www.office.com">office.com</a> 即可下载安装</li>
+</ol>
+<p><strong>替代方案</strong>：
+- WPS Office：免费，界面与 Excel 兼容，但部分高级功能（Power Query、部分 VBA）支持有限
+- LibreOffice Calc：完全免费开源，VBA 兼容性较差，不推荐用于复杂自动化任务</p>
+<blockquote>
+<p>提示：如果需要 Power Query、VBA、批量导入导出或插件，桌面版 Excel 通常比网页版更完整；只做简单查看和协作时网页版也够用。</p>
+</blockquote>
+<h3 id="22">2.2 关键配置<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
+<p>安装完成后，做以下配置可以大幅提升使用效率：</p>
+<p><strong>启用开发工具选项卡</strong>（使用 VBA 必需）：
+1. 文件 -&gt; 选项 -&gt; 自定义功能区
+2. 勾选"开发工具"，点击确定
+3. 之后可以在"开发工具"选项卡中录制宏、打开 VBA 编辑器</p>
+<p><strong>启用 Power Query</strong>（Office 365 默认已集成）：
+1. 在"数据"选项卡中可以看到"获取数据"按钮，说明 Power Query 已可用
+2. 如果看不到，检查 Office 更新：文件 -&gt; 账户 -&gt; 更新选项 -&gt; 立即更新</p>
+<p><strong>常用快捷设置</strong>：
+1. 文件 -&gt; 选项 -&gt; 公式 -&gt; 勾选"启用迭代计算"（某些循环引用公式需要）
+2. 文件 -&gt; 选项 -&gt; 高级 -&gt; 取消勾选"自动完成单元格值"（避免输入时自动填充干扰）
+3. 文件 -&gt; 选项 -&gt; 保存 -&gt; 设置自动保存间隔为 5 分钟</p>
+<h3 id="23-copilot-for-excel">2.3 Copilot for Excel（如可用）<a class="headerlink" href="#23-copilot-for-excel" title="Permanent link">&para;</a></h3>
+<p>如果你的 Microsoft 365 许可证包含 Copilot，你会在 Excel 功能区看到 Copilot 入口。Copilot 可以直接在 Excel 中用自然语言辅助操作，比如"高亮大于平均值的数据"、"添加一列计算同比增长率"等。</p>
+<p>Copilot for Excel 的能力和入口在 2026 年仍在调整，部分 App Skills 和 Office 内嵌入口会随许可证变化。对于复杂 VBA、Power Query M 代码和可复现数据处理，仍建议让对话式 AI 生成可审查的公式/脚本，再由你手动验证。</p>
+<div class="admonition warning">
+<p class="admonition-title">数据安全</p>
+<p>不要把未发表实验数据、专利相关信息或包含个人信息的工作簿上传到云端 AI。需要借助 AI 调试公式时，优先使用脱敏后的列名和少量模拟数据。</p>
+</div>
+<hr />
+<h2 id="3-ai">3. AI辅助使用核心技巧<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h2>
+<h3 id="31-ai">3.1 用对话式AI生成公式<a class="headerlink" href="#31-ai" title="Permanent link">&para;</a></h3>
+<p>Excel 有几百个函数，没人能全记住。关键是学会向 AI 描述你的需求，让它帮你找到合适的函数组合。</p>
+<p><strong>描述公式的要点</strong>：</p>
+<ol>
+<li><strong>说明数据位置</strong>：告诉 AI 你的数据在哪几列、表头是什么</li>
+<li><strong>说明计算逻辑</strong>：用自然语言描述你想要的结果，不需要知道用什么函数</li>
+<li><strong>说明特殊情况</strong>：有没有空值？有没有错误值需要处理？需不需要忽略某些行？</li>
+</ol>
+<p><strong>示例对话</strong>：</p>
+<blockquote>
+<p>我的数据在 A 列到 E 列，A 列是样品编号，B 列是测量日期，C 列是温度，D 列是湿度，E 列是测量值。我想在 F 列计算每个样品的测量值与该日期所有样品平均值的偏差百分比，忽略 E 列中的空值。</p>
+</blockquote>
+<p>AI 会返回类似这样的公式：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>=IF(E2=&quot;&quot;,&quot;&quot;, (E2 - AVERAGEIF(B:B, B2, E:E)) / AVERAGEIF(B:B, B2, E:E) * 100)
+</code></pre></div>
+<p>你只需要复制粘贴到 F2 单元格，然后向下填充即可。</p>
+<h3 id="32-aivba">3.2 用对话式AI编写VBA宏<a class="headerlink" href="#32-aivba" title="Permanent link">&para;</a></h3>
+<p>VBA 是 Excel 自动化的核心能力，但学习曲线陡峭。AI 可以帮你跨过这道坎。</p>
+<p><strong>编写 VBA 宏的流程</strong>：</p>
+<ol>
+<li>用自然语言向 AI 描述你要做什么</li>
+<li>AI 生成 VBA 代码</li>
+<li>复制到 VBA 编辑器（Alt + F11 打开）</li>
+<li>运行测试（F5 运行，或在 Excel 中通过开发工具 -&gt; 宏 -&gt; 运行）</li>
+<li>如果报错，把错误信息发给 AI，让它帮你修复</li>
+</ol>
+<p><strong>注意事项</strong>：
+- 始终在测试数据上先运行宏，确认无误后再用于正式数据
+- 重要数据在运行宏之前先备份（另存为副本）
+- 如果 AI 生成的代码运行报错，把完整的错误提示和出错的那行代码发给 AI，它能精准定位问题</p>
+<h3 id="33-aipower-query">3.3 AI辅助数据透视表与Power Query<a class="headerlink" href="#33-aipower-query" title="Permanent link">&para;</a></h3>
+<p>数据透视表和 Power Query 的操作比较图形化，AI 辅助的方式是帮你规划操作步骤：</p>
+<ul>
+<li><strong>数据透视表</strong>：向 AI 描述你的分析维度和指标，它会告诉你行字段、列字段、值字段分别放什么，以及用什么汇总方式</li>
+<li><strong>Power Query</strong>：向 AI 描述数据清洗需求，它帮你生成 M 语言代码，你可以直接粘贴到 Power Query 的高级编辑器中</li>
+</ul>
+<h3 id="34-ai">3.4 AI 生成公式/宏的验收清单<a class="headerlink" href="#34-ai" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>先复制工作簿</strong>：VBA 宏执行后通常无法撤销，先另存为测试副本。</li>
+<li><strong>检查函数兼容性</strong>：确认是否使用 <code>XLOOKUP</code>、<code>FILTER</code>、<code>UNIQUE</code>、<code>LET</code>、<code>LAMBDA</code> 等新版函数。</li>
+<li><strong>用手算样例验证</strong>：挑 3–5 行数据手算，核对公式结果。</li>
+<li><strong>保留清洗步骤</strong>：Power Query 的 M 代码比手工操作更可复现，建议保存在工作簿或单独 <code>.pq</code> 文本中。</li>
+<li><strong>避免覆盖原始数据</strong>：宏输出到新工作表或新文件，原始数据只读。</li>
+</ol>
+<h3 id="35">3.5 提问公式<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>无论什么场景，一个高效的提问通常包含以下要素：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[数据情况] + [目标结果] + [约束条件] + [工具版本]
+</code></pre></div>
+<p>例如：</p>
+<blockquote>
+<p>我的 Excel 表格有 5000 行数据，A 列是日期格式 YYYY-MM-DD，B 列是实验组名称（共3组：control、treatment-A、treatment-B），C 列到 F 列是四项检测指标的数值。我需要：1) 在 G 列生成每行数据的综合评分，四项指标的权重分别是 0.3、0.2、0.3、0.2；2) 用条件格式标出综合评分前 10% 的行。我使用的是 Office 365 版 Excel。</p>
+</blockquote>
+<hr />
+<h2 id="4">4. 常见任务与提示词示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>以下提示词可以直接复制使用，根据你的实际数据情况修改列号、表名等参数即可。</p>
+<h3 id="1_1">任务1：复杂公式生成<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>场景</strong>：你有一组实验数据，需要根据多个条件进行统计计算，手动写公式很容易出错。</p>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>请帮我写一个 Excel 公式，需求如下：
+- 数据表名为 Sheet1，A 列是实验日期（格式 2025-03-15），B 列是样品组别（A组/B组/C组），C 列是测量值（数值），D 列是是否合格（是/否）
+- 我需要在另一个 Sheet2 的 A1 单元格计算：2025年3月份、B组、合格样品的测量值平均值，结果保留两位小数
+- 如果没有符合条件的数据，显示"无数据"而不是报错
+- 请解释公式中每个函数的作用</p>
+</blockquote>
+<p><strong>预期输出参考</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>=IFERROR(ROUND(AVERAGEIFS(Sheet1!C:C, Sheet1!A:A, &quot;&gt;=2025-03-01&quot;, Sheet1!A:A, &quot;&lt;=2025-03-31&quot;, Sheet1!B:B, &quot;B组&quot;, Sheet1!D:D, &quot;是&quot;), 2), &quot;无数据&quot;)
+</code></pre></div>
+<p>函数说明：
+- <code>AVERAGEIFS</code>：多条件平均，同时满足日期范围、组别、合格三个条件
+- <code>ROUND(..., 2)</code>：保留两位小数
+- <code>IFERROR</code>：当没有匹配数据时（AVERAGEIFS 返回 #DIV/0! 错误），显示"无数据"</p>
+<h3 id="2vba">任务2：VBA宏批量处理<a class="headerlink" href="#2vba" title="Permanent link">&para;</a></h3>
+<p><strong>场景</strong>：你有几十个结构相同的工作表，需要逐个执行相同的处理操作。</p>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>请帮我写一个 Excel VBA 宏，需求如下：
+- 工作簿中有多个工作表，名称格式为 "Sample_01" 到 "Sample_30"
+- 每个工作表结构相同：A 列是时间（秒），B 列是温度读数，C 列是压力读数
+- 我需要宏自动完成以下操作：
+  1. 在每个工作表的 D 列计算温度变化率（当前行温度减去上一行温度，除以时间差）
+  2. 在每个工作表的 E 列标注压力是否超限（压力 &gt; 100 时标"超限"，否则标"正常"）
+  3. 在每个工作表的 F1 单元格写入该表最高温度及对应时间
+  4. 第一行是表头，从第二行开始处理数据
+- 处理完成后弹出一个消息框显示"30个工作表处理完成"
+- 请在代码中添加中文注释，方便我理解</p>
+</blockquote>
+<p><strong>预期输出参考</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Sub BatchProcessSamples()
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    Dim ws As Worksheet
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Dim i As Long
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    Dim lastRow As Long
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    Dim maxTemp As Double
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    Dim maxTempTime As Double
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    Dim processedCount As Integer
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    processedCount = 0
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    &#39; 遍历所有工作表
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    For Each ws In ThisWorkbook.Worksheets
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        &#39; 只处理名称以 &quot;Sample_&quot; 开头的工作表
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        If Left(ws.Name, 7) = &quot;Sample_&quot; Then
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>            &#39; 添加表头
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            ws.Cells(1, 4).Value = &quot;温度变化率&quot;
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>            ws.Cells(1, 5).Value = &quot;压力状态&quot;
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            ws.Cells(1, 6).Value = &quot;最高温度及时间&quot;
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>            &#39; 获取最后一行数据
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>            lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>            &#39; 初始化最高温度
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>            maxTemp = ws.Cells(2, 2).Value
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>            maxTempTime = ws.Cells(2, 1).Value
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>            &#39; 从第二行开始处理数据
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>            For i = 2 To lastRow
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>                &#39; 计算温度变化率
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>                If i = 2 Then
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>                    ws.Cells(i, 4).Value = &quot;N/A&quot;  &#39; 第一行数据没有前一行，无法计算变化率
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>                Else
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>                    Dim timeDiff As Double
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>                    timeDiff = ws.Cells(i, 1).Value - ws.Cells(i - 1, 1).Value
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>                    If timeDiff &lt;&gt; 0 Then
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>                        ws.Cells(i, 4).Value = (ws.Cells(i, 2).Value - ws.Cells(i - 1, 2).Value) / timeDiff
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>                    Else
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>                        ws.Cells(i, 4).Value = &quot;N/A&quot;
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>                    End If
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>                End If
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>                &#39; 标注压力状态
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>                If ws.Cells(i, 3).Value &gt; 100 Then
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>                    ws.Cells(i, 5).Value = &quot;超限&quot;
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>                Else
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>                    ws.Cells(i, 5).Value = &quot;正常&quot;
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>                End If
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>                &#39; 记录最高温度及其对应时间
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>                If ws.Cells(i, 2).Value &gt; maxTemp Then
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a>                    maxTemp = ws.Cells(i, 2).Value
+<a id="__codelineno-3-52" name="__codelineno-3-52" href="#__codelineno-3-52"></a>                    maxTempTime = ws.Cells(i, 1).Value
+<a id="__codelineno-3-53" name="__codelineno-3-53" href="#__codelineno-3-53"></a>                End If
+<a id="__codelineno-3-54" name="__codelineno-3-54" href="#__codelineno-3-54"></a>            Next i
+<a id="__codelineno-3-55" name="__codelineno-3-55" href="#__codelineno-3-55"></a>
+<a id="__codelineno-3-56" name="__codelineno-3-56" href="#__codelineno-3-56"></a>            &#39; 写入最高温度信息
+<a id="__codelineno-3-57" name="__codelineno-3-57" href="#__codelineno-3-57"></a>            ws.Cells(1, 6).Value = &quot;最高温度: &quot; &amp; maxTemp &amp; &quot; (时间: &quot; &amp; maxTempTime &amp; &quot;s)&quot;
+<a id="__codelineno-3-58" name="__codelineno-3-58" href="#__codelineno-3-58"></a>
+<a id="__codelineno-3-59" name="__codelineno-3-59" href="#__codelineno-3-59"></a>            processedCount = processedCount + 1
+<a id="__codelineno-3-60" name="__codelineno-3-60" href="#__codelineno-3-60"></a>        End If
+<a id="__codelineno-3-61" name="__codelineno-3-61" href="#__codelineno-3-61"></a>    Next ws
+<a id="__codelineno-3-62" name="__codelineno-3-62" href="#__codelineno-3-62"></a>
+<a id="__codelineno-3-63" name="__codelineno-3-63" href="#__codelineno-3-63"></a>    &#39; 完成提示
+<a id="__codelineno-3-64" name="__codelineno-3-64" href="#__codelineno-3-64"></a>    MsgBox processedCount &amp; &quot;个工作表处理完成&quot;, vbInformation, &quot;处理结果&quot;
+<a id="__codelineno-3-65" name="__codelineno-3-65" href="#__codelineno-3-65"></a>End Sub
+</code></pre></div>
+<h3 id="3">任务3：数据透视表设置指导<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>场景</strong>：你需要从原始实验记录中快速汇总分组统计数据。</p>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我有一张实验数据表，列结构如下：
+- A列：实验日期
+- B列：实验人员（张三/李四/王五）
+- C列：样品类型（Type1/Type2/Type3）
+- D列：测量值1
+- E列：测量值2
+- F列：是否合格（合格/不合格）</p>
+<p>我想创建一个数据透视表，实现以下分析：
+1. 按实验人员和样品类型交叉统计合格率（合格数/总数）
+2. 按月份统计各项测量值的平均值和标准差
+3. 在透视表中增加一个计算字段：测量值1与测量值2的比值</p>
+<p>请告诉我具体的操作步骤，包括每一步在哪里拖放哪个字段、选择什么汇总方式。如果是需要用计算字段的操作，请详细说明。</p>
+</blockquote>
+<p><strong>预期操作指导参考</strong>：</p>
+<p><strong>分析1：合格率交叉统计</strong>
+1. 选中数据区域，插入 -&gt; 数据透视表，放到新工作表
+2. 行区域：拖入"实验人员"
+3. 列区域：拖入"样品类型"
+4. 值区域：拖入"是否合格"，右键 -&gt; 值字段设置 -&gt; 汇总方式改为"计数"
+5. 再次将"是否合格"拖入值区域，右键 -&gt; 值字段设置 -&gt; 汇总方式改为"计数"，显示方式改为"占同行总计的百分比"（即行汇总百分比）
+6. 若要精确只计算"合格"的占比，需要先对数据添加辅助列，或在值字段中筛选仅显示"合格"</p>
+<p><strong>分析2：按月份统计</strong>
+1. 将"实验日期"拖入行区域，Excel 会自动按月分组
+2. 如果没有自动分组，右键日期字段 -&gt; 组合 -&gt; 选择"月"
+3. 将"测量值1"拖入值区域，汇总方式设为"平均值"
+4. 再次将"测量值1"拖入值区域，汇总方式设为"标准偏差"（即标准差）
+5. 对"测量值2"重复上述操作</p>
+<p><strong>分析3：计算字段</strong>
+1. 在数据透视表上点击，选择"数据透视表分析" -&gt; "字段、项目和集" -&gt; "计算字段"
+2. 名称输入"测量值比值"，公式输入 <code>= 测量值1 / 测量值2</code>
+3. 点击添加 -&gt; 确定</p>
+<h3 id="4power-query">任务4：Power Query 数据清洗<a class="headerlink" href="#4power-query" title="Permanent link">&para;</a></h3>
+<p><strong>场景</strong>：你从仪器导出的原始数据格式混乱，需要清洗后才能分析。Power Query 比手动操作更高效，且清洗步骤可重复执行。</p>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我从实验仪器导出了一个 CSV 文件，数据问题如下：
+- 前 5 行是仪器信息头部，不是数据，需要跳过
+- 第 6 行才是真正的表头：Time, Channel1, Channel2, Channel3, Temperature, Status
+- 数据中混有字符串 "NaN" 和 "OVERFLOW"，需要替换为 null
+- Temperature 列的值有些带单位"°C"后缀（如"25.3°C"），需要去掉单位转为数值
+- Status 列只有两种值需要保留："OK" 和 "ERROR"，其他值（如空行、"N/A"）都替换为 null
+- 最后按 Time 列升序排列</p>
+<p>请帮我生成 Power Query 的 M 语言代码，我可以直接粘贴到高级编辑器中使用。</p>
+</blockquote>
+<p><strong>预期输出参考</strong>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>let
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    // 读取 CSV 文件，跳过前 5 行头部信息
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    Source = Csv.Document(File.Contents(&quot;C:\Data\experiment_raw.csv&quot;),[Delimiter=&quot;,&quot;, Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    // 提升第 6 行作为表头（跳过前 5 行后，第 1 行就是表头）
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    SkipHeader = Table.Skip(Source, 5),
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    PromoteHeaders = Table.PromoteHeaders(SkipHeader, [PromoteAllScalars=true]),
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    // 替换 &quot;NaN&quot; 和 &quot;OVERFLOW&quot; 为 null
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    ReplaceNaN = Table.ReplaceValue(PromoteHeaders, &quot;NaN&quot;, null, Replacer.ReplaceValue, {&quot;Channel1&quot;, &quot;Channel2&quot;, &quot;Channel3&quot;, &quot;Temperature&quot;, &quot;Status&quot;}),
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    ReplaceOverflow = Table.ReplaceValue(ReplaceNaN, &quot;OVERFLOW&quot;, null, Replacer.ReplaceValue, {&quot;Channel1&quot;, &quot;Channel2&quot;, &quot;Channel3&quot;, &quot;Temperature&quot;, &quot;Status&quot;}),
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    // 清理 Temperature 列：去掉 &quot;°C&quot; 后缀并转为数值类型
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    CleanTemperature = Table.TransformColumns(ReplaceOverflow, {{
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>        &quot;Temperature&quot;,
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        each if Text.Contains(Text.From(_), &quot;°C&quot;) then
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>            Text.BeforeDelimiter(Text.From(_), &quot;°C&quot;)
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        else Text.From(_),
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        type text
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    }}),
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>    ChangeTempType = Table.TransformColumnTypes(CleanTemperature, {{&quot;Temperature&quot;, type number}}),
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>    // 清理 Status 列：只保留 &quot;OK&quot; 和 &quot;ERROR&quot;，其他替换为 null
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>    CleanStatus = Table.TransformColumns(ChangeTempType, {{
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>        &quot;Status&quot;,
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        each if _ = &quot;OK&quot; or _ = &quot;ERROR&quot; then _ else null,
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>        type text
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>    }}),
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>    // 将 Channel 列转为数值类型
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>    ChangeTypes = Table.TransformColumnTypes(CleanStatus, {
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>        {&quot;Channel1&quot;, type number},
+<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a>        {&quot;Channel2&quot;, type number},
+<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a>        {&quot;Channel3&quot;, type number}
+<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a>    }),
+<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a>
+<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>    // 按 Time 列升序排列
+<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>    SortRows = Table.Sort(ChangeTypes, {{&quot;Time&quot;, Order.Ascending}})
+<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a>in
+<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>    SortRows
+</code></pre></div>
+<h3 id="5">任务5：条件格式与数据可视化<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p><strong>场景</strong>：你想让数据表自动用颜色标记关键信息，一眼看出异常值和趋势。</p>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我的 Excel 数据表结构：
+- A列：样品编号（S001-S200）
+- B列：测量值（数值范围大约 0-100）
+- C列：偏差值（数值，可正可负）
+- D列：判定结果（Pass/Fail）</p>
+<p>请帮我设置以下条件格式，给出具体的操作步骤或公式：
+1. B列中，数值大于 90 的单元格填充绿色，小于 10 的填充红色
+2. C列中，绝对值大于 5 的单元格文字加粗并标红
+3. D列中，"Fail" 的单元格整行填充浅红色背景
+4. A列中，样品编号按奇偶交替填充浅蓝/白色背景，方便阅读</p>
+</blockquote>
+<p><strong>预期操作指导参考</strong>：</p>
+<p><strong>格式1：B列数值范围标记</strong>
+1. 选中 B2:B201
+2. 开始 -&gt; 条件格式 -&gt; 新建规则 -&gt; 使用公式确定要设置格式的单元格
+3. 公式：<code>=B2&gt;90</code>，格式设置为绿色填充
+4. 再次新建规则，公式：<code>=B2&lt;10</code>，格式设置为红色填充</p>
+<p><strong>格式2：C列偏差超标标记</strong>
+1. 选中 C2:C201
+2. 条件格式 -&gt; 新建规则 -&gt; 使用公式
+3. 公式：<code>=ABS(C2)&gt;5</code>
+4. 格式设置：字体加粗、颜色设为红色</p>
+<p><strong>格式3：Fail 行整行标记</strong>
+1. 选中 A2:D201（整行数据区域，不含表头）
+2. 条件格式 -&gt; 新建规则 -&gt; 使用公式
+3. 公式：<code>=$D2="Fail"</code>
+4. 格式设置：浅红色背景填充
+5. 注意 <code>$D2</code> 中的 <code>$</code> 不能省略，这确保条件判断始终基于 D 列的值</p>
+<p><strong>格式4：奇偶行交替色</strong>
+1. 选中 A2:D201
+2. 条件格式 -&gt; 新建规则 -&gt; 使用公式
+3. 公式：<code>=MOD(ROW(),2)=0</code>（偶数行）
+4. 格式设置：浅蓝色背景填充
+5. 白色背景是默认值，无需额外设置</p>
+<hr />
+<h2 id="5_1">5. 常见问题与排错<a class="headerlink" href="#5_1" title="Permanent link">&para;</a></h2>
+<h3 id="q1ai-name">Q1：AI 生成的公式报 #NAME? 错误<a class="headerlink" href="#q1ai-name" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：最常见的情况是函数名拼写错误或使用了你的 Excel 版本不支持的函数。</p>
+<p><strong>解决方法</strong>：
+- 检查函数名是否正确，尤其是中文环境下的函数名（如 <code>AVERAGEIFS</code> 在中文版 Excel 中可能显示为 <code>AVERAGEIFS</code>，但部分旧函数名不同）
+- 确认你的 Excel 版本：文件 -&gt; 账户 -&gt; 查看 Office 版本号。部分函数（如 <code>XLOOKUP</code>、<code>FILTER</code>、<code>UNIQUE</code>）仅 Office 365 或 Excel 2021 及以上版本支持
+- 把报错信息和你的 Excel 版本发给 AI，让它帮你用兼容的函数重写</p>
+<h3 id="q2vba">Q2：VBA 宏运行时报"子过程未定义"错误<a class="headerlink" href="#q2vba" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：宏代码粘贴的位置不对，或宏名称与调用时不一致。</p>
+<p><strong>解决方法</strong>：
+- 确认代码粘贴在"模块"中，而不是"工作表"或"ThisWorkbook"的代码窗口中。在 VBA 编辑器左侧项目面板中，右键 -&gt; 插入 -&gt; 模块
+- 检查 Sub 后面的宏名称是否与你运行时选择的宏名称一致
+- 如果代码中引用了其他工作簿的函数，需要添加对应引用</p>
+<h3 id="q3vba">Q3：VBA 宏运行后数据被覆盖，无法撤销<a class="headerlink" href="#q3vba" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：VBA 宏的操作无法通过 Ctrl+Z 撤销，这是 Excel 的设计限制。</p>
+<p><strong>解决方法</strong>（防患于未然）：
+- 运行宏之前，先另存为工作簿副本
+- 在宏代码开头添加自动备份逻辑：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&#39; 运行前自动备份当前工作表
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>ThisWorkbook.SaveCopyAs ThisWorkbook.Path &amp; &quot;\backup_&quot; &amp; Format(Now, &quot;yyyymmdd_hhmmss&quot;) &amp; &quot;.xlsx&quot;
+</code></pre></div>
+<h3 id="q4power-query">Q4：Power Query 刷新后数据丢失或格式变化<a class="headerlink" href="#q4power-query" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：Power Query 刷新会重新执行全部步骤，如果源文件路径变了或数据格式变化，可能出问题。</p>
+<p><strong>解决方法</strong>：
+- 源文件路径尽量使用相对路径或共享文件夹路径，避免因个人电脑路径不同导致问题
+- 在 Power Query 的最后一步加上 <code>Table.Buffer()</code> 缓存中间结果，避免重复计算
+- 如果刷新后列类型变化，检查"更改类型"步骤是否写死了列名，数据列增减时需要手动更新</p>
+<h3 id="q5ai">Q5：AI 生成的公式太长，难以理解和维护<a class="headerlink" href="#q5ai" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：AI 有时会生成超长的嵌套公式，虽然能运行，但可读性差。</p>
+<p><strong>解决方法</strong>：
+- 明确要求 AI 使用辅助列拆分逻辑。例如：让 AI 把一个复杂公式拆成 2-3 列，每列做一步中间计算
+- 在提问时加上"请用辅助列方式实现，不要写超长嵌套公式"
+- 对关键公式添加批注：选中单元格 -&gt; 审阅 -&gt; 新建批注，写明公式的用途和逻辑</p>
+<h3 id="q6copilot-for-excel">Q6：Copilot for Excel 不可用或功能有限<a class="headerlink" href="#q6copilot-for-excel" title="Permanent link">&para;</a></h3>
+<p><strong>原因</strong>：Copilot 需要 Microsoft 365 Copilot 许可证，普通 Office 365 订阅不包含此功能。</p>
+<p><strong>替代方案</strong>：
+- 使用对话式 AI（Claude、ChatGPT）配合手动操作，效果相当甚至更好
+- 把你的 Excel 数据结构描述给 AI，让它生成公式、VBA 代码或 Power Query 步骤，你手动粘贴执行
+- 对于简单操作，可以尝试在 Copilot 网页版（copilot.microsoft.com）中描述需求，虽然它不能直接操作 Excel，但可以生成操作指南</p>
+<hr />
+<h2 id="6">6. 进阶资源<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="_3">本仓库示例脚本<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>以下文件位于 <code>docs/assets/examples/</code>，构建站点后可通过站点内链接下载。</p>
+<ul>
+<li><a href="../assets/examples/excel_batch_process.bas">excel_batch_process.bas</a> — VBA 批量处理数据示例（按需修改路径与列号）</li>
+</ul>
+<h3 id="_4">学习资源<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Excel 函数速查</strong>：微软官方文档 <a href="https://support.microsoft.com/zh-cn/excel">support.microsoft.com</a> 提供所有函数的详细说明和示例</li>
+<li><strong>VBA 入门教程</strong>：可以先让 AI 帮你生成几段 VBA 代码并逐行解释，从实践中学习比单纯看语法更高效</li>
+<li><strong>Copilot in Excel</strong>：<a href="https://support.microsoft.com/en-us/copilot-excel">support.microsoft.com/copilot-excel</a></li>
+<li><strong>Power Query 指南</strong>：微软 Learn 平台有系统的 Power Query 学习路径，搜索 "Power Query 学习路径" 即可找到</li>
+</ul>
+<h3 id="_5">进阶技巧<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>动态数组公式</strong>：Office 365 支持的 <code>FILTER</code>、<code>SORT</code>、<code>UNIQUE</code> 等函数可以实现以往必须用 VBA 才能做到的功能，向 AI 提问时可以注明"优先使用动态数组函数而非 VBA"</li>
+<li><strong>LAMBDA 自定义函数</strong>：Excel 365 支持用 <code>LAMBDA</code> 创建自定义函数，适合将反复使用的公式封装成可复用的函数。可以让 AI 帮你把常用计算逻辑写成 LAMBDA 函数</li>
+<li><strong>Power Query + Power BI 联动</strong>：如果你的数据量大或需要交互式可视化报表，可以考虑将 Power Query 清洗后的数据导入 Power BI 做可视化，AI 同样可以辅助 Power BI 的 DAX 公式编写</li>
+</ul>
+<h3 id="ai_1">与 AI 协作的最佳实践<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>先整理数据再提问</strong>：确保你的数据有清晰的表头、一致的格式，AI 给出的方案会更精准</li>
+<li><strong>小数据测试</strong>：先用几行数据测试 AI 给出的公式或宏，确认结果正确后再应用到全量数据</li>
+<li><strong>保存好提示词</strong>：当你找到一个效果很好的提示词，保存下来。下次遇到类似任务时直接复用，只需要改参数</li>
+<li><strong>逐步迭代</strong>：如果 AI 第一次给出的方案不完美，不要从头重新提问，而是在原对话基础上追加修改要求，比如"请把公式改为忽略错误值"或"请在宏中添加进度提示"</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <div
+    class="md-copyright__highlight"
+    id="site-ga-popularity"
+    data-stats="https://2dmaterial-lab.github.io/AIUserManual/assets/analytics-stats.json"
+  >浏览量统计加载中…</div>
+  <script>
+    (function () {
+      var el = document.getElementById("site-ga-popularity");
+      if (!el) return;
+      var url = el.getAttribute("data-stats");
+      if (!url) {
+        el.textContent = "浏览量统计未配置（缺少 site_url）";
+        return;
+      }
+      fetch(url, { credentials: "same-origin", cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.totalPageViews == null || d.totalPageViews === "") {
+            el.textContent =
+              "全站浏览量：暂未写入（请确认部署时已配置 GA_SERVICE_ACCOUNT_JSON 与 GA4_PROPERTY_ID）";
+            return;
+          }
+          var n =
+            typeof d.totalPageViews === "number"
+              ? d.totalPageViews
+              : parseInt(d.totalPageViews, 10);
+          if (isNaN(n)) {
+            el.textContent = "浏览量数据格式异常";
+            return;
+          }
+          var when = "";
+          if (d.updatedAt) {
+            try {
+              var dt = d.updatedAt.slice(0, 10);
+              when = " · 数据更新 " + dt;
+            } catch (e) {}
+          }
+          el.textContent =
+            "全站累计约 " +
+            n.toLocaleString("zh-CN") +
+            " 次页面浏览" +
+            when +
+            (n === 0
+              ? "（新站或 GA 处理延迟时可能短期为 0，可与 GA 后台对照）"
+              : "");
+        })
+        .catch(function (err) {
+          el.textContent =
+            "浏览量统计加载失败（请强制刷新或关闭广告拦截后重试）";
+          if (typeof console !== "undefined" && console.warn) {
+            console.warn("analytics-stats:", err);
+          }
+        });
+    })();
+  </script>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

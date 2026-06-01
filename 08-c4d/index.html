@@ -1,0 +1,2498 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="面向课题组研究生的AI辅助环境配置与工具使用指南">
+      
+      
+        <meta name="author" content="2Dmaterial-lab">
+      
+      
+        <link rel="canonical" href="https://2dmaterial-lab.github.io/AIUserManual/08-c4d/">
+      
+      
+        <link rel="prev" href="../07-solidworks/">
+      
+      
+        <link rel="next" href="../09-labview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>C4D - AI辅助科研工具使用说明</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-CL41PLMZE3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-CL41PLMZE3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-CL41PLMZE3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#c4d-ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-header__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI辅助科研工具使用说明
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              C4D
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../00-introduction/" class="md-tabs__link">
+          
+  
+  
+  基础篇
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../02-origin/" class="md-tabs__link">
+          
+  
+  
+  工具指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-research-workflows/" class="md-tabs__link">
+          
+  
+  
+  科研工作流
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../10-prompt-templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  提示词模板
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../11-lab-info/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-nav__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI辅助科研工具使用说明
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-ai-tools-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI工具总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具指南
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-origin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMSOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fdtd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDTD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-solidworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SolidWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c4d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 C4D
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 年可关注的变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        获取方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c4d-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4D 与 AI 的配合方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C4D 与 AI 的配合方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建模指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渲染设置指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 辅助科研可视化的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景1：光学器件三维示意图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景2：Python脚本 — 批量渲染
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景3：材质与灯光设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景4：科研动画制作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI能帮你快速解决的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        需要注意的事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐学习路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替代方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-labview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研工作流
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    科研工作流
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-research-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研任务工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-data-reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据管理与可复现科研
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-new-student-bootcamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入组第一周训练
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-prompt-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提示词模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-lab-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课题组信息与本地约定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 简介与适用场景
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 简介与适用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c4d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么时候优先用 C4D
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 能做 / 不能做
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        最小闭环案例
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2026 年可关注的变化
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 安装与配置
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 安装与配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        获取方式
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装要点
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐配置
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. AI辅助使用核心技巧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. AI辅助使用核心技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c4d-ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4D 与 AI 的配合方式
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="C4D 与 AI 的配合方式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        建模指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        渲染设置指导
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 辅助科研可视化的验收清单
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 常见任务与提示词示例
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 常见任务与提示词示例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景1：光学器件三维示意图
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景2：Python脚本 — 批量渲染
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景3：材质与灯光设置
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        场景4：科研动画制作
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. 常见问题与排错
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 常见问题与排错">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI能帮你快速解决的问题
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        需要注意的事项
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        常见问题速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. 进阶资源
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. 进阶资源">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        本仓库示例脚本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        学习资源
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐学习路径
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        替代方案
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/2dmaterial-lab/AIUserManual/edit/main/docs/08-c4d.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="c4d-ai">C4D — AI辅助使用指南<a class="headerlink" href="#c4d-ai" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>本章导读</strong>：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。</p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">版本与功能时效</p>
+<p>本章按 Cinema 4D 2026.x、Redshift 2026.x 和科研可视化常见需求整理。Maxon One、教育版、第三方渲染器和插件的授权方式会变化；正式投稿前应保留项目文件、素材来源和渲染参数。</p>
+</div>
+<h2 id="1">1. 简介与适用场景<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>Cinema 4D（C4D）是 Maxon 公司开发的三维建模、动画和渲染软件。与 SolidWorks 的工程定位不同，C4D 侧重于视觉效果和艺术表现，在课题组中主要用于：</p>
+<ul>
+<li><strong>科研配图</strong>：三维器件示意图、原理图渲染</li>
+<li><strong>论文插图</strong>：光学器件的三维可视化展示</li>
+<li><strong>动画展示</strong>：器件工作原理的动画演示</li>
+<li><strong>PPT/报告</strong>：高质量的三维视觉素材</li>
+<li><strong>论文封面</strong>：Nature/Science 级别的封面图</li>
+</ul>
+<h3 id="c4d">什么时候优先用 C4D<a class="headerlink" href="#c4d" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>科研三维示意图、原理图、动画</td>
+<td>推荐</td>
+<td>材质、灯光、相机和渲染能力强</td>
+</tr>
+<tr>
+<td>论文封面和展示图</td>
+<td>推荐</td>
+<td>视觉表现比工程 CAD 更灵活</td>
+</tr>
+<tr>
+<td>参数化重复生成简单结构</td>
+<td>推荐 Python 脚本</td>
+<td>可批量创建对象和渲染</td>
+</tr>
+<tr>
+<td>需要精确加工图</td>
+<td>不推荐</td>
+<td>SolidWorks 更适合尺寸、公差和工程图</td>
+</tr>
+<tr>
+<td>用艺术效果表达定量仿真结果</td>
+<td>谨慎</td>
+<td>色标、比例和数据来源必须说明</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai">AI 能做 / 不能做<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>AI 适合做</th>
+<th>必须人工确认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>规划场景、材质、灯光、相机和动画</td>
+<td>图是否误导比例或物理机制</td>
+</tr>
+<tr>
+<td>生成 C4D Python 批量建模/渲染脚本</td>
+<td>单位、坐标轴、对象层级和渲染路径</td>
+</tr>
+<tr>
+<td>给出论文图视觉风格建议</td>
+<td>色标、图注和数据来源</td>
+</tr>
+<tr>
+<td>辅助生成纹理或概念背景</td>
+<td>是否允许用于投稿或展示</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">最小闭环案例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>用一个波导、薄膜或器件结构作为示意对象。</li>
+<li>让 AI 给出建模步骤和材质/灯光设置。</li>
+<li>保存 <code>.c4d</code>、渲染图、相机和材质参数。</li>
+<li>在图注或记录中说明哪些是示意放大、哪些来自真实数据。</li>
+</ol>
+<h3 id="2026">2026 年可关注的变化<a class="headerlink" href="#2026" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Cinema 4D 2026.x</strong>：关注对象管理、节点/材质、模拟和性能方面的版本变化；旧项目打开前建议备份。</li>
+<li><strong>Redshift 2026.x</strong>：GPU 渲染器更新较频繁，显卡驱动、采样设置、降噪器和材质节点兼容性需要一起检查。</li>
+<li><strong>移动端/AI 3D 工具</strong>：iPad 建模、图像生成 3D、文本生成材质等工具可以做概念草图，但论文图仍需可解释的几何、材质和数据来源。</li>
+<li><strong>Blender 互操作</strong>：如果课题组没有 C4D 授权，可用 Blender 承担部分科研可视化任务；跨软件迁移时注意单位、坐标轴、材质和相机焦距。</li>
+</ul>
+<h2 id="2">2. 安装与配置<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">获取方式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Maxon One 教育版</strong>：约 149 美元/年，访问 <a href="https://www.maxon.net/en/education">maxon.net/en/education</a></li>
+<li><strong>C4D 试用版</strong>：14天全功能试用</li>
+<li><strong>学生验证</strong>：用学校邮箱验证学生身份</li>
+</ul>
+<h3 id="_3">安装要点<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>选择合适的渲染器：</li>
+<li><strong>Standard/Physical Renderer</strong>：C4D 内置，简单快速</li>
+<li><strong>Redshift</strong>：GPU 渲染器，速度快（Maxon One 包含）</li>
+<li><strong>Octane Render</strong>：第三方 GPU 渲染器，效果好</li>
+<li>推荐安装的插件：</li>
+<li><strong>GreyscaleGorilla Plus</strong>：材质库和灯光预设</li>
+<li><strong>Forester</strong>：自然场景生成</li>
+<li><strong>X-Particles</strong>：粒子系统</li>
+</ul>
+<h3 id="_4">推荐配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>项目设置</strong>：<code>编辑 → 项目设置 → 帧率 30fps</code></li>
+<li><strong>渲染设置</strong>：<code>渲染 → 渲染设置 → 保存格式 PNG/TIFF</code></li>
+<li><strong>视图配置</strong>：开启 OpenGL 实时渲染预览</li>
+<li><strong>单位设置</strong>：<code>编辑 → 项目设置 → 单位：厘米</code></li>
+</ol>
+<h2 id="3-ai">3. AI辅助使用核心技巧<a class="headerlink" href="#3-ai" title="Permanent link">&para;</a></h2>
+<h3 id="c4d-ai_1">C4D 与 AI 的配合方式<a class="headerlink" href="#c4d-ai_1" title="Permanent link">&para;</a></h3>
+<h4 id="_5">建模指导<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>描述你想要的三维场景，AI 给出建模步骤</li>
+<li>推荐使用什么建模工具（样条、生成器、变形器等）</li>
+<li>材质和灯光设置建议</li>
+</ul>
+<h4 id="python">Python 脚本<a class="headerlink" href="#python" title="Permanent link">&para;</a></h4>
+<p>C4D 有完整的 Python API，AI 可以生成 Python 脚本自动化操作：</p>
+<ul>
+<li>批量创建对象</li>
+<li>自动设置材质</li>
+<li>批量渲染</li>
+<li>参数化建模</li>
+</ul>
+<h4 id="_6">渲染设置指导<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<ul>
+<li>AI 可以根据你的需求推荐渲染设置</li>
+<li>灯光布置建议</li>
+<li>材质参数建议</li>
+</ul>
+<h3 id="ai_1">AI 辅助科研可视化的验收清单<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>几何来源可追溯</strong>：示意图是概念模型还是仿真/实验数据重建，要在图注或记录中说明。</li>
+<li><strong>比例不要误导</strong>：如果某些结构被放大、截断或非等比例显示，应在图注里说明。</li>
+<li><strong>颜色映射一致</strong>：光场、温度、应力等数据颜色要使用固定色标，不要只凭视觉效果调整。</li>
+<li><strong>保留渲染参数</strong>：记录 C4D/Redshift 版本、相机、灯光、材质、分辨率和后期处理步骤。</li>
+<li><strong>区分生成素材</strong>：AI 生成的背景、纹理或概念图应记录来源，避免混入实验数据图。</li>
+</ol>
+<h2 id="4">4. 常见任务与提示词示例<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<h3 id="1_1">场景1：光学器件三维示意图<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我需要为论文制作一张光学波导的三维示意图，要求：
+- 硅波导（灰色半透明），截面500nm x 220nm
+- SiO2衬底（浅蓝色半透明）
+- 输入光束（红色光线）从左端进入
+- 波导内部的光场用红色渐变表示
+- 背景纯白或浅灰
+- 整体风格简洁专业，适合Nature级别期刊</p>
+<p>请给我C4D的建模和渲染步骤。</p>
+</blockquote>
+<p><strong>预期输出</strong>：建模渲染指导</p>
+<ol>
+<li><strong>波导建模</strong>：</li>
+<li>用"矩形样条"画截面轮廓</li>
+<li>用"扫掠"生成3D波导</li>
+<li>
+<p>或直接用"立方体"设置尺寸</p>
+</li>
+<li>
+<p><strong>材质设置</strong>：</p>
+</li>
+<li>硅：灰色，透明度30%，折射率3.48，粗糙度10%</li>
+<li>SiO2：浅蓝色，透明度50%，折射率1.44</li>
+<li>
+<p>光束：发光材质（Luminance通道），红色</p>
+</li>
+<li>
+<p><strong>灯光</strong>：</p>
+</li>
+<li>用一个区域光从侧面打光</li>
+<li>环境光设置HDRI（纯白环境）</li>
+<li>
+<p>加一个背光勾勒轮廓</p>
+</li>
+<li>
+<p><strong>渲染</strong>：</p>
+</li>
+<li>使用 Physical Renderer 或 Redshift</li>
+<li>开启全局光照（GI）</li>
+<li>输出分辨率至少300dpi</li>
+<li>输出格式：TIFF 或 PNG</li>
+</ol>
+<h3 id="2python">场景2：Python脚本 — 批量渲染<a class="headerlink" href="#2python" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我有一个C4D项目文件，里面有10个不同的相机角度。请帮我写一个Python脚本，遍历所有相机，分别渲染输出为PNG图片。</p>
+</blockquote>
+<p><strong>预期输出</strong>：C4D Python 脚本</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">c4d</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">c4d</span><span class="w"> </span><span class="kn">import</span> <span class="n">documents</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">doc</span> <span class="o">=</span> <span class="n">documents</span><span class="o">.</span><span class="n">GetActiveDocument</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="c1"># 获取所有相机对象</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">cameras</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">search_cameras</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">if</span> <span class="n">obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="k">return</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">GetType</span><span class="p">()</span> <span class="o">==</span> <span class="n">c4d</span><span class="o">.</span><span class="n">Ocamera</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="n">cameras</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="n">search_cameras</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">GetDown</span><span class="p">())</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        <span class="n">search_cameras</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">GetNext</span><span class="p">())</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">search_cameras</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">GetFirstObject</span><span class="p">())</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">cameras</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;未找到相机对象&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">return</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="c1"># 渲染设置</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="n">renderData</span> <span class="o">=</span> <span class="n">doc</span><span class="o">.</span><span class="n">GetActiveRenderData</span><span class="p">()</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_FORMAT</span><span class="p">]</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">FILTER_PNG</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>    <span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_XRES</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3000</span>  <span class="c1"># 300dpi x 10inch</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_YRES</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2000</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="c1"># 遍历相机渲染</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">cam</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">cameras</span><span class="p">):</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="c1"># 设置当前相机</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        <span class="n">doc</span><span class="o">.</span><span class="n">SetActiveRenderCam</span><span class="p">(</span><span class="n">cam</span><span class="p">)</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="c1"># 设置输出路径</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="n">outputPath</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;C:/Renders/camera_</span><span class="si">{</span><span class="n">i</span><span class="si">:</span><span class="s2">02d</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">cam</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span><span class="si">}</span><span class="s2">.png&quot;</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_PATH</span><span class="p">]</span> <span class="o">=</span> <span class="n">outputPath</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="c1"># 执行渲染</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="n">bmp</span> <span class="o">=</span> <span class="n">c4d</span><span class="o">.</span><span class="n">bitmaps</span><span class="o">.</span><span class="n">BaseBitmap</span><span class="p">()</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="n">bmp</span><span class="o">.</span><span class="n">Init</span><span class="p">(</span><span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_XRES</span><span class="p">],</span> <span class="n">renderData</span><span class="p">[</span><span class="n">c4d</span><span class="o">.</span><span class="n">RDATA_YRES</span><span class="p">])</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">documents</span><span class="o">.</span><span class="n">RenderDocument</span><span class="p">(</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>            <span class="n">doc</span><span class="p">,</span> <span class="n">renderData</span><span class="o">.</span><span class="n">GetData</span><span class="p">(),</span> <span class="n">bmp</span><span class="p">,</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>            <span class="n">c4d</span><span class="o">.</span><span class="n">RENDERFLAGS_EXTERNAL</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="p">)</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>        <span class="k">if</span> <span class="n">result</span> <span class="o">==</span> <span class="n">c4d</span><span class="o">.</span><span class="n">RENDERRESULT_OK</span><span class="p">:</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>            <span class="n">bmp</span><span class="o">.</span><span class="n">Save</span><span class="p">(</span><span class="n">outputPath</span><span class="p">,</span> <span class="n">c4d</span><span class="o">.</span><span class="n">FILTER_PNG</span><span class="p">)</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;已渲染: </span><span class="si">{</span><span class="n">outputPath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;渲染失败: </span><span class="si">{</span><span class="n">cam</span><span class="o">.</span><span class="n">GetName</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>        <span class="n">bmp</span><span class="o">.</span><span class="n">FlushAll</span><span class="p">()</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;完成！共渲染 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">cameras</span><span class="p">)</span><span class="si">}</span><span class="s2"> 个相机视角&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="3">场景3：材质与灯光设置<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我需要在C4D中渲染一组金属光学元件（反射镜、支架），要求：
+- 金属表面：抛光铝质感
+- 玻璃元件：透明+微反射
+- 黑色阳极氧化铝支架
+- 整体影棚灯光效果（白色背景，无阴影）</p>
+<p>请给我详细的材质参数和灯光设置。</p>
+</blockquote>
+<p><strong>预期输出</strong>：材质参数 + 灯光设置</p>
+<p><strong>抛光铝材质</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>颜色通道：浅灰色 (RGB: 200, 200, 200)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>反射通道：
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  - 层1：Beckmann分布，粗糙度5%
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  - 反射强度：95%
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  - 高光：白色，宽度20%
+</code></pre></div></p>
+<p><strong>透明玻璃材质</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>透明通道：开启
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  - 颜色：白色（微偏蓝）
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>  - 折射率：1.52
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>  - 全内反射：开启
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>反射通道：
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>  - 层1：Fresnel衰减
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>  - 反射强度：由Fresnel自动控制
+</code></pre></div></p>
+<p><strong>黑色阳极氧化铝</strong>：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>颜色通道：深灰 (RGB: 40, 40, 42)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>反射通道：
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  - 层1：GGX分布，粗糙度40%
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  - 反射强度：30%
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  - 高光：暗灰色
+</code></pre></div></p>
+<p><strong>影棚灯光</strong>：
+1. 三点照明：
+   - 主光：区域光，从左上45度，强度80%
+   - 补光：区域光，从右侧，强度40%
+   - 背光：区域光，从后方，强度30%
+2. 环境：纯白HDRI，强度100%
+3. 地面：阴影捕捉器（Shadow Catcher），只接收阴影</p>
+<h3 id="4_1">场景4：科研动画制作<a class="headerlink" href="#4_1" title="Permanent link">&para;</a></h3>
+<p><strong>提示词</strong>：</p>
+<blockquote>
+<p>我想用C4D制作一个15秒的光学器件工作原理动画，展示光束通过波导的过程。要求：
+- 相机缓慢旋转（绕Y轴360度）
+- 光束沿波导传播的动画（发光粒子从左到右移动）
+- 波导内的光场强度渐变
+- 输出为MP4格式，1080p，30fps</p>
+<p>请给我制作步骤和关键设置。</p>
+</blockquote>
+<p><strong>预期输出</strong>：动画制作指导</p>
+<ol>
+<li><strong>相机动画</strong>：</li>
+<li>创建相机，设置目标为波导中心</li>
+<li>在第0帧记录相机位置（0度）</li>
+<li>在第450帧（15s x 30fps）记录相机位置（360度）</li>
+<li>
+<p>使用"对齐到样条"标签沿圆形路径运动</p>
+</li>
+<li>
+<p><strong>光束传播动画</strong>：</p>
+</li>
+<li>方法1：用"扫掠"样条动画（起始值从0%到100%）</li>
+<li>方法2：用粒子沿样条运动（X-Particles或Thinking Particles）</li>
+<li>
+<p>方法3：用发光材质的Alpha通道动画</p>
+</li>
+<li>
+<p><strong>光场动画</strong>：</p>
+</li>
+<li>使用"渐变"着色器</li>
+<li>
+<p>关键帧动画渐变位移</p>
+</li>
+<li>
+<p><strong>渲染设置</strong>：</p>
+</li>
+<li>帧范围：0-450</li>
+<li>输出格式：MP4（H.264）</li>
+<li>分辨率：1920x1080</li>
+<li>先渲染为图片序列（PNG），再合成为视频更安全</li>
+</ol>
+<h2 id="5">5. 常见问题与排错<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h3 id="ai_2">AI能帮你快速解决的问题<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>AI协助方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不知道怎么建某种形状</td>
+<td>描述形状，AI 推荐建模方法</td>
+</tr>
+<tr>
+<td>材质效果不对</td>
+<td>描述期望效果，AI 给出参数</td>
+</tr>
+<tr>
+<td>渲染太慢</td>
+<td>描述场景复杂度，AI 优化设置</td>
+</tr>
+<tr>
+<td>Python脚本报错</td>
+<td>贴出代码和报错，AI 修复</td>
+</tr>
+<tr>
+<td>动画卡顿</td>
+<td>描述动画内容，AI 优化方案</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">需要注意的事项<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>C4D 版本差异</strong>：不同版本的 Python API 有差异，注意确认版本</li>
+<li><strong>渲染时间</strong>：高质量渲染可能需要数小时，先用低分辨率测试</li>
+<li><strong>文件管理</strong>：C4D 项目文件不会嵌入纹理，移动时需要打包</li>
+<li><strong>GPU 渲染</strong>：Redshift/Octane 需要 NVIDIA GPU</li>
+</ul>
+<h3 id="_8">常见问题速查<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>材质不显示</td>
+<td>视图渲染模式不对</td>
+<td>切换为"视图着色（线条）"</td>
+</tr>
+<tr>
+<td>渲染全黑</td>
+<td>灯光未开启或GI未设置</td>
+<td>添加灯光、开启GI</td>
+</tr>
+<tr>
+<td>渲染噪点多</td>
+<td>采样数不够</td>
+<td>增加采样数/减少抗锯齿</td>
+</tr>
+<tr>
+<td>动画跳帧</td>
+<td>关键帧插值不对</td>
+<td>检查关键帧曲线编辑器</td>
+</tr>
+<tr>
+<td>内存不足</td>
+<td>场景太复杂</td>
+<td>减少多边形数、使用实例</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 进阶资源<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h3 id="_9">本仓库示例脚本<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>以下文件位于 <code>docs/assets/examples/</code>，在 C4D 中通过脚本编辑器或外部 Python 环境按需运行。</p>
+<ul>
+<li><a href="../assets/examples/c4d_batch_render.py">c4d_batch_render.py</a> — 批量渲染相关 Python 脚本示例</li>
+</ul>
+<h3 id="_10">学习资源<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>C4D 官方教程：<a href="https://www.maxon.net/en/learn">maxon.net/learn</a></li>
+<li>Maxon 支持与 Release Notes：<a href="https://support.maxon.net/hc/en-us">support.maxon.net</a></li>
+<li>GreyscaleGorilla：<a href="https://greyscalegorilla.com">greyscalegorilla.com</a>（顶级C4D教程）</li>
+<li>C4D Python API 文档：安装目录下 <code>help/python/</code></li>
+</ul>
+<h3 id="_11">推荐学习路径<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>入门</strong>：掌握基本建模（样条、生成器、变形器）、简单材质和灯光</li>
+<li><strong>进阶</strong>：MoGraph 运动图形、XPresso 节点编程、高级材质</li>
+<li><strong>高级</strong>：Python 脚本自动化、插件开发、高级渲染技术</li>
+</ol>
+<h3 id="_12">替代方案<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>如果暂时无法获取 C4D：</p>
+<ul>
+<li><strong>Blender</strong>（免费开源）：功能强大，AI 对其 Python API 支持很好</li>
+<li><strong>Keyshot</strong>：专注于渲染，操作简单</li>
+</ul>
+<p>AI 可以帮你在这些工具之间迁移工作流。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <div
+    class="md-copyright__highlight"
+    id="site-ga-popularity"
+    data-stats="https://2dmaterial-lab.github.io/AIUserManual/assets/analytics-stats.json"
+  >浏览量统计加载中…</div>
+  <script>
+    (function () {
+      var el = document.getElementById("site-ga-popularity");
+      if (!el) return;
+      var url = el.getAttribute("data-stats");
+      if (!url) {
+        el.textContent = "浏览量统计未配置（缺少 site_url）";
+        return;
+      }
+      fetch(url, { credentials: "same-origin", cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.totalPageViews == null || d.totalPageViews === "") {
+            el.textContent =
+              "全站浏览量：暂未写入（请确认部署时已配置 GA_SERVICE_ACCOUNT_JSON 与 GA4_PROPERTY_ID）";
+            return;
+          }
+          var n =
+            typeof d.totalPageViews === "number"
+              ? d.totalPageViews
+              : parseInt(d.totalPageViews, 10);
+          if (isNaN(n)) {
+            el.textContent = "浏览量数据格式异常";
+            return;
+          }
+          var when = "";
+          if (d.updatedAt) {
+            try {
+              var dt = d.updatedAt.slice(0, 10);
+              when = " · 数据更新 " + dt;
+            } catch (e) {}
+          }
+          el.textContent =
+            "全站累计约 " +
+            n.toLocaleString("zh-CN") +
+            " 次页面浏览" +
+            when +
+            (n === 0
+              ? "（新站或 GA 处理延迟时可能短期为 0，可与 GA 后台对照）"
+              : "");
+        })
+        .catch(function (err) {
+          el.textContent =
+            "浏览量统计加载失败（请强制刷新或关闭广告拦截后重试）";
+          if (typeof console !== "undefined" && console.warn) {
+            console.warn("analytics-stats:", err);
+          }
+        });
+    })();
+  </script>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
