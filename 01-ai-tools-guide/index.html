@@ -1,0 +1,3267 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="面向课题组研究生的AI辅助环境配置与工具使用指南">
+      
+      
+        <meta name="author" content="2Dmaterial-lab">
+      
+      
+        <link rel="canonical" href="https://2dmaterial-lab.github.io/AIUserManual/01-ai-tools-guide/">
+      
+      
+        <link rel="prev" href="../00-introduction/">
+      
+      
+        <link rel="next" href="../02-origin/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>AI工具总览 - AI辅助科研工具使用说明</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-CL41PLMZE3"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-CL41PLMZE3",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-CL41PLMZE3",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ai" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-header__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI辅助科研工具使用说明
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI工具总览
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../00-introduction/" class="md-tabs__link">
+          
+  
+  
+  基础篇
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../02-origin/" class="md-tabs__link">
+          
+  
+  
+  工具指南
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../12-research-workflows/" class="md-tabs__link">
+          
+  
+  
+  科研工作流
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../10-prompt-templates/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  提示词模板
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../11-lab-info/" class="md-tabs__link">
+          
+  
+  
+  附录
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="AI辅助科研工具使用说明" class="md-nav__button md-logo" aria-label="AI辅助科研工具使用说明" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI辅助科研工具使用说明
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/2dmaterial-lab/AIUserManual" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    基础篇
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    基础篇
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    前言
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI工具总览
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI工具总览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、对话式AI对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、对话式AI对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他主流选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20265" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        费用参考（2026年5月）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩展工具费用速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、AI编程工具对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、AI编程工具对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 编辑器插件 / 独立 IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cli-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 CLI 命令行工具（终端AI）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 其他常见形态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        费用参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcpaiagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、MCP协议与AI智能体（Agent）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、MCP协议与AI智能体（Agent）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 什么是 MCP？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 什么是 AI Agent（智能体）？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 对课题组的实用价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、科研工作流建议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、科研工作流建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 文献检索与综述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 数据分析与代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 仿真与实验设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 论文写作与科研诚信
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、账号注册快速指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、账号注册快速指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-education" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Education
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm-zai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLM / 智谱清言（Z.ai）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grok
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Gemini
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perplexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perplexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kimi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kimi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通义千问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codeium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codeium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetbrains-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JetBrains AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        豆包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        元宝
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、隐私与安全
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、隐私与安全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么数据可以输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么数据绝对不能输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、科研软件工具选择速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、科研软件工具选择速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 配合方式分层
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、与各科研软件的配合方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、本次核对来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    工具指南
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    工具指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-origin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-matlab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MATLAB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-excel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-comsol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    COMSOL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fdtd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FDTD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-solidworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SolidWorks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-c4d/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    C4D
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-labview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LabVIEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研工作流
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    科研工作流
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12-research-workflows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    科研任务工作流
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13-data-reproducibility/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数据管理与可复现科研
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14-new-student-bootcamp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    入组第一周训练
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-prompt-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    提示词模板
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    附录
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    附录
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-lab-info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    课题组信息与本地约定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新日志
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ai_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        一、对话式AI对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、对话式AI对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        其他主流选择
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20265" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        费用参考（2026年5月）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        扩展工具费用速查
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        二、AI编程工具对比
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、AI编程工具对比">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 编辑器插件 / 独立 IDE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-cli-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 CLI 命令行工具（终端AI）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 其他常见形态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        选择参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        费用参考
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcpaiagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        三、MCP协议与AI智能体（Agent）
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、MCP协议与AI智能体（Agent）">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 什么是 MCP？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 什么是 AI Agent（智能体）？
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 对课题组的实用价值
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        四、科研工作流建议
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="四、科研工作流建议">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 文献检索与综述
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 数据分析与代码
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 仿真与实验设计
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 论文写作与科研诚信
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        五、账号注册快速指南
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="五、账号注册快速指南">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#github-education" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Education
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claude
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatgpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ChatGPT
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deepseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeepSeek
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#glm-zai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GLM / 智谱清言（Z.ai）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grok" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grok
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Gemini
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perplexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Perplexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-copilot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Copilot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kimi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kimi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        通义千问
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#codeium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Codeium
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jetbrains-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JetBrains AI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        豆包
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        元宝
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        六、隐私与安全
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="六、隐私与安全">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么数据可以输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        什么数据绝对不能输入
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全实践
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        七、科研软件工具选择速查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="七、科研软件工具选择速查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐工作流
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI 配合方式分层
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        八、与各科研软件的配合方式
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        九、本次核对来源
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        下一步
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/2dmaterial-lab/AIUserManual/edit/main/docs/01-ai-tools-guide.md" title="编辑此页" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="ai">AI工具选择与使用指南<a class="headerlink" href="#ai" title="Permanent link">&para;</a></h1>
+<p>目前市面上的 AI 工具大致分三类：<strong>对话式 AI</strong>（问答、文档、图像、检索）、<strong>编程辅助 AI</strong>（嵌入编辑器或终端）和<strong>Agent 工作流</strong>（给定目标后自主规划、调用工具并验证）。本章帮你搞清楚用哪个、怎么用。</p>
+<div class="admonition info">
+<p class="admonition-title">价格与产品信息时效</p>
+<p><strong>以下模型线、价格、免费额度与产品名称已于 2026 年 5 月 19 日核对</strong>，厂商政策与定价变化频繁。订阅、选课或申请教育优惠前，<strong>务必以各产品官网当日说明为准</strong>；建议与 <a href="../11-lab-info/">课题组信息与本地约定</a> 中的账号说明对照使用。</p>
+</div>
+<hr />
+<h2 id="ai_1">一、对话式AI对比<a class="headerlink" href="#ai_1" title="Permanent link">&para;</a></h2>
+<p>下表列出四款当前主流对话产品；更多国际与国内选择见本节 <strong>「其他主流选择」</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Claude</th>
+<th>ChatGPT</th>
+<th>DeepSeek</th>
+<th>Gemini</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>开发商</strong></td>
+<td>Anthropic</td>
+<td>OpenAI</td>
+<td>DeepSeek</td>
+<td>Google</td>
+</tr>
+<tr>
+<td><strong>代表模型线</strong></td>
+<td>Claude Opus 4.7 / Sonnet 4.6</td>
+<td>GPT-5.5 / GPT-5.5 Pro / GPT-5.5 Instant</td>
+<td>DeepSeek V4-Pro / V4-Flash</td>
+<td>Gemini 3.1 Pro / Flash-Lite</td>
+</tr>
+<tr>
+<td><strong>强项</strong></td>
+<td>代码质量、长文本理解、深度推理、MCP 与 Claude Code 生态</td>
+<td>通用能力、图像/语音/视频生态、Deep Research、Codex 编程工作流</td>
+<td>中文友好、开源/开放权重、性价比高、本地部署选择多</td>
+<td>长上下文、复杂推理、Google 生态、多模态</td>
+</tr>
+<tr>
+<td><strong>弱项</strong></td>
+<td>免费额度较紧，复杂任务成本较高</td>
+<td>产品线变化快，旧模型会逐步退役</td>
+<td>Web/App/API 模型名与能力可能不同，需看官方文档</td>
+<td>部分地区可用性与套餐差异较大，中文表达不如国产模型自然</td>
+</tr>
+<tr>
+<td><strong>免费额度</strong></td>
+<td>有（通常有限）</td>
+<td>有（以 ChatGPT 当日页面为准）</td>
+<td>有（较充裕）</td>
+<td>有（以 Gemini 当日页面为准）</td>
+</tr>
+<tr>
+<td><strong>学生优惠</strong></td>
+<td>暂无</td>
+<td>ChatGPT Edu（部分学校）</td>
+<td>暂无</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>复杂代码生成、长论文分析、科研写作、Agent 开发</td>
+<td>通用问答、多模态任务、深度研究、编程 Agent</td>
+<td>日常编程、代码调试、中文任务、本地部署</td>
+<td>长文档分析、复杂图文理解、Google 生态用户</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1">其他主流选择<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>下表补充常见国际与国内网页对话产品，可与上表四款搭配使用；能力边界与可用地区<strong>以各产品官网为准</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>类型</th>
+<th>强项</th>
+<th>注意</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Grok</strong>（xAI）</td>
+<td>国际</td>
+<td>推理能力强（Grok-3）、实时信息获取、X/Twitter 集成</td>
+<td>部分地区需 VPN；免费额度以官网为准</td>
+</tr>
+<tr>
+<td><strong>Perplexity</strong></td>
+<td>国际</td>
+<td>检索增强、回答常附引用链接，适合快速查证与入门线索</td>
+<td><strong>不能替代</strong>正式文献检索与数据库综述；联网场景注意第六节隐私</td>
+</tr>
+<tr>
+<td><strong>Microsoft Copilot</strong></td>
+<td>国际（网页/Windows/Edge）</td>
+<td>与 Microsoft 365、Edge、Windows、Office 生态深度集成</td>
+<td>功能随系统版本与 Microsoft 365 等订阅变化，Copilot+PC 特性另见官网</td>
+</tr>
+<tr>
+<td><strong>GLM / 智谱清言（Z.ai）</strong></td>
+<td>国内常用 / 开放权重</td>
+<td>GLM-5.1 在长程 Agent、代码与中文工程任务上表现突出，可作为国产模型重点选择</td>
+<td>以 <a href="https://docs.z.ai/guides/llm/glm-5.1">Z.ai 文档</a> 与 <a href="https://huggingface.co/zai-org/GLM-5.1">Hugging Face 模型页</a> 为准</td>
+</tr>
+<tr>
+<td><strong>Kimi</strong>（月之暗面）</td>
+<td>国内常用</td>
+<td>长文本、中文场景常见，K2 模型</td>
+<td>额度与模型版本以 <a href="https://kimi.moonshot.cn">kimi.moonshot.cn</a> 为准</td>
+</tr>
+<tr>
+<td><strong>通义千问（Qwen）</strong></td>
+<td>国内常用</td>
+<td>Qwen3 系列开源强大、阿里生态、工具调用、代码能力</td>
+<td>以阿里云/通义官网能力与条款为准，开源版可本地部署</td>
+</tr>
+<tr>
+<td><strong>豆包（字节跳动）</strong></td>
+<td>国内常用</td>
+<td>多模态、中文对话自然、与抖音/飞书等字节生态结合</td>
+<td>以豆包官网能力与条款为准</td>
+</tr>
+<tr>
+<td><strong>元宝（腾讯）</strong></td>
+<td>国内常用</td>
+<td>与微信/腾讯文档等腾讯生态集成、中文场景</td>
+<td>以腾讯混元/元宝官网能力与条款为准</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">选择参考<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>写 MATLAB/Python 代码</strong>：Claude Code、ChatGPT/Codex、DeepSeek 都可用；复杂项目可选择能读写文件并运行测试的 Agent 工具</li>
+<li><strong>需要深度推理（复杂公式推导、疑难 bug 分析）</strong>：Claude 扩展思考、ChatGPT GPT-5.5 Thinking/Pro、Gemini 3.1 Pro、DeepSeek V4 思考模式、GLM-5.1 都值得交叉验证</li>
+<li><strong>处理中文文档/翻译</strong>：DeepSeek、GLM-5.1 中文处理出色；也可结合 <strong>通义千问</strong>、<strong>Kimi</strong>、<strong>豆包</strong></li>
+<li><strong>需要看图分析</strong>：ChatGPT、Gemini 3.1 Pro、Claude Opus 4.7 都支持图像理解；涉及图表读数时仍需人工核对</li>
+<li><strong>长文档阅读（论文、综述）</strong>：Gemini 3.1 Pro 和 Claude 都适合长文档；长中文材料可对比 <strong>Kimi</strong></li>
+<li><strong>需要「带出处」的快速查证</strong>：可考虑 <strong>Perplexity</strong>（仍须用正式数据库与综述核对）</li>
+<li><strong>已深度使用 Google / Microsoft / Apple 生态</strong>：可考虑 <strong>Gemini</strong>、<strong>Microsoft Copilot</strong> 或对应生态 AI</li>
+<li><strong>开源/本地部署需求</strong>：DeepSeek V4、GLM-5.1、Qwen3、Llama 等开源/开放权重模型可搭配 Ollama、vLLM、SGLang 等本地工具</li>
+<li><strong>日常随手问</strong>：哪个方便用哪个，差异不大</li>
+<li><strong>涉密、未发表数据、课题组未公开成果</strong>：一律勿输入云端工具；见第六节</li>
+</ul>
+<h3 id="20265">费用参考（2026年5月）<a class="headerlink" href="#20265" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>免费版</th>
+<th>付费版（月费）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Claude</td>
+<td>有限免费（通常为 Sonnet 系列）</td>
+<td>Pro 常见 $20/月；Max/Team/Enterprise 提供更多用量与管理能力</td>
+</tr>
+<tr>
+<td>ChatGPT</td>
+<td>有免费档</td>
+<td>Plus 常见 $20/月；Pro/Team/Edu/Enterprise 按场景选择</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>Web/App 常见免费或低门槛</td>
+<td>API 按量付费；官方模型名与旧别名会调整</td>
+</tr>
+<tr>
+<td>Gemini</td>
+<td>有免费档</td>
+<td>Google AI Pro / Ultra 或 Google One AI Premium 等套餐随地区变化</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">扩展工具费用速查<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>以下档位变化快，<strong>仅列常见形态</strong>；订阅前请以官网当日页面为准。</p>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>说明（以官网为准）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grok</td>
+<td>常见为免费档 + SuperGrok 等付费档</td>
+</tr>
+<tr>
+<td>Perplexity</td>
+<td>常见为免费档 + Pro 等订阅档</td>
+</tr>
+<tr>
+<td>Microsoft Copilot</td>
+<td>免费能力与 Microsoft 365 订阅捆绑因地区与套餐而异</td>
+</tr>
+<tr>
+<td>GLM / 智谱清言</td>
+<td>GLM-5.1 API、Coding Plan、开放权重与第三方接入价格差异较大，以 Z.ai / 智谱官方说明为准</td>
+</tr>
+<tr>
+<td>Kimi</td>
+<td>额度与会员以 <a href="https://kimi.moonshot.cn">kimi.moonshot.cn</a> 当日说明为准</td>
+</tr>
+<tr>
+<td>通义千问</td>
+<td>以阿里云/通义官网当日定价为准，开源版免费自部署</td>
+</tr>
+<tr>
+<td>豆包</td>
+<td>以豆包官网当日定价与额度为准</td>
+</tr>
+<tr>
+<td>元宝</td>
+<td>以腾讯混元/元宝官网当日定价与额度为准</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>建议：先用免费版熟悉，确认有持续需求再考虑付费。Claude Pro、ChatGPT Plus/Pro 或 Gemini 付费档的主要差异通常在模型权限、上下文长度、额度和 Agent/深度研究能力。国内用户如 VPN 不便，DeepSeek V4、GLM-5.1、通义、Kimi、豆包等中文工具也能覆盖大量日常需求。</p>
+<p><strong>时效性说明</strong>：各产品名称、定价与政策会随厂商调整而变化，请以官方网站当日公布为准；本手册中的价格与功能描述仅作参考，建议每学期核对一次。</p>
+</blockquote>
+<hr />
+<h2 id="ai_2">二、AI编程工具对比<a class="headerlink" href="#ai_2" title="Permanent link">&para;</a></h2>
+<h3 id="21-ide">2.1 编辑器插件 / 独立 IDE<a class="headerlink" href="#21-ide" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>GitHub Copilot</th>
+<th>Cursor</th>
+<th>Windsurf</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>形态</strong></td>
+<td>VS Code/JetBrains 插件</td>
+<td>独立IDE（基于VS Code）</td>
+<td>独立IDE</td>
+</tr>
+<tr>
+<td><strong>核心功能</strong></td>
+<td>代码补全、Chat、Agent模式</td>
+<td>Tab补全、Composer、Agent模式、项目级理解</td>
+<td>代码补全、Cascade（Agent）、多文件编辑</td>
+</tr>
+<tr>
+<td><strong>强项</strong></td>
+<td>与GitHub深度集成、稳定性好、生态最大</td>
+<td>Agent模式强、项目上下文理解深、MCP支持</td>
+<td>上手快、Cascade流式体验好</td>
+</tr>
+<tr>
+<td><strong>弱项</strong></td>
+<td>Agent模式相对保守</td>
+<td>需迁移到新IDE、免费额度有限</td>
+<td>生态较新</td>
+</tr>
+<tr>
+<td><strong>学生优惠</strong></td>
+<td>有（GitHub Education）</td>
+<td>暂无</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td><strong>适合谁</strong></td>
+<td>已有 VS Code 习惯、希望保留原编辑器的人</td>
+<td>需要项目级上下文和 Agent 工作流的人</td>
+<td>需要轻量级 Agent 辅助的人</td>
+</tr>
+</tbody>
+</table>
+<h3 id="22-cli-ai">2.2 CLI 命令行工具（终端AI）<a class="headerlink" href="#22-cli-ai" title="Permanent link">&para;</a></h3>
+<p>除 IDE 插件外，终端原生的 AI 编程工具已成为重要选择，尤其适合无 GUI 的服务器环境或习惯命令行的用户。</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Claude Code</th>
+<th>Codex CLI</th>
+<th>GitHub Copilot CLI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>开发商</strong></td>
+<td>Anthropic</td>
+<td>OpenAI</td>
+<td>GitHub</td>
+</tr>
+<tr>
+<td><strong>形态</strong></td>
+<td>终端CLI</td>
+<td>终端CLI</td>
+<td>终端CLI（<code>gh copilot</code>）</td>
+</tr>
+<tr>
+<td><strong>强项</strong></td>
+<td>项目级理解强、Agent自主执行、MCP原生支持</td>
+<td>与 OpenAI / ChatGPT / Codex 生态结合，适合终端式代码任务</td>
+<td>与GitHub/Git工作流结合</td>
+</tr>
+<tr>
+<td><strong>弱项</strong></td>
+<td>Pro 用量有限；Max 或 API 更适合大仓库和高频使用</td>
+<td>生态较新</td>
+<td>功能相对精简</td>
+</tr>
+<tr>
+<td><strong>适合谁</strong></td>
+<td>复杂重构、多文件改动、无GUI环境</td>
+<td>OpenAI生态用户</td>
+<td>GitHub深度用户</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Claude Code 是终端 AI 编程工具中的常见选择，Agent 模式可自主完成「理解代码 → 修改 → 验证」闭环，适合跨文件改动和批量脚本维护。</p>
+</blockquote>
+<h3 id="23">2.3 其他常见形态<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
+<p>不想换主编辑器、或惯用 JetBrains 时，可考虑下列形态；产品名与功能以官网为准。</p>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>形态</th>
+<th>适合谁</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Codeium</strong></td>
+<td>VS Code、JetBrains、Vim 等多编辑器插件</td>
+<td>需要免费档较常见的补全/聊天、<strong>不愿换 IDE</strong></td>
+<td>与 Copilot 类似偏「插件补全」，深度项目级能力因编辑器而异</td>
+</tr>
+<tr>
+<td><strong>JetBrains AI Assistant / Junie</strong></td>
+<td>内置于 IntelliJ IDEA、PyCharm 等 JetBrains IDE</td>
+<td><strong>坚持用 JetBrains 栈</strong>、不迁到 VS Code 的用户</td>
+<td>具体功能名（如 Assistant、Junie）与订阅以 <a href="https://www.jetbrains.com/ai/">jetbrains.com/ai</a> 为准</td>
+</tr>
+<tr>
+<td><strong>Amazon Q Developer</strong></td>
+<td>AWS 工具链与多款 IDE 插件</td>
+<td>深度使用 <strong>AWS</strong> 的开发者</td>
+<td>与云资源、IAM 策略相关，以 AWS 官网说明为准</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">选择参考<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MATLAB 编程</strong>：Copilot 不直接支持 MATLAB；可用 Claude Code（终端）+ 对话式 Claude/DeepSeek，或用 Cursor + 对话式 AI</li>
+<li><strong>Python/LabVIEW脚本</strong>：Claude Code、Cursor 都可处理项目级脚本；仅要补全可选 Copilot 或 Codeium</li>
+<li><strong>VBA/Excel</strong>：Copilot 和 Microsoft Copilot 支持较好；Claude/ChatGPT 对话也覆盖</li>
+<li><strong>日常多语言开发</strong>：Cursor（Agent模式）和 Claude Code 覆盖面较广</li>
+<li><strong>不换编辑器、只要补全/Chat</strong>：可考虑 GitHub Copilot、Codeium 等插件</li>
+<li><strong>服务器/无 GUI 环境</strong>：可考虑 Claude Code、Codex CLI 等终端工具</li>
+<li><strong>云 API、数据出境或合规敏感</strong>：与第六节「隐私与安全」、课题组规定结合，谨慎选择联网助手</li>
+</ul>
+<h3 id="_5">费用参考<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>个人版</th>
+<th>学生版</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GitHub Copilot</td>
+<td>$10/月（或含 GitHub 订阅）</td>
+<td>免费（GitHub Education）</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>$20/月（Pro）</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>Windsurf</td>
+<td>有免费额度</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>Claude Code</td>
+<td>可通过 Claude Pro（$20/月）、Max、Team/Enterprise 或 Anthropic Console API 使用；Pro 适合轻量小仓库，Max/API 更适合大仓库和高频使用</td>
+<td>暂无明确通用学生档</td>
+</tr>
+<tr>
+<td>Codex CLI</td>
+<td>需 OpenAI API Key 或 ChatGPT/Codex 相关订阅，具体以 OpenAI 页面为准</td>
+<td>以官网为准</td>
+</tr>
+<tr>
+<td>Codeium</td>
+<td>常见有免费档，团队/企业档见官网</td>
+<td>见官网</td>
+</tr>
+<tr>
+<td>JetBrains AI</td>
+<td>常与 IDE 订阅或单独 AI 订阅绑定</td>
+<td>见官网</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>如果有学校邮箱，可查看 GitHub Education 是否可用；通过后通常可获得 Copilot 学生权益。</p>
+<p>编程类工具的月费、学生政策同样可能变更，以各产品官网为准。</p>
+</blockquote>
+<hr />
+<h2 id="mcpaiagent">三、MCP协议与AI智能体（Agent）<a class="headerlink" href="#mcpaiagent" title="Permanent link">&para;</a></h2>
+<h3 id="31-mcp">3.1 什么是 MCP？<a class="headerlink" href="#31-mcp" title="Permanent link">&para;</a></h3>
+<p><strong>MCP（Model Context Protocol，模型上下文协议）</strong> 是由 Anthropic 于 2024 年底发布、并被多类 AI 工具采用的开放协议。它让 AI 模型能够<strong>以标准方式连接外部工具和数据源</strong>，例如本地文件、数据库、浏览器、文献管理器和实验数据目录。</p>
+<p>对于科研工作者，MCP 的实际意义是：
+- AI 可以直接<strong>读取你电脑上的文件</strong>（代码、数据、论文），而不需要你复制粘贴
+- AI 可以<strong>查询数据库、搜索网页、调用 API</strong>
+- 一次配置后，多个支持 MCP 的 AI 工具可复用相似的工具连接</p>
+<h3 id="32-ai-agent">3.2 什么是 AI Agent（智能体）？<a class="headerlink" href="#32-ai-agent" title="Permanent link">&para;</a></h3>
+<p>传统对话式 AI 是「你问它答」，Agent 则是<strong>能自主执行多步任务的 AI</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>传统对话</th>
+<th>Agent 模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>交互方式</td>
+<td>一问一答</td>
+<td>给定目标，自主规划并执行</td>
+</tr>
+<tr>
+<td>能力边界</td>
+<td>只能输出文本</td>
+<td>可读写文件、运行命令、搜索网络</td>
+</tr>
+<tr>
+<td>典型场景</td>
+<td>"帮我写一段代码"</td>
+<td>"帮我在项目中找到所有性能瓶颈并修复"</td>
+</tr>
+<tr>
+<td>代表产品</td>
+<td>ChatGPT / Claude / Gemini / DeepSeek 网页版</td>
+<td>Claude Code、Codex CLI、Cursor Agent、Windsurf Cascade、Manus、Devin</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33">3.3 对课题组的实用价值<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>代码与数据管理</strong>：使用 Claude Code + MCP 文件系统，AI 可直接操作项目文件</li>
+<li><strong>文献管理</strong>：MCP 连接 Zotero/文献库，AI 帮助整理、检索文献</li>
+<li><strong>数据安全</strong>：MCP 可限制工具可访问的本地目录和动作，但如果连接的是云端模型，对话内容和必要上下文仍可能发送给服务商；涉密数据仍需本地模型或单位批准的企业方案</li>
+<li><strong>跨工具协作</strong>：一次配置 MCP server，Claude Desktop、Cursor、Claude Code 均可使用</li>
+</ul>
+<blockquote>
+<p><strong>当前建议</strong>：课题组同学可以先从 Claude Desktop + 文件系统 MCP 入手，体验「AI 直接读你的论文 PDF」的便利。进阶后使用 Claude Code 进行代码项目级辅助。</p>
+</blockquote>
+<hr />
+<h2 id="_6">四、科研工作流建议<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="41">4.1 文献检索与综述<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>AI 可以用来<strong>形成检索式、提炼问题、对比观点、整理笔记</strong>，但不能替代正式文献检索。推荐流程：</p>
+<ol>
+<li>用 AI 把研究问题拆成关键词、同义词、材料体系、表征方法和应用场景。</li>
+<li>在 Web of Science、Scopus、Google Scholar、CNKI、arXiv、期刊官网等正式来源检索。</li>
+<li>把论文标题、摘要、DOI 和你关心的问题交给 AI 做初筛与表格化整理。</li>
+<li>对关键结论回到原文核对，尤其是实验条件、样品制备、表征参数和统计口径。</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">不要让 AI 编造引用</p>
+<p>论文引用必须来自真实数据库或期刊官网。AI 给出的 DOI、页码、期刊名和作者列表都需要逐条核对。</p>
+</div>
+<h3 id="42">4.2 数据分析与代码<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<ul>
+<li>让 AI 写脚本时，要求它同时给出<strong>输入数据假设、异常值处理、单位说明、可复现实验步骤</strong>。</li>
+<li>对关键脚本保留版本号、运行环境、依赖包版本和随机种子。</li>
+<li>让 Agent 改代码时，先限定工作目录和目标文件，完成后必须运行最小验证：小样本数据、极限情况、已知答案或图像肉眼检查。</li>
+<li>对论文级图表，要求 AI 输出可重复运行的 MATLAB/Python 脚本，而不是只给操作步骤。</li>
+</ul>
+<h3 id="43">4.3 仿真与实验设计<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<ul>
+<li>COMSOL、FDTD、SolidWorks、LabVIEW 等场景中，AI 适合生成脚本、解释报错、提出排查路径。</li>
+<li>边界条件、网格无关性、材料参数、仪器量程、采样率、噪声模型等必须由研究者核对。</li>
+<li>如果 AI 建议修改物理模型，要求它说明假设、适用范围和可能失效的情况。</li>
+</ul>
+<h3 id="44">4.4 论文写作与科研诚信<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<ul>
+<li>AI 可以润色语言、检查逻辑、生成图注初稿、整理审稿回复框架。</li>
+<li>论文核心创新、实验结果解释、结论边界必须由作者负责。</li>
+<li>建议在项目记录中保留 AI 辅助痕迹：使用工具、日期、用途、是否用于正文或代码。</li>
+<li>投稿前查看目标期刊、学校和课题组对 AI 使用声明的要求。</li>
+</ul>
+<hr />
+<h2 id="_7">五、账号注册快速指南<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="github-education">GitHub Education<a class="headerlink" href="#github-education" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://education.github.com">education.github.com</a></li>
+<li>用学校邮箱注册/登录 GitHub</li>
+<li>上传学生证明（学生证照片或学信网截图）</li>
+<li>审核通过后，在权益页面激活 Copilot</li>
+</ol>
+<h3 id="claude">Claude<a class="headerlink" href="#claude" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://claude.ai">claude.ai</a></li>
+<li>注册账号（可用 Google 登录）</li>
+<li>免费版、Pro、Max、Team 等档位可用模型和额度以页面当日说明为准；复杂科研任务可尝试 Opus/Sonnet 的思考模式</li>
+<li><strong>Claude Code</strong>：Anthropic 官方帮助中心说明 Pro 和 Max 订阅均可在终端使用 Claude Code；Pro（$20/月）适合轻量小仓库任务，Max 提供更高额度并可在 Claude Code 中使用 Opus。也可用 Anthropic Console API 按量付费</li>
+</ol>
+<h3 id="chatgpt">ChatGPT<a class="headerlink" href="#chatgpt" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://chat.openai.com">chat.openai.com</a></li>
+<li>注册账号</li>
+<li>免费版、Plus、Pro、Team/Edu/Enterprise 的模型和额度会变化；复杂任务可尝试 GPT-5.5、Deep Research 或 Codex 相关能力</li>
+</ol>
+<h3 id="deepseek">DeepSeek<a class="headerlink" href="#deepseek" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://chat.deepseek.com">chat.deepseek.com</a></li>
+<li>注册账号</li>
+<li>Web/App 与 API 的模型名可能不同；截至本次核对，官方 API 文档已进入 V4 Preview 线（V4-Pro / V4-Flash），并提示旧 <code>deepseek-chat</code> / <code>deepseek-reasoner</code> 别名会调整</li>
+</ol>
+<h3 id="glm-zai">GLM / 智谱清言（Z.ai）<a class="headerlink" href="#glm-zai" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://chatglm.cn">chatglm.cn</a> 或 Z.ai 相关入口，按页面指引注册</li>
+<li>若用于代码 Agent，可重点关注 GLM-5.1、GLM Coding Plan、OpenAI 兼容 API 或第三方接入方式</li>
+<li>GLM-5.1 是文本模型，长程工程任务和代码场景表现较强；涉及图像、多模态或极长文档时需与其他模型搭配</li>
+</ol>
+<h3 id="grok">Grok<a class="headerlink" href="#grok" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://grok.xai.com">grok.xai.com</a>（若所在地区入口不同，以 xAI 官方说明为准）</li>
+<li>使用 X/Twitter 或 Google 账号登录</li>
+<li>免费档与 SuperGrok 付费档以页面当日说明为准</li>
+</ol>
+<h3 id="google-gemini">Google Gemini<a class="headerlink" href="#google-gemini" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://gemini.google.com">gemini.google.com</a>（若所在地区入口不同，以 Google 官方说明为准）</li>
+<li>使用 Google 账号登录</li>
+<li>免费档与付费档以页面当日说明为准</li>
+</ol>
+<h3 id="perplexity">Perplexity<a class="headerlink" href="#perplexity" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://www.perplexity.ai">perplexity.ai</a></li>
+<li>注册账号（可用常见邮箱或第三方登录，以官网为准）</li>
+<li>免费与 Pro 额度以官网当日说明为准</li>
+</ol>
+<h3 id="microsoft-copilot">Microsoft Copilot<a class="headerlink" href="#microsoft-copilot" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://copilot.microsoft.com">copilot.microsoft.com</a>，或在 Windows、Edge 中打开 Copilot 入口</li>
+<li>使用 Microsoft 账号登录</li>
+<li>功能与是否需 Microsoft 365 等以微软官网当日说明为准</li>
+</ol>
+<h3 id="kimi">Kimi<a class="headerlink" href="#kimi" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://kimi.moonshot.cn">kimi.moonshot.cn</a></li>
+<li>按页面指引注册或登录</li>
+<li>额度与会员政策以官网当日说明为准</li>
+</ol>
+<h3 id="_8">通义千问<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://tongyi.aliyun.com">通义官网对话入口</a>（或阿里云控制台中的通义产品页）</li>
+<li>使用阿里云/淘宝等账号登录（以页面要求为准）</li>
+<li>额度与条款以官网当日说明为准</li>
+</ol>
+<h3 id="codeium">Codeium<a class="headerlink" href="#codeium" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://codeium.com">codeium.com</a></li>
+<li>注册账号后在目标编辑器中安装 Codeium 插件并按向导登录</li>
+<li>免费与团队政策以官网为准</li>
+</ol>
+<h3 id="jetbrains-ai">JetBrains AI<a class="headerlink" href="#jetbrains-ai" title="Permanent link">&para;</a></h3>
+<ol>
+<li>打开 JetBrains IDE，在 <strong>Plugins</strong> 中搜索 <strong>AI Assistant</strong> 等官方 AI 插件，或访问 <a href="https://www.jetbrains.com/ai/">jetbrains.com/ai</a></li>
+<li>使用 JetBrains Account 登录并按向导启用</li>
+<li>试用、订阅与功能名以官网当日说明为准</li>
+</ol>
+<h3 id="_9">豆包<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://www.doubao.com">doubao.com</a> 或下载豆包 App</li>
+<li>使用手机号/抖音/飞书等账号登录</li>
+<li>额度与会员政策以官网当日说明为准</li>
+</ol>
+<h3 id="_10">元宝<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ol>
+<li>访问 <a href="https://yuanbao.tencent.com">yuanbao.tencent.com</a> 或下载元宝 App</li>
+<li>使用微信/QQ/手机号等账号登录</li>
+<li>额度与会员政策以官网当日说明为准</li>
+</ol>
+<hr />
+<h2 id="_11">六、隐私与安全<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h3 id="_12">什么数据可以输入<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>公开数据集</li>
+<li>已发表的实验数据</li>
+<li>通用的代码片段</li>
+<li>报错信息和日志</li>
+<li>学习笔记和问题</li>
+</ul>
+<h3 id="_13">什么数据绝对不能输入<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>未发表的实验数据</strong>：可能被用于训练模型</li>
+<li><strong>专利相关的技术细节</strong>：违反保密协议</li>
+<li><strong>个人信息</strong>：学生证号、身份证号等</li>
+<li><strong>课题组未公开成果</strong>：保护知识产权</li>
+</ul>
+<h3 id="_14">安全实践<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>数据脱敏</strong>：输入前去掉文件名中的真实项目名称</li>
+<li><strong>用模拟数据</strong>：让 AI 帮你生成测试数据来调试代码</li>
+<li><strong>本地部署</strong>：敏感项目考虑用 Ollama + DeepSeek V4、GLM-5.1、Qwen3 等开源/开放权重模型本地运行</li>
+<li><strong>MCP 本地连接</strong>：使用 Claude Desktop、Cursor 或 Claude Code 的文件系统 MCP 连接，让 AI 在授权范围内读取本地文件；若模型在云端，对话内容和必要上下文仍经 API</li>
+<li><strong>企业版/团队版</strong>：如果课题组统一订阅，注意选择不用于训练的版本（如 ChatGPT Team、Claude Team）</li>
+<li><strong>联网检索类工具</strong>（如 Perplexity、部分场景下的 Microsoft Copilot）：查询会经厂商服务器甚至对接网页检索，<strong>切勿</strong>粘贴未发表数据、课题内部资料；需要正式文献仍以数据库与图书馆检索为主</li>
+</ol>
+<hr />
+<h2 id="tool-choice">七、科研软件工具选择速查<a class="headerlink" href="#tool-choice" title="Permanent link">&para;</a></h2>
+<p>很多时候，真正的问题不是“这个软件能不能做”，而是“这件事应该优先用哪个工具做”。下表给出课题组日常任务的保守选择。</p>
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>首选</th>
+<th>备选</th>
+<th>不建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>快速查看小规模实验数据</td>
+<td>Origin / Excel</td>
+<td>MATLAB</td>
+<td>直接用截图记录结论</td>
+</tr>
+<tr>
+<td>批量处理多文件数据</td>
+<td>MATLAB / Python</td>
+<td>Excel VBA / Origin Python</td>
+<td>手动复制粘贴</td>
+</tr>
+<tr>
+<td>论文级可复现出图</td>
+<td>MATLAB / Python / Origin 脚本</td>
+<td>Origin 模板</td>
+<td>只保存 <code>.opju</code> 或截图</td>
+</tr>
+<tr>
+<td>复杂公式、拟合、信号处理</td>
+<td>MATLAB</td>
+<td>Python / Origin</td>
+<td>Excel 手工公式堆叠</td>
+</tr>
+<tr>
+<td>表格整理和临时报表</td>
+<td>Excel</td>
+<td>Origin / Python</td>
+<td>MATLAB 处理复杂格式表格</td>
+</tr>
+<tr>
+<td>多物理场仿真</td>
+<td>COMSOL</td>
+<td>MATLAB 自写简化模型</td>
+<td>只靠 AI 判断物理模型</td>
+</tr>
+<tr>
+<td>光子器件 FDTD 仿真</td>
+<td>Ansys Lumerical FDTD</td>
+<td>COMSOL 波动光学 / Tidy3D 等</td>
+<td>手动逐个参数点截图</td>
+</tr>
+<tr>
+<td>机械结构设计和加工图</td>
+<td>SolidWorks</td>
+<td>Fusion / FreeCAD</td>
+<td>C4D 做加工件</td>
+</tr>
+<tr>
+<td>科研三维示意图和动画</td>
+<td>C4D / Blender</td>
+<td>SolidWorks 渲染</td>
+<td>用示意图冒充仿真数据</td>
+</tr>
+<tr>
+<td>仪器控制和自动采集</td>
+<td>LabVIEW / Python</td>
+<td>MATLAB</td>
+<td>手动记录长期数据</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">推荐工作流<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议流程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实验数据到论文图</td>
+<td>Excel/Origin 快速预览 → MATLAB/Python 脚本正式处理 → Origin/C4D/Illustrator 做必要排版 → 保存源数据和脚本</td>
+</tr>
+<tr>
+<td>仿真参数扫描</td>
+<td>GUI 建立基准模型 → 脚本/API 扫参数 → 导出 CSV/MAT → MATLAB/Python 统计和出图</td>
+</tr>
+<tr>
+<td>仪器自动化</td>
+<td>手动确认仪器命令 → LabVIEW/Python 做最小采集 → 加入异常处理和元数据保存 → 长时间测试</td>
+</tr>
+<tr>
+<td>机械设计到加工</td>
+<td>手绘需求和约束 → SolidWorks 参数化建模 → 工程图标注 → 人工复核材料、公差和加工方式</td>
+</tr>
+<tr>
+<td>科研可视化</td>
+<td>仿真/实验数据确定结构和比例 → C4D/Blender 制作示意图 → 图注说明比例、色标和数据来源</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai_3">AI 配合方式分层<a class="headerlink" href="#ai_3" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>适合做什么</th>
+<th>注意事项</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>对话式 AI</td>
+<td>选工具、写提示词、生成脚本、解释报错、检查逻辑</td>
+<td>不能直接相信物理结论和引用</td>
+</tr>
+<tr>
+<td>编辑器/Agent</td>
+<td>多文件脚本、批量处理、自动运行测试、重构项目</td>
+<td>限定目录，要求它报告改动和验证</td>
+</tr>
+<tr>
+<td>软件内置 AI</td>
+<td>Excel Copilot、MATLAB Copilot、NI Nigel 等场景内辅助</td>
+<td>能力随许可证变化，结果仍要人工验收</td>
+</tr>
+<tr>
+<td>软件 API/宏</td>
+<td>Origin Python、MATLAB、COMSOL Java API、FDTD Script、VBA、C4D Python</td>
+<td>最适合可复现自动化，但需要小样本测试</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_16">八、与各科研软件的配合方式<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<p>不同软件和 AI 的配合方式不同，核心思路如下：</p>
+<table>
+<thead>
+<tr>
+<th>软件</th>
+<th>AI配合方式</th>
+<th>主要AI工具</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origin</td>
+<td>对话式AI生成脚本 + Python接口</td>
+<td>Claude / DeepSeek / 通义</td>
+</tr>
+<tr>
+<td>MATLAB</td>
+<td>对话式AI生成.m代码 + Agent/编辑器辅助</td>
+<td>Claude Code / Codex CLI / Cursor + 对话式 AI</td>
+</tr>
+<tr>
+<td>Excel</td>
+<td>对话式AI生成公式/VBA + Copilot</td>
+<td>ChatGPT + Copilot；Office 场景可辅以 Microsoft Copilot</td>
+</tr>
+<tr>
+<td>COMSOL</td>
+<td>对话式AI辅助建模思路 + Java API</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>FDTD</td>
+<td>对话式AI辅助脚本编写</td>
+<td>Claude / DeepSeek</td>
+</tr>
+<tr>
+<td>SolidWorks</td>
+<td>对话式AI辅助建模思路 + 宏</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>C4D</td>
+<td>对话式AI辅助 + Python脚本</td>
+<td>Claude</td>
+</tr>
+<tr>
+<td>LabVIEW</td>
+<td>对话式AI辅助设计思路 + 仪器命令/伪代码</td>
+<td>Claude / DeepSeek / NI Nigel AI（如可用）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>通用模式</strong>：先在对话式 AI 中描述需求、获取代码/思路，然后在软件中实现和验证。</p>
+<hr />
+<h2 id="_17">九、本次核对来源<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p>以下链接用于核对 2026-05-19 更新中的主要趋势和模型线。产品可用性、模型名称、价格和额度仍以官网当日页面为准。</p>
+<ul>
+<li><a href="https://hai.stanford.edu/ai-index/2026-ai-index-report%C2%A0">Stanford HAI 2026 AI Index Report</a>：用于把握 AI 投资、能力、治理和科研应用趋势。</li>
+<li><a href="https://openai.com/index/introducing-gpt-5-5/">OpenAI GPT-5.5 announcement</a> 与 <a href="https://openai.com/index/gpt-5-5-instant/">GPT-5.5 Instant announcement</a>：用于核对 OpenAI GPT-5.5 公开模型线。</li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-7">Anthropic Claude Opus 4.7 announcement</a>：用于核对 Claude Opus 4.7、Agent/编码和高分辨率视觉能力。</li>
+<li><a href="https://support.anthropic.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan">Anthropic Help Center: Using Claude Code with your Pro or Max plan</a>：用于核对 Claude Code 与 Pro / Max 订阅的关系。</li>
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/">Google Gemini 3.1 Pro announcement</a> 与 <a href="https://deepmind.google/models/model-cards/gemini-3-1-pro">Gemini 3.1 Pro model card</a>：用于核对 Gemini 3.1 Pro。</li>
+<li><a href="https://api-docs.deepseek.com/news/news260424">DeepSeek V4 Preview release</a>、<a href="https://api-docs.deepseek.com/updates/">DeepSeek API change log</a> 与 <a href="https://www.deepseek.com/en/transparency/">DeepSeek transparency center</a>：用于核对 DeepSeek V4 线、模型发布和旧 API 别名调整。</li>
+<li><a href="https://docs.z.ai/guides/llm/glm-5.1">Z.ai GLM-5.1 documentation</a> 与 <a href="https://huggingface.co/zai-org/GLM-5.1">GLM-5.1 Hugging Face model page</a>：用于核对 GLM-5.1 的定位、上下文和开放权重信息。</li>
+</ul>
+<hr />
+<h2 id="_18">下一步<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p>选择你正在使用的工具，进入对应章节查看详细指南：</p>
+<ul>
+<li><a href="../02-origin/">02 - Origin</a></li>
+<li><a href="../03-matlab/">03 - MATLAB</a></li>
+<li><a href="../04-excel/">04 - Excel</a></li>
+<li><a href="../05-comsol/">05 - COMSOL</a></li>
+<li><a href="../06-fdtd/">06 - FDTD</a></li>
+<li><a href="../07-solidworks/">07 - SolidWorks</a></li>
+<li><a href="../08-c4d/">08 - C4D</a></li>
+<li><a href="../09-labview/">09 - LabVIEW</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <div
+    class="md-copyright__highlight"
+    id="site-ga-popularity"
+    data-stats="https://2dmaterial-lab.github.io/AIUserManual/assets/analytics-stats.json"
+  >浏览量统计加载中…</div>
+  <script>
+    (function () {
+      var el = document.getElementById("site-ga-popularity");
+      if (!el) return;
+      var url = el.getAttribute("data-stats");
+      if (!url) {
+        el.textContent = "浏览量统计未配置（缺少 site_url）";
+        return;
+      }
+      fetch(url, { credentials: "same-origin", cache: "no-store" })
+        .then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        })
+        .then(function (d) {
+          if (d.totalPageViews == null || d.totalPageViews === "") {
+            el.textContent =
+              "全站浏览量：暂未写入（请确认部署时已配置 GA_SERVICE_ACCOUNT_JSON 与 GA4_PROPERTY_ID）";
+            return;
+          }
+          var n =
+            typeof d.totalPageViews === "number"
+              ? d.totalPageViews
+              : parseInt(d.totalPageViews, 10);
+          if (isNaN(n)) {
+            el.textContent = "浏览量数据格式异常";
+            return;
+          }
+          var when = "";
+          if (d.updatedAt) {
+            try {
+              var dt = d.updatedAt.slice(0, 10);
+              when = " · 数据更新 " + dt;
+            } catch (e) {}
+          }
+          el.textContent =
+            "全站累计约 " +
+            n.toLocaleString("zh-CN") +
+            " 次页面浏览" +
+            when +
+            (n === 0
+              ? "（新站或 GA 处理延迟时可能短期为 0，可与 GA 后台对照）"
+              : "");
+        })
+        .catch(function (err) {
+          el.textContent =
+            "浏览量统计加载失败（请强制刷新或关闭广告拦截后重试）";
+          if (typeof console !== "undefined" && console.warn) {
+            console.warn("analytics-stats:", err);
+          }
+        });
+    })();
+  </script>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.tracking", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
