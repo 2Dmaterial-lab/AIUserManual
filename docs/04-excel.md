@@ -56,12 +56,17 @@ AI 辅助可以帮你跨越这个门槛：
 
 ## 2. 安装与配置
 
+### 2026-09-11 功能核对
+
+[Microsoft 官方 FAQ](https://support.microsoft.com/en-us/excel/copilot/frequently-asked-questions-about-copilot-in-excel) 已区分编辑、计划和聊天模式。编辑模式可直接修改工作簿、公式、图表和数据透视表，适合多步整理任务；科研数据先保留副本，再检查引用区域、单位和计算结果。按钮是否出现取决于客户端、许可证、网络与组织设置，校园 Office 账号不自动等于完整 Copilot 权益。
+
+
 ### 2.1 获取 Excel
 
 **可选方案：Microsoft 365 学生/校园授权**
 
-1. 访问 [Microsoft 教育版页面](https://www.microsoft.com/zh-cn/education/products/office)，输入学校邮箱（.edu.cn 后缀），验证学生身份后可免费使用网页版 Office，或以优惠价格订阅桌面版
-2. 如果学校已购买校园授权，直接用学校账号登录 [office.com](https://www.office.com) 即可下载安装
+1. 访问 [Microsoft 教育版页面](https://www.microsoft.com/zh-cn/education/products/office)，按官方要求验证学校与学生资格；网页版、桌面版和 Copilot 权益分别核对
+2. 如果学校已购买校园授权，用学校账号登录 [Microsoft 365](https://www.microsoft365.com/) 查看是否有桌面应用安装权限
 
 **替代方案**：
 - WPS Office：免费，界面与 Excel 兼容，但部分高级功能（Power Query、部分 VBA）支持有限

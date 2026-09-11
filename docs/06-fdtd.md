@@ -46,6 +46,8 @@ FDTD（时域有限差分法）是求解麦克斯韦方程组的数值方法，�
 
 ### 2026 年可关注的变化
 
+- **维护版本（2026-09-11 核对）**：[Lumerical 官方发布记录](https://optics.ansys.com/hc/en-us/sections/1500001572701-Release-Notes) 已列出 2026 R1.4。升级时按 FDTD/MODE 的具体修复项核对既有模型、脚本接口和许可证，不把 Ansys 其他产品的发布版本直接当成 Lumerical 版本。
+
 - **Ansys 2026 R1**：Ansys 2026 R1 强调多产品工程工作流和 AI-powered 产品更新，光子设计中更常见 FDTD、MODE、INTERCONNECT 与版图/电路工具联动。
 - **Lumerical 与系统级光子设计**：如果课题涉及光子集成电路，不要只停留在单个 FDTD 仿真；可把器件级 S 参数导出到 INTERCONNECT 或其他系统级工具。
 - **材料库与色散模型**：新版材料库和旧脚本可能存在名称差异，AI 生成脚本后要核对材料名、拟合波段和损耗模型。

@@ -18,6 +18,10 @@ on:
   schedule:
     - cron: '0 * * * *'
 
+concurrency:
+  group: github-pages-deploy
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -37,9 +41,17 @@ jobs:
       - run: pip install -r requirements.txt
       - run: pip install -r scripts/requirements-analytics.txt
       - name: Pull GA4 total page views for footer
+        id: stats
+        continue-on-error: true
         env:
           GA_SERVICE_ACCOUNT_JSON: ${{ secrets.GA_SERVICE_ACCOUNT_JSON }}
           GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
         run: python scripts/fetch_ga_stats.py
+      - name: Hide unavailable optional statistics
+        if: steps.stats.outcome == 'failure'
+        run: |
+          python scripts/fetch_ga_stats.py
+          echo "GA4 statistics unavailable; publishing documentation without a counter." >> "$GITHUB_STEP_SUMMARY"
       - run: mkdocs build --strict
-      - run: mkdocs gh-deploy --force
+      - run: python scripts/check_site.py
+      - run: mkdocs gh-deploy --force --strict

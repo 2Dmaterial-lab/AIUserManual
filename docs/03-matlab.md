@@ -45,6 +45,8 @@ MATLAB 是矩阵实验室（Matrix Laboratory）的缩写，是科研领域最�
 
 ### 2026 年可关注的变化
 
+- **MATLAB Copilot（2026-09-11 核对）**：这是 MathWorks 自身产品，与 GitHub Copilot 不同。[官方要求](https://www.mathworks.com/support/requirements/matlab-copilot.html) 包括 R2025a 或更新版本、MathWorks 账号登录和网络连接，当前注明中国地区不可用。学校 MATLAB 授权与实际 Copilot 权益需分别确认；无法使用时可用获准的对话工具生成 `.m` 文件，再在 MATLAB 内验证。
+
 - **R2026a**：MathWorks 已发布 R2026a，包含性能、图形/App 构建和 Simulink 工作流更新。
 - **Simulink Copilot**：R2026a 引入面向工程系统开发的生成式 AI 能力；如果课题涉及控制、嵌入式或系统级仿真，可关注学校授权是否包含相关功能。
 - **Python 互操作**：MATLAB 与 Python 联合工作越来越常见，适合把仪器数据处理、机器学习或批量文件处理拆到 Python，再用 MATLAB 做既有分析流程。
@@ -54,7 +56,7 @@ MATLAB 是矩阵实验室（Matrix Laboratory）的缩写，是科研领域最�
 
 ### 获取方式
 
-大多数高校都有 MATLAB 校园授权（Site License），通过学校网络即可免费使用：
+如学校已购买 MATLAB 校园授权（Campus-Wide License），按学校软件平台指引获取；仅连接校园网络不代表已经取得许可证：
 
 1. 访问 [mathworks.com](https://www.mathworks.com)
 2. 用学校邮箱注册 MathWorks 账号

@@ -4,7 +4,7 @@
 
 !!! info "版本与功能时效"
 
-    本章按 Origin/OriginPro 2025b–2026 的公开资料和常见课题组工作流整理。菜单位置、App 名称、校园授权范围会随版本变化；执行脚本前请先确认本机 Origin 版本、许可证类型和数据备份。
+    本章按 Origin/OriginPro 2025b–2026b 的公开资料和常见课题组工作流整理。菜单位置、App 名称、校园授权范围会随版本变化；执行脚本前请先确认本机 Origin 版本、许可证类型和数据备份。
 
 ## 1. 简介与适用场景
 
@@ -44,6 +44,8 @@ Origin 是 OriginLab 公司开发的数据分析和绘图软件，在物理、�
 
 ### 2026 年可关注的变化
 
+- **2026b 升级入口**：官方已提供 [Origin/OriginPro 2026b 获取说明](https://cloud.originlab.com/getVer91)；是否可升级取决于维护期与许可证，先用项目副本检查兼容性。
+
 - **项目浏览器与搜索**：新版 Origin 强化了 Project Browser 和顶部搜索框，适合在复杂项目中快速定位工作簿、图、报告表和菜单命令。
 - **统计模式与统计 App**：Origin 2025b 起强化 Stats Mode 和常用统计 App，做 ANOVA、回归、控制图等任务时可先确认是否处于统计模式。
 - **交互式单元格引用**：新版工作表更接近 Excel 的单元格引用体验，适合把简单计算留在工作表内，把批量和复杂逻辑交给 Python/LabTalk。
@@ -53,8 +55,8 @@ Origin 是 OriginLab 公司开发的数据分析和绘图软件，在物理、�
 
 ### 获取方式
 
-- **学校授权**：多数高校有 Origin 的校园授权，通过学校软件下载平台获取
-- **学生版**：OriginLab 提供学生版（功能完整，6个月免费），访问 [originlab.com/student](https://www.originlab.com/student)
+- **学校授权**：先在学校软件平台核对是否已购买 Origin 以及授权范围
+- **学生学习版**：截至 2026-09-11，[OriginPro Learning Edition](https://www.originlab.com/learningedition.aspx) 为符合条件的学生提供 6 个月学习许可，每个项目最多访问 12 个窗口，且可能需要有效活动入口；付费 Student Version 与此不同，按地区与官网条款申请
 - **试用版**：21天全功能试用
 
 ### 安装要点

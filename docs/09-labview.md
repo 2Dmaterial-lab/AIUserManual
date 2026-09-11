@@ -3,7 +3,7 @@
 > **本章导读**：按「简介与场景 → 安装配置 → AI 辅助技巧 → 示例与排错 → 进阶资源」组织，可按需跳读。
 
 !!! info "版本与功能时效"
-    本章按 LabVIEW 2026 Q1 前后的公开资料和实验室仪器控制场景整理。NI-VISA、NI-DAQmx、仪器驱动、Python Node 支持版本和硬件固件会影响实际可用功能，部署前请按实验室机器逐项核对。
+    本章按 LabVIEW 2026 Q3的公开资料和实验室仪器控制场景整理。NI-VISA、NI-DAQmx、仪器驱动、Python Node 支持版本和硬件固件会影响实际可用功能，部署前请按实验室机器逐项核对。
 
 ## 1. 简介与适用场景
 
@@ -19,7 +19,7 @@ LabVIEW（Laboratory Virtual Instrument Engineering Workbench）是 NI（Nationa
 
 ### AI辅助的特殊定位
 
-LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI 文件。但 AI 仍然可以在以下方面提供辅助：
+LabVIEW 是图形化编程环境。普通对话工具给出的文本不能直接当作可运行 VI；但 LabVIEW 2026 Q3 的 NI Nigel AI 已提供基于提示词的代码生成功能，具体范围见下方官方说明。其他 AI 工具仍可在以下方面提供辅助：
 
 - **框图设计策略**：描述你的测量需求，AI 帮你规划程序架构（状态机、生产者/消费者、主从等），确定数据流向和模块划分
 - **文本化脚本**：LabVIEW 支持通过 VI Scripting 自动生成代码，AI 可以帮你编写脚本
@@ -65,8 +65,10 @@ LabVIEW 是图形化编程环境，AI 无法直接生成可以拖拽连线的 VI
 
 ### 2026 年可关注的变化
 
-- **LabVIEW 2026 Q1**：NI 持续更新 LabVIEW 版本和功能变更说明，升级前要确认项目、工具包和驱动兼容性。
-- **NI Nigel AI**：NI 正在把 AI 辅助能力引入开发流程，可用于查文档、解释错误和生成思路；关键 VI 仍需人工搭建和测试。
+- **2026 Q3（2026-09-11 核对）**：[NI 官方更新说明](https://www.ni.com/docs/en-US/bundle/labview/page/labview-changes.html) 包含 Nigel AI 提示词代码生成与 Unicode/UTF-8 界面支持。Nigel 的资格和功能依赖实际许可；生成后先在模拟输入上检查连线、错误处理和停止逻辑，再接入仪器。
+
+- **版本与驱动兼容**：NI 持续更新 LabVIEW 版本和功能变更说明，升级前要确认项目、工具包和驱动兼容性。
+- **NI Nigel AI**：Nigel 可用于文档、代码和开发辅助；AI 生成或修改的 VI 仍需人工审核与实际测试。
 - **驱动版本联动**：DAQmx、VISA、Serial、仪器厂商驱动与 LabVIEW 版本强相关，换电脑或升级系统时要一并记录。
 - **Python Node 兼容性**：Python 版本、位数、包环境和 LabVIEW 支持矩阵要匹配；生产环境可保留文件中转方案作为兜底。
 
@@ -953,7 +955,7 @@ if __name__ == '__main__':
 - **LabVIEW Release Notes**：[ni.com LabVIEW release notes](https://www.ni.com/en/support/documentation/release-notes/product.labview.html)
 - **LabVIEW New Features and Changes**：[ni.com LabVIEW changes](https://www.ni.com/docs/en-IO/bundle/labview/page/labview-changes.html)
 - **NI VISA 帮助**：安装 NI-VISA 后，在开始菜单中找到 "NI-VISA Documentation"
-- **SCPI 命令参考**：[scpi-99.org](http://www.ivifoundation.org/docs/scpi-99.pdf)（通用 SCPI 标准，具体仪器命令以厂商手册为准）
+- **SCPI 命令参考**：[scpi-99.org](https://www.ivifoundation.org/downloads/SCPI/scpi-99.pdf)（通用 SCPI 标准，具体仪器命令以厂商手册为准）
 - **NI 开发者社区**：[forums.ni.com](https://forums.ni.com/) 有大量 LabVIEW 编程问题的讨论和解决方案
 
 ### 推荐学习路径

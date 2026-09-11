@@ -18,8 +18,8 @@
 
 ## 账号与权限
 
-- **学校邮箱 / GitHub**：建议用学校邮箱（.edu.cn 后缀）注册 GitHub，可免费获取 [GitHub Education](https://education.github.com) 权益（含 Copilot 免费等）。是否统一注册请与导师确认。
-- **组内代码托管**：暂无统一平台。如组内后续建立 GitHub 组织或 GitLab 等平台，请以导师通知为准。
+- **学校邮箱 / GitHub**：可用现有 GitHub 账号按 [GitHub Education](https://education.github.com) 要求验证在读资格；可用权益、有效期与地区以审核结果为准。是否统一注册请与导师确认。
+- **本手册代码托管**：已使用 [2Dmaterial-lab/AIUserManual](https://github.com/2Dmaterial-lab/AIUserManual) 公开仓库。其他课题是否统一使用该组织、成员权限与私有仓库安排，请以导师通知为准。
 - **软件许可证**：MATLAB、COMSOL、Origin 等大多通过**学校校园授权**获取，具体请查看学校信息化中心/软件下载平台，或咨询高年级同学。如学校未提供授权，可先使用学生版/试用版。
 
 建议维护者后续补充一张本地信息表：
