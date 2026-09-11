@@ -44,6 +44,9 @@ COMSOL Multiphysics 是多物理场仿真软件，通过有限元方法（FEM）
 
 ### 2026 年可关注的变化
 
+- **维护版本（2026-09-11 核对）**：官方当前提供 [6.4 Update 3，build 6.4.0.429](https://www.comsol.com/product-update/6.4)，发布于 2026-05-29，主要包含性能与稳定性修复。更新前保存基准模型和关键结果用于复核。
+- **模型内 Chatbot**：[6.4 Desktop 更新](https://www.comsol.com/release/6.4/comsol-desktop) 支持检索官方文档、附加模型节点，并连接兼容的 LLM 服务。模型上下文可能发送给所配置服务；仅在课题组许可的数据范围内使用。
+
 - **COMSOL 6.4**：官方发布说明强调性能、稳定性、GPU 支持和多物理场建模能力更新。
 - **NVIDIA GPU 支持**：6.4 系列扩展了 NVIDIA GPU 支持，部分 DNN surrogate model training 和显式声学等任务可受益；普通 FEM 求解是否加速仍取决于物理场和求解器。
 - **LiveLink 兼容性**：6.4 更新说明提到与 SOLIDWORKS 2026 的兼容性改进，涉及 CAD 联动时要核对双方版本。
@@ -56,8 +59,8 @@ COMSOL Multiphysics 是多物理场仿真软件，通过有限元方法（FEM）
 COMSOL 是商业软件，价格昂贵，主要通过学校授权获取：
 
 1. **校园授权**：学校网络许可证服务器，在校内或通过VPN连接使用
-2. **学术版**：COMSOL 提供学术折扣，约为商业版的 1/5 价格
-3. **试用版**：30天全功能试用，访问 [comsol.com](https://www.comsol.com)
+2. **学术版**：按所需模块、许可类型和地区向官方询价，不使用固定折扣比例估算
+3. **试用版**：通过 [COMSOL 官方下载与试用入口](https://www.comsol.com/product-download) 申请，期限和模块以获批许可为准
 
 ### 安装要点
 

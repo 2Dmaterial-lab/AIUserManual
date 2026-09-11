@@ -4,6 +4,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,13 +18,15 @@ jobs:
           cache: pip
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt
-      - run: pip install -r scripts/requirements-analytics.txt
-      - name: GA4 stats JSON (no secrets on fork PRs → placeholder)
-        env:
-          GA_SERVICE_ACCOUNT_JSON: ${{ secrets.GA_SERVICE_ACCOUNT_JSON }}
-          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+      - name: Generate optional statistics placeholder (no credentials in PR builds)
         run: python scripts/fetch_ga_stats.py
       - run: mkdocs build --strict
+      - run: python scripts/check_site.py
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/popularity.test.cjs
 
   link_check:
     runs-on: ubuntu-latest

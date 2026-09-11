@@ -66,19 +66,19 @@ SolidWorks 是工业界最广泛使用的三维机械 CAD 软件之一。在物�
 
 **可选方案：SolidWorks 教育版或校园授权**
 
-SolidWorks 为在校学生提供免费的教育版许可，功能与商业版基本一致（仅部分高级插件受限）。
+截至 2026-09-11，官方提供免费的 [SOLIDWORKS Design Standard for Students](https://www.solidworks.com/product/students/design-standard)。它与付费学生套餐、学校教育授权的组件范围不同，不能一概视为商业版全部功能。
 
-1. 访问 [SolidWorks 教育版页面](https://www.solidworks.com/zh/sw/education/solidworks-student-design-kit.html)，使用学校邮箱（.edu.cn 后缀）验证学生身份
-2. 如果学校已购买校园教育版授权，请联系实验室老师或学校 IT 部门获取安装包和序列号
-3. 下载 Student Design Kit 或 Education Edition 安装包
+1. 先查看官方学生产品页，确认资格、地区、功能与适用用途，再按页面要求申请。
+2. 如学校已购买校园授权，联系实验室老师或学校 IT 部门获取匹配的安装包与许可。
+3. 安装与已获许可一致的版本；需要 Toolbox、仿真或其他附加产品时，先确认套餐是否包含。
 
-> 提示：教育版覆盖多数建模、装配和出图需求，适合教学和非商业科研训练。部分高级仿真插件（如 Flow Simulation）可能需要额外授权。
+> 提示：学习训练、课题研究和商业用途的许可条件可能不同，按学校采购与官方条款确认。
 
 ### 2.2 安装与激活
 
 1. 运行安装程序，选择"单机安装"
 2. 输入序列号（教育版通常是一年有效期，到期后需重新申请）
-3. 安装类型选择"完整安装"，确保包含以下组件：
+3. 按许可证和实际需求选择组件，不必默认完整安装：
    - SolidWorks 基础功能
    - SolidWorks Toolbox（标准件库）
    - eDrawings（图纸查看器）

@@ -26,6 +26,16 @@
 ```bash
 pip install -r requirements.txt
 mkdocs build --strict
+python scripts/check_site.py
+python -m unittest discover -s tests -p 'test_*.py'
+node --test tests/popularity.test.cjs  # Node.js 22；仅主题脚本测试需要
 ```
 
 构建无告警后再推送，可避免线上部署失败。
+
+## 维护检查说明
+
+- `scripts/check_site.py` 检查构建后的站内链接、锚点与静态资源；外部站点的可用性仍由独立外链检查辅助核对。403、429 和超时应人工复查，不能直接判为死链。
+- 页脚逻辑位于 `docs/assets/javascripts/popularity.js`，通过 Material 的 `document$` 适配即时导航。统计路径必须相对当前站点，避免本地预览读取正式站数据。
+- 部署会串行执行。GA4 查询失败会在 Actions 摘要中提示，并隐藏计数，正文仍正常发布；这不会关闭已有 GA4 页面浏览采集。
+- 内容日期只对应实际核对范围，保留旧更新日志日期；商业软件示例需注明是否经过对应软件实际运行验证。

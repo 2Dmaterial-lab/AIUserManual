@@ -4,22 +4,22 @@
 
 !!! info "价格与产品信息时效"
 
-    **以下模型线、价格、免费额度与产品名称已于 2026 年 5 月 19 日核对**，厂商政策与定价变化频繁。订阅、选课或申请教育优惠前，**务必以各产品官网当日说明为准**；建议与 [课题组信息与本地约定](11-lab-info.md) 中的账号说明对照使用。
+    **本章于 2026 年 9 月 11 日核对主要模型目录、工具入口与教育权益**，厂商政策与定价变化频繁。订阅、选课或申请教育优惠前，**务必以各产品官网当日说明为准**；建议与 [课题组信息与本地约定](11-lab-info.md) 中的账号说明对照使用。
 
 ---
 
 ## 一、对话式AI对比
 
-下表列出四款当前主流对话产品；更多国际与国内选择见本节 **「其他主流选择」**。
+下表列出四类常用产品。**网页/App、API 和编程工具的可用模型可能不同**；代表模型来自官方目录，不表示免费账号或所有地区都能使用。更多选择见「其他主流选择」。
 
 | 特性 | Claude | ChatGPT | DeepSeek | Gemini |
 |------|--------|---------|----------|--------|
 | **开发商** | Anthropic | OpenAI | DeepSeek | Google |
-| **代表模型线** | Claude Opus 4.7 / Sonnet 4.6 | GPT-5.5 / GPT-5.5 Pro / GPT-5.5 Instant | DeepSeek V4-Pro / V4-Flash | Gemini 3.1 Pro / Flash-Lite |
+| **代表模型线** | Claude Fable 5.1 / Opus 5 / Sonnet 5 / Haiku 4.5 [1](#source-1) | GPT-6 Astra / GPT-5.6 系列 [2](#source-2) | DeepSeek V4-Pro / V4-Flash（正式版）[3](#source-3) | Gemini 3.8 Flash / 3.5 Flash-Lite；3.1 Pro 为 API Preview [4](#source-4) |
 | **强项** | 代码质量、长文本理解、深度推理、MCP 与 Claude Code 生态 | 通用能力、图像/语音/视频生态、Deep Research、Codex 编程工作流 | 中文友好、开源/开放权重、性价比高、本地部署选择多 | 长上下文、复杂推理、Google 生态、多模态 |
-| **弱项** | 免费额度较紧，复杂任务成本较高 | 产品线变化快，旧模型会逐步退役 | Web/App/API 模型名与能力可能不同，需看官方文档 | 部分地区可用性与套餐差异较大，中文表达不如国产模型自然 |
-| **免费额度** | 有（通常有限） | 有（以 ChatGPT 当日页面为准） | 有（较充裕） | 有（以 Gemini 当日页面为准） |
-| **学生优惠** | 暂无 | ChatGPT Edu（部分学校） | 暂无 | 暂无 |
+| **使用前确认** | 模型权限、用量与费用 | 当前客户端、套餐与工作区开放的模型 | Web/App/API 能力与计费差异 | App 与 API 型号不同；稳定版与 Preview 分开选择 |
+| **额度** | 以账号用量页为准 | 以账号用量页为准 | 网页使用与 API 余额分别查看 | 以账号及地区为准 |
+| **教育使用** | 查看学校采购或官方教育项目 | Edu 属于学校方案，不能等同个人学生折扣 | 查看官网活动与学校安排 | 查看所在地区的教育活动与资格 |
 | **适用场景** | 复杂代码生成、长论文分析、科研写作、Agent 开发 | 通用问答、多模态任务、深度研究、编程 Agent | 日常编程、代码调试、中文任务、本地部署 | 长文档分析、复杂图文理解、Google 生态用户 |
 
 ### 其他主流选择
@@ -28,36 +28,38 @@
 
 | 工具 | 类型 | 强项 | 注意 |
 |------|------|------|------|
-| **Grok**（xAI） | 国际 | 推理能力强（Grok-3）、实时信息获取、X/Twitter 集成 | 部分地区需 VPN；免费额度以官网为准 |
+| **Grok**（xAI） | 国际 | 实时信息检索、推理与 X 内容相关任务 | 使用 [Grok 官方入口](https://grok.com/)，核对地区与账号可用性 |
 | **Perplexity** | 国际 | 检索增强、回答常附引用链接，适合快速查证与入门线索 | **不能替代**正式文献检索与数据库综述；联网场景注意第六节隐私 |
 | **Microsoft Copilot** | 国际（网页/Windows/Edge） | 与 Microsoft 365、Edge、Windows、Office 生态深度集成 | 功能随系统版本与 Microsoft 365 等订阅变化，Copilot+PC 特性另见官网 |
-| **GLM / 智谱清言（Z.ai）** | 国内常用 / 开放权重 | GLM-5.1 在长程 Agent、代码与中文工程任务上表现突出，可作为国产模型重点选择 | 以 [Z.ai 文档](https://docs.z.ai/guides/llm/glm-5.1) 与 [Hugging Face 模型页](https://huggingface.co/zai-org/GLM-5.1) 为准 |
-| **Kimi**（月之暗面） | 国内常用 | 长文本、中文场景常见，K2 模型 | 额度与模型版本以 [kimi.moonshot.cn](https://kimi.moonshot.cn) 为准 |
-| **通义千问（Qwen）** | 国内常用 | Qwen3 系列开源强大、阿里生态、工具调用、代码能力 | 以阿里云/通义官网能力与条款为准，开源版可本地部署 |
+| **GLM / 智谱清言（Z.ai）** | 国内常用 / 开放权重 | 中文、代码与 Agent 任务；具体型号按官方目录选择 | 以 [Z.ai 模型目录](https://docs.z.ai/guides/overview/overview) 为准；开放权重与托管 API 分别核对 |
+| **Kimi**（月之暗面） | 国内常用 | 长文本、中文资料与代码任务；型号见 [Kimi 官方目录](https://platform.kimi.ai/docs/overview) | 额度与模型版本以 [kimi.moonshot.cn](https://kimi.moonshot.cn) 为准 |
+| **通义千问（Qwen）** | 国内常用 | Qwen 系列开放模型、阿里生态、工具调用与代码能力 | 以阿里云/通义官网能力与条款为准，开源版可本地部署 |
 | **豆包（字节跳动）** | 国内常用 | 多模态、中文对话自然、与抖音/飞书等字节生态结合 | 以豆包官网能力与条款为准 |
 | **元宝（腾讯）** | 国内常用 | 与微信/腾讯文档等腾讯生态集成、中文场景 | 以腾讯混元/元宝官网能力与条款为准 |
 
 ### 选择参考
 
 - **写 MATLAB/Python 代码**：Claude Code、ChatGPT/Codex、DeepSeek 都可用；复杂项目可选择能读写文件并运行测试的 Agent 工具
-- **需要深度推理（复杂公式推导、疑难 bug 分析）**：Claude 扩展思考、ChatGPT GPT-5.5 Thinking/Pro、Gemini 3.1 Pro、DeepSeek V4 思考模式、GLM-5.1 都值得交叉验证
-- **处理中文文档/翻译**：DeepSeek、GLM-5.1 中文处理出色；也可结合 **通义千问**、**Kimi**、**豆包**
-- **需要看图分析**：ChatGPT、Gemini 3.1 Pro、Claude Opus 4.7 都支持图像理解；涉及图表读数时仍需人工核对
-- **长文档阅读（论文、综述）**：Gemini 3.1 Pro 和 Claude 都适合长文档；长中文材料可对比 **Kimi**
+- **需要深度推理（复杂公式推导、疑难 bug 分析）**：Claude 扩展思考、ChatGPT 当前可用的推理模型、Gemini 推理模型、DeepSeek V4 思考模式、GLM 都值得交叉验证
+- **处理中文文档/翻译**：DeepSeek、GLM 可用于中文处理；也可结合 **通义千问**、**Kimi**、**豆包**
+- **需要看图分析**：ChatGPT、Gemini、Claude 中选择支持视觉的模型；涉及图表读数时仍需人工核对
+- **长文档阅读（论文、综述）**：Gemini 和 Claude 都适合长文档；长中文材料可对比 **Kimi**
 - **需要「带出处」的快速查证**：可考虑 **Perplexity**（仍须用正式数据库与综述核对）
 - **已深度使用 Google / Microsoft / Apple 生态**：可考虑 **Gemini**、**Microsoft Copilot** 或对应生态 AI
-- **开源/本地部署需求**：DeepSeek V4、GLM-5.1、Qwen3、Llama 等开源/开放权重模型可搭配 Ollama、vLLM、SGLang 等本地工具
+- **开源/本地部署需求**：先按显存、内存和许可证选择较小的开放权重模型，再核对 Ollama、vLLM 或 SGLang 的支持清单；大型模型不能假定普通电脑可运行
 - **日常随手问**：哪个方便用哪个，差异不大
 - **涉密、未发表数据、课题组未公开成果**：一律勿输入云端工具；见第六节
 
-### 费用参考（2026年5月）
+### 费用与套餐（2026年9月核对）
 
-| 产品 | 免费版 | 付费版（月费） |
-|------|--------|----------------|
-| Claude | 有限免费（通常为 Sonnet 系列） | Pro 常见 $20/月；Max/Team/Enterprise 提供更多用量与管理能力 |
-| ChatGPT | 有免费档 | Plus 常见 $20/月；Pro/Team/Edu/Enterprise 按场景选择 |
-| DeepSeek | Web/App 常见免费或低门槛 | API 按量付费；官方模型名与旧别名会调整 |
-| Gemini | 有免费档 | Google AI Pro / Ultra 或 Google One AI Premium 等套餐随地区变化 |
+**网页订阅通常不等于 API 额度**。批量分析、Agent 长任务和联网工具可能有独立用量限制；先做小样本，查看实际消耗，再决定套餐。这里保留官方费用入口，不把短期价格写成长期承诺。
+
+| 产品 | 订阅与 API 的区别 | 核对入口 |
+|------|------------------|----------|
+| Claude | 网页套餐、Claude Code 使用方式与 Console API 计费分别确认 | [官方套餐](https://claude.com/pricing) |
+| ChatGPT / Codex | 免费、个人、Business、Edu/Enterprise 与 API 使用范围不同；以账号实际权益为准 | [ChatGPT 定价](https://chatgpt.com/pricing)、[Codex 费用与用量](https://developers.openai.com/codex/pricing) |
+| DeepSeek | Web/App 与 API 分开；V4 API 已引入峰谷时段计费，输入缓存与输出分别计费 | [API 定价](https://api-docs.deepseek.com/quick_start/pricing/) |
+| Gemini | Google AI 订阅与 Gemini API 分开；地区、模型和 Preview 状态会影响可用性 | [Google AI 套餐](https://one.google.com/about/google-ai-plans/)、[API 定价](https://ai.google.dev/gemini-api/docs/pricing) |
 
 ### 扩展工具费用速查
 
@@ -68,13 +70,13 @@
 | Grok | 常见为免费档 + SuperGrok 等付费档 |
 | Perplexity | 常见为免费档 + Pro 等订阅档 |
 | Microsoft Copilot | 免费能力与 Microsoft 365 订阅捆绑因地区与套餐而异 |
-| GLM / 智谱清言 | GLM-5.1 API、Coding Plan、开放权重与第三方接入价格差异较大，以 Z.ai / 智谱官方说明为准 |
+| GLM / 智谱清言 | GLM API、Coding Plan、开放权重与第三方接入价格差异较大，以 Z.ai / 智谱官方说明为准 |
 | Kimi | 额度与会员以 [kimi.moonshot.cn](https://kimi.moonshot.cn) 当日说明为准 |
-| 通义千问 | 以阿里云/通义官网当日定价为准，开源版免费自部署 |
+| 通义千问 | 以阿里云/通义官网当日定价为准，开放模型自部署仍有硬件、运维成本，并受模型许可证约束 |
 | 豆包 | 以豆包官网当日定价与额度为准 |
 | 元宝 | 以腾讯混元/元宝官网当日定价与额度为准 |
 
-> 建议：先用免费版熟悉，确认有持续需求再考虑付费。Claude Pro、ChatGPT Plus/Pro 或 Gemini 付费档的主要差异通常在模型权限、上下文长度、额度和 Agent/深度研究能力。国内用户如 VPN 不便，DeepSeek V4、GLM-5.1、通义、Kimi、豆包等中文工具也能覆盖大量日常需求。
+> 建议：先用免费版熟悉，确认有持续需求再考虑付费。Claude Pro、ChatGPT Plus/Pro 或 Gemini 付费档的主要差异通常在模型权限、上下文长度、额度和 Agent/深度研究能力。按所在地允许的服务与学校安排选择；DeepSeek、GLM、通义、Kimi、豆包等也可用于日常任务。
 
 > **时效性说明**：各产品名称、定价与政策会随厂商调整而变化，请以官方网站当日公布为准；本手册中的价格与功能描述仅作参考，建议每学期核对一次。
 
@@ -88,9 +90,9 @@
 |------|---------------|--------|----------|
 | **形态** | VS Code/JetBrains 插件 | 独立IDE（基于VS Code） | 独立IDE |
 | **核心功能** | 代码补全、Chat、Agent模式 | Tab补全、Composer、Agent模式、项目级理解 | 代码补全、Cascade（Agent）、多文件编辑 |
-| **强项** | 与GitHub深度集成、稳定性好、生态最大 | Agent模式强、项目上下文理解深、MCP支持 | 上手快、Cascade流式体验好 |
-| **弱项** | Agent模式相对保守 | 需迁移到新IDE、免费额度有限 | 生态较新 |
-| **学生优惠** | 有（GitHub Education） | 暂无 | 暂无 |
+| **强项** | 与 GitHub、受支持编辑器和代码审查工作流集成 | Agent模式强、项目上下文理解深、MCP支持 | 上手快、Cascade流式体验好 |
+| **使用前确认** | 编辑器、Agent 功能和额度 | 项目权限、模型消耗与云端任务范围 | Editor 与旧插件的功能和维护状态 |
+| **学生权益** | 以已验证学生的权益页为准 [5](#source-5) | 官方学生页介绍校园/线上活动优惠 [6](#source-6) | 以官网当期教育活动为准 |
 | **适合谁** | 已有 VS Code 习惯、希望保留原编辑器的人 | 需要项目级上下文和 Agent 工作流的人 | 需要轻量级 Agent 辅助的人 |
 
 ### 2.2 CLI 命令行工具（终端AI）
@@ -100,48 +102,48 @@
 | 特性 | Claude Code | Codex CLI | GitHub Copilot CLI |
 |------|------------|-----------|-------------------|
 | **开发商** | Anthropic | OpenAI | GitHub |
-| **形态** | 终端CLI | 终端CLI | 终端CLI（`gh copilot`） |
+| **形态** | 终端CLI | 终端CLI | 独立终端 CLI（`copilot`）[7](#source-7) |
 | **强项** | 项目级理解强、Agent自主执行、MCP原生支持 | 与 OpenAI / ChatGPT / Codex 生态结合，适合终端式代码任务 | 与GitHub/Git工作流结合 |
-| **弱项** | Pro 用量有限；Max 或 API 更适合大仓库和高频使用 | 生态较新 | 功能相对精简 |
+| **使用前确认** | 套餐额度与 API 计费方式 | 登录方式、模型权限与执行环境 | 当前 Copilot 计划和工具权限 |
 | **适合谁** | 复杂重构、多文件改动、无GUI环境 | OpenAI生态用户 | GitHub深度用户 |
 
 > Claude Code 是终端 AI 编程工具中的常见选择，Agent 模式可自主完成「理解代码 → 修改 → 验证」闭环，适合跨文件改动和批量脚本维护。
 
-### 2.3 其他常见形态
+**旧教程迁移**：`gh copilot` 扩展已退役。新用户应按 [GitHub 官方安装指南](https://docs.github.com/en/copilot/how-tos/set-up/install-copilot-cli) 安装独立 Copilot CLI，不再沿用旧扩展安装命令。
+
+### 2.3 桌面应用与其他常见形态
 
 不想换主编辑器、或惯用 JetBrains 时，可考虑下列形态；产品名与功能以官网为准。
 
 | 工具 | 形态 | 适合谁 | 说明 |
 |------|------|--------|------|
-| **Codeium** | VS Code、JetBrains、Vim 等多编辑器插件 | 需要免费档较常见的补全/聊天、**不愿换 IDE** | 与 Copilot 类似偏「插件补全」，深度项目级能力因编辑器而异 |
+| **Windsurf Plugins（原 Codeium）** | 多编辑器插件 | 维护既有插件环境的用户 | 多个旧插件已处于维护模式；新项目先看 [官方维护状态](https://docs.windsurf.com/plugins/getting-started)，尤其注意 JetBrains 迁移说明 [8](#source-8) |
+| **Codex 桌面应用 / IDE 扩展** | 桌面任务、项目文件与编辑器内工作流 | 希望直接整理文件、分析数据或维护仓库的用户 | 先确认工作目录、已连接应用和验收标准；具体功能以 [官方文档](https://developers.openai.com/codex/app) 为准 |
 | **JetBrains AI Assistant / Junie** | 内置于 IntelliJ IDEA、PyCharm 等 JetBrains IDE | **坚持用 JetBrains 栈**、不迁到 VS Code 的用户 | 具体功能名（如 Assistant、Junie）与订阅以 [jetbrains.com/ai](https://www.jetbrains.com/ai/) 为准 |
 | **Amazon Q Developer** | AWS 工具链与多款 IDE 插件 | 深度使用 **AWS** 的开发者 | 与云资源、IAM 策略相关，以 AWS 官网说明为准 |
 
 ### 选择参考
 
-- **MATLAB 编程**：Copilot 不直接支持 MATLAB；可用 Claude Code（终端）+ 对话式 Claude/DeepSeek，或用 Cursor + 对话式 AI
-- **Python/LabVIEW脚本**：Claude Code、Cursor 都可处理项目级脚本；仅要补全可选 Copilot 或 Codeium
+- **MATLAB 编程**：MATLAB 内置的 **MATLAB Copilot** 与 **GitHub Copilot** 是不同产品；前者需满足 MathWorks 版本、地区与许可要求，后者可在受支持编辑器中辅助 `.m` 文件；也可用 Claude Code/Codex/Cursor 编写后在 MATLAB 中运行 [9](#source-9)
+- **Python/LabVIEW脚本**：Claude Code、Cursor 都可处理项目级脚本；仅要补全可选 Copilot 或受支持的 Windsurf 插件
 - **VBA/Excel**：Copilot 和 Microsoft Copilot 支持较好；Claude/ChatGPT 对话也覆盖
 - **日常多语言开发**：Cursor（Agent模式）和 Claude Code 覆盖面较广
-- **不换编辑器、只要补全/Chat**：可考虑 GitHub Copilot、Codeium 等插件
+- **不换编辑器、只要补全/Chat**：可考虑 GitHub Copilot 等仍支持当前编辑器版本的插件
 - **服务器/无 GUI 环境**：可考虑 Claude Code、Codex CLI 等终端工具
 - **云 API、数据出境或合规敏感**：与第六节「隐私与安全」、课题组规定结合，谨慎选择联网助手
 
 ### 费用参考
 
-| 产品 | 个人版 | 学生版 |
-|------|--------|--------|
-| GitHub Copilot | $10/月（或含 GitHub 订阅） | 免费（GitHub Education） |
-| Cursor | $20/月（Pro） | 暂无 |
-| Windsurf | 有免费额度 | 暂无 |
-| Claude Code | 可通过 Claude Pro（$20/月）、Max、Team/Enterprise 或 Anthropic Console API 使用；Pro 适合轻量小仓库，Max/API 更适合大仓库和高频使用 | 暂无明确通用学生档 |
-| Codex CLI | 需 OpenAI API Key 或 ChatGPT/Codex 相关订阅，具体以 OpenAI 页面为准 | 以官网为准 |
-| Codeium | 常见有免费档，团队/企业档见官网 | 见官网 |
-| JetBrains AI | 常与 IDE 订阅或单独 AI 订阅绑定 | 见官网 |
+| 产品 | 费用/权益核对入口 | 选择时看什么 |
+|------|--------------------|--------------|
+| GitHub Copilot | [官方计划](https://docs.github.com/en/copilot/get-started/plans) | 免费与付费计划、AI 用量；学生权益需要验证资格 |
+| Cursor | [定价](https://cursor.com/pricing)、[学生页](https://cursor.com/students) | Agent 用量与超额费用；校园活动不能视为所有学生自动获赠订阅 |
+| Windsurf | [定价](https://windsurf.com/pricing) | Editor、插件与团队计划分别核对 |
+| Claude Code | [官方使用与订阅说明](https://code.claude.com/docs/en/overview) | 订阅登录和 API 按量付费不同 |
+| Codex | [官方费用与用量](https://developers.openai.com/codex/pricing) | ChatGPT 登录与 API Key 登录的计费方式不同 |
+| JetBrains AI | [官方产品页](https://www.jetbrains.com/ai/) | IDE 版本、AI Assistant/Junie 与账号权益 |
 
-> 如果有学校邮箱，可查看 GitHub Education 是否可用；通过后通常可获得 Copilot 学生权益。
-
-> 编程类工具的月费、学生政策同样可能变更，以各产品官网为准。
+> 有学校邮箱不代表自动获得全部教育权益。申请前查看资格、所在地区和有效期；不要把付费网页订阅理解为无限 API 或无限 Agent 使用量。
 
 ---
 
@@ -152,6 +154,7 @@
 **MCP（Model Context Protocol，模型上下文协议）** 是由 Anthropic 于 2024 年底发布、并被多类 AI 工具采用的开放协议。它让 AI 模型能够**以标准方式连接外部工具和数据源**，例如本地文件、数据库、浏览器、文献管理器和实验数据目录。
 
 对于科研工作者，MCP 的实际意义是：
+
 - AI 可以直接**读取你电脑上的文件**（代码、数据、论文），而不需要你复制粘贴
 - AI 可以**查询数据库、搜索网页、调用 API**
 - 一次配置后，多个支持 MCP 的 AI 工具可复用相似的工具连接
@@ -163,18 +166,18 @@
 | 模式 | 传统对话 | Agent 模式 |
 |------|---------|-----------|
 | 交互方式 | 一问一答 | 给定目标，自主规划并执行 |
-| 能力边界 | 只能输出文本 | 可读写文件、运行命令、搜索网络 |
+| 能力边界 | 取决于所选模式，也可能支持附件、联网和分析工具 | 在授权工具与环境范围内执行多步任务 |
 | 典型场景 | "帮我写一段代码" | "帮我在项目中找到所有性能瓶颈并修复" |
-| 代表产品 | ChatGPT / Claude / Gemini / DeepSeek 网页版 | Claude Code、Codex CLI、Cursor Agent、Windsurf Cascade、Manus、Devin |
+| 典型入口 | 各产品的普通问答模式 | Claude Code、Codex、Cursor Agent 等；部分网页产品也提供 Agent 模式 |
 
 ### 3.3 对课题组的实用价值
 
-- **代码与数据管理**：使用 Claude Code + MCP 文件系统，AI 可直接操作项目文件
+- **代码与数据管理**：Claude Code、Codex 等可通过自身文件工具操作项目；只有需要额外数据源时才配置 MCP
 - **文献管理**：MCP 连接 Zotero/文献库，AI 帮助整理、检索文献
 - **数据安全**：MCP 可限制工具可访问的本地目录和动作，但如果连接的是云端模型，对话内容和必要上下文仍可能发送给服务商；涉密数据仍需本地模型或单位批准的企业方案
-- **跨工具协作**：一次配置 MCP server，Claude Desktop、Cursor、Claude Code 均可使用
+- **跨工具协作**：可在支持 MCP 的不同客户端中配置同一服务；认证、传输方式和权限仍须逐个客户端核对
 
-> **当前建议**：课题组同学可以先从 Claude Desktop + 文件系统 MCP 入手，体验「AI 直接读你的论文 PDF」的便利。进阶后使用 Claude Code 进行代码项目级辅助。
+> **入门建议**：先用一份公开论文或示例数据完成任务。附件、已有文件工具或连接器能满足需求时，直接使用；需要扩展能力时再配置 MCP。MCP 本身不保证 PDF 解析、联网隔离或结果正确。
 
 ---
 
@@ -221,37 +224,37 @@ AI 可以用来**形成检索式、提炼问题、对比观点、整理笔记**�
 
 1. 访问 [education.github.com](https://education.github.com)
 2. 用学校邮箱注册/登录 GitHub
-3. 上传学生证明（学生证照片或学信网截图）
-4. 审核通过后，在权益页面激活 Copilot
+3. 按官方申请页面要求提交在读证明；不要把身份证件发给 AI 助手
+4. 审核通过后，在权益页面确认并激活当前可用的 Copilot 学生权益 [5](#source-5)
 
 ### Claude
 
 1. 访问 [claude.ai](https://claude.ai)
 2. 注册账号（可用 Google 登录）
 3. 免费版、Pro、Max、Team 等档位可用模型和额度以页面当日说明为准；复杂科研任务可尝试 Opus/Sonnet 的思考模式
-4. **Claude Code**：Anthropic 官方帮助中心说明 Pro 和 Max 订阅均可在终端使用 Claude Code；Pro（$20/月）适合轻量小仓库任务，Max 提供更高额度并可在 Claude Code 中使用 Opus。也可用 Anthropic Console API 按量付费
+4. **Claude Code**：按 [官方入门页](https://code.claude.com/docs/en/overview) 安装并选择登录方式；订阅额度与 Console API 账单分别核对
 
 ### ChatGPT
 
-1. 访问 [chat.openai.com](https://chat.openai.com)
+1. 访问 [chatgpt.com](https://chatgpt.com)
 2. 注册账号
-3. 免费版、Plus、Pro、Team/Edu/Enterprise 的模型和额度会变化；复杂任务可尝试 GPT-5.5、Deep Research 或 Codex 相关能力
+3. 免费版、Plus、Pro、Business/Edu/Enterprise 的模型和额度会变化；复杂任务使用账号可用的推理、Deep Research 或 Codex 能力
 
 ### DeepSeek
 
 1. 访问 [chat.deepseek.com](https://chat.deepseek.com)
 2. 注册账号
-3. Web/App 与 API 的模型名可能不同；截至本次核对，官方 API 文档已进入 V4 Preview 线（V4-Pro / V4-Flash），并提示旧 `deepseek-chat` / `deepseek-reasoner` 别名会调整
+3. Web/App 与 API 的模型名可能不同；V4-Pro 已于 2026-08-13 正式发布。新脚本按官方目录使用 `deepseek-v4-pro` / `deepseek-v4-flash`，旧教程中的别名先核对再迁移 [3](#source-3)
 
 ### GLM / 智谱清言（Z.ai）
 
 1. 访问 [chatglm.cn](https://chatglm.cn) 或 Z.ai 相关入口，按页面指引注册
-2. 若用于代码 Agent，可重点关注 GLM-5.1、GLM Coding Plan、OpenAI 兼容 API 或第三方接入方式
-3. GLM-5.1 是文本模型，长程工程任务和代码场景表现较强；涉及图像、多模态或极长文档时需与其他模型搭配
+2. 若用于代码 Agent，先查看官方模型目录、GLM Coding Plan、兼容 API 与账号支持的型号
+3. 逐个型号确认是否支持图像、工具调用和所需上下文，不要把模型家族名当成统一能力保证
 
 ### Grok
 
-1. 访问 [grok.xai.com](https://grok.xai.com)（若所在地区入口不同，以 xAI 官方说明为准）
+1. 访问 [grok.com](https://grok.com/)（若所在地区入口不同，以 xAI 官方说明为准）
 2. 使用 X/Twitter 或 Google 账号登录
 3. 免费档与 SuperGrok 付费档以页面当日说明为准
 
@@ -285,11 +288,11 @@ AI 可以用来**形成检索式、提炼问题、对比观点、整理笔记**�
 2. 使用阿里云/淘宝等账号登录（以页面要求为准）
 3. 额度与条款以官网当日说明为准
 
-### Codeium
+### Windsurf Plugins（原 Codeium）
 
-1. 访问 [codeium.com](https://codeium.com)
-2. 注册账号后在目标编辑器中安装 Codeium 插件并按向导登录
-3. 免费与团队政策以官网为准
+1. 访问 [官方插件文档](https://docs.windsurf.com/plugins/getting-started)
+2. 先查看目标编辑器的维护或弃用状态，再选择当前支持的插件或迁移路径
+3. 根据官方向导安装、登录并核对用量 [8](#source-8)
 
 ### JetBrains AI
 
@@ -332,9 +335,9 @@ AI 可以用来**形成检索式、提炼问题、对比观点、整理笔记**�
 
 1. **数据脱敏**：输入前去掉文件名中的真实项目名称
 2. **用模拟数据**：让 AI 帮你生成测试数据来调试代码
-3. **本地部署**：敏感项目考虑用 Ollama + DeepSeek V4、GLM-5.1、Qwen3 等开源/开放权重模型本地运行
+3. **本地部署**：先用公开样例验证适合本机硬件的开放模型；确认推理、嵌入、OCR、日志和工具均在获准环境内处理，再按课题组规定使用
 4. **MCP 本地连接**：使用 Claude Desktop、Cursor 或 Claude Code 的文件系统 MCP 连接，让 AI 在授权范围内读取本地文件；若模型在云端，对话内容和必要上下文仍经 API
-5. **企业版/团队版**：如果课题组统一订阅，注意选择不用于训练的版本（如 ChatGPT Team、Claude Team）
+5. **企业版/团队版**：如果课题组统一订阅，注意选择不用于训练的版本（如 ChatGPT Business、Claude Team）
 6. **联网检索类工具**（如 Perplexity、部分场景下的 Microsoft Copilot）：查询会经厂商服务器甚至对接网页检索，**切勿**粘贴未发表数据、课题内部资料；需要正式文献仍以数据库与图书馆检索为主
 
 ---
@@ -396,15 +399,21 @@ AI 可以用来**形成检索式、提炼问题、对比观点、整理笔记**�
 
 ## 九、本次核对来源
 
-以下链接用于核对 2026-05-19 更新中的主要趋势和模型线。产品可用性、模型名称、价格和额度仍以官网当日页面为准。
+**核对日期：2026-09-11。** 下列目录用于查证产品状态，不是能力排名。优先选择能完成自己样例任务的工具；实验中记录实际模型 ID、日期、提示词、工具版本与结果验证方式。
 
-- [Stanford HAI 2026 AI Index Report](https://hai.stanford.edu/ai-index/2026-ai-index-report%C2%A0)：用于把握 AI 投资、能力、治理和科研应用趋势。
-- [OpenAI GPT-5.5 announcement](https://openai.com/index/introducing-gpt-5-5/) 与 [GPT-5.5 Instant announcement](https://openai.com/index/gpt-5-5-instant/)：用于核对 OpenAI GPT-5.5 公开模型线。
-- [Anthropic Claude Opus 4.7 announcement](https://www.anthropic.com/news/claude-opus-4-7)：用于核对 Claude Opus 4.7、Agent/编码和高分辨率视觉能力。
-- [Anthropic Help Center: Using Claude Code with your Pro or Max plan](https://support.anthropic.com/en/articles/11145838-using-claude-code-with-your-pro-or-max-plan)：用于核对 Claude Code 与 Pro / Max 订阅的关系。
-- [Google Gemini 3.1 Pro announcement](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/) 与 [Gemini 3.1 Pro model card](https://deepmind.google/models/model-cards/gemini-3-1-pro)：用于核对 Gemini 3.1 Pro。
-- [DeepSeek V4 Preview release](https://api-docs.deepseek.com/news/news260424)、[DeepSeek API change log](https://api-docs.deepseek.com/updates/) 与 [DeepSeek transparency center](https://www.deepseek.com/en/transparency/)：用于核对 DeepSeek V4 线、模型发布和旧 API 别名调整。
-- [Z.ai GLM-5.1 documentation](https://docs.z.ai/guides/llm/glm-5.1) 与 [GLM-5.1 Hugging Face model page](https://huggingface.co/zai-org/GLM-5.1)：用于核对 GLM-5.1 的定位、上下文和开放权重信息。
+| 编号 | 官方来源 | 本次更新依据 |
+|------|----------|--------------|
+| <span id="source-1">[1]</span> | [Claude 模型目录](https://platform.claude.com/docs/en/models/overview) | Fable 5.1、Opus 5、Sonnet 5、Haiku 4.5；API 与网页可用性分开核对 |
+| <span id="source-2">[2]</span> | [OpenAI 模型与选择说明](https://developers.openai.com/codex/models) | GPT-6 Astra、GPT-5.6 Sol/Terra/Luna；权限取决于计划、客户端和开放范围 |
+| <span id="source-3">[3]</span> | [DeepSeek V4-Pro 正式发布](https://api-docs.deepseek.com/news/news260813/)、[当前定价](https://api-docs.deepseek.com/quick_start/pricing/) | 8 月正式版与 8 月 16 日起峰谷计费；不再笼统标为 Preview |
+| <span id="source-4">[4]</span> | [Gemini API 模型目录](https://ai.google.dev/gemini-api/docs/models) | 3.8 Flash、3.5 Flash-Lite 为稳定版；3.1 Pro 仍标为 Preview |
+| <span id="source-5">[5]</span> | [GitHub Copilot 计划](https://docs.github.com/en/copilot/get-started/plans) | 当前计划与经过验证的学生权益 |
+| <span id="source-6">[6]</span> | [Cursor 学生项目](https://cursor.com/students) | 以校园/线上活动和官方资格说明为准 |
+| <span id="source-7">[7]</span> | [GitHub 旧 CLI 扩展退役说明](https://docs.github.com/en/copilot/how-tos/use-copilot-for-common-tasks/use-copilot-in-the-cli) | 从 `gh copilot` 迁移至独立 Copilot CLI |
+| <span id="source-8">[8]</span> | [Windsurf 插件文档](https://docs.windsurf.com/plugins/getting-started) | 原 Codeium 名称与旧插件维护/迁移状态 |
+| <span id="source-9">[9]</span> | [MATLAB Copilot 要求](https://www.mathworks.com/support/requirements/matlab-copilot.html) | 版本、登录、网络和地区条件；与 GitHub Copilot 区分 |
+
+其他模型目录：[Z.ai](https://docs.z.ai/guides/overview/overview)、[Kimi](https://platform.kimi.ai/docs/overview)。未逐一验证的学校采购、内部账号和地区权益，应由使用者或课题组管理员确认。
 
 ---
 
