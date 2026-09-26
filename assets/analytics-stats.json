@@ -1,0 +1,6 @@
+{
+  "totalPageViews": 7103,
+  "updatedAt": "2026-09-26T17:32:17Z",
+  "source": "ga4",
+  "note": "自 2020-01-01 起至「今天」：主指标为 page_view 的 eventCount；若为 0 再尝试 screenPageViews；由部署任务拉取。"
+}
