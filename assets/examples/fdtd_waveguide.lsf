@@ -1,0 +1,78 @@
+# Lumerical FDTD 波导仿真脚本模板
+# 用途：设置并运行基本的波导FDTD仿真
+# 使用：修改参数后在Lumerical脚本编辑器中运行
+
+# ===== 清空当前设计 =====
+deleteall;
+
+# ===== 参数定义 =====
+wavelength_start = 1.5e-6;    # 起始波长 (m)
+wavelength_stop = 1.6e-6;     # 终止波长 (m)
+wg_width = 500e-9;            # 波导宽度 (m)
+wg_height = 220e-9;           # 波导高度 (m)
+wg_length = 10e-6;            # 波导长度 (m)
+n_core = 3.48;                # 硅折射率
+n_clad = 1.44;                # SiO2折射率
+
+# ===== 创建结构 =====
+# 硅波导芯层
+addrect;
+set("name", "waveguide_core");
+set("x", 0);
+set("x span", wg_length);
+set("y", 0);
+set("y span", wg_width);
+set("z", wg_height/2);
+set("z span", wg_height);
+set("index", n_core);
+
+# SiO2下包层
+addrect;
+set("name", "substrate");
+set("x", 0);
+set("x span", wg_length + 4e-6);
+set("y", 0);
+set("y span", 4e-6);
+set("z", -1e-6);
+set("z span", 2e-6);
+set("index", n_clad);
+set("alpha", 0.3);
+
+# ===== 仿真区域 =====
+addfdtd;
+set("x", 0);
+set("x span", wg_length + 4e-6);
+set("y", 0);
+set("y span", 4e-6);
+set("z", wg_height/2);
+set("z span", 4e-6);
+set("mesh accuracy", 3);
+set("simulation time", 1000e-15);  # 1ps
+
+# ===== 光源 =====
+addmode;
+set("name", "source");
+set("x", -wg_length/2 + 1e-6);
+set("y", 0);
+set("z", wg_height/2);
+set("wavelength start", wavelength_start);
+set("wavelength stop", wavelength_stop);
+set("direction", "Forward");
+
+# ===== 监视器 =====
+# 传输监视器
+addpower;
+set("name", "transmission");
+set("monitor type", "2D X-normal");
+set("x", wg_length/2 - 1e-6);
+set("y", 0);
+set("y span", 4e-6);
+set("z", wg_height/2);
+set("z span", 4e-6);
+
+# ===== 运行仿真 =====
+run;
+
+# ===== 提取结果 =====
+T = getresult("transmission", "T");
+plot(T.lambda*1e6, T.T, "Wavelength (um)", "Transmission", "Waveguide Transmission");
